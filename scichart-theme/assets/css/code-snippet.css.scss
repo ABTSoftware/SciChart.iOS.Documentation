@@ -1,0 +1,36 @@
+@font-face { font-family: Montserrat-Light; src: url("../fonts/Montserrat-Light.otf"); } 
+@font-face { font-family: Montserrat-SemiBold; src: url("../fonts/Montserrat-SemiBold.otf"); } 
+
+.code-snippet-tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+.code-snippet-tabs button {
+    font-family: Montserrat-Light;
+    text-align: center;
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 1.5em;
+    transition: 0.15s;
+    font-size: 0.9em;
+    height: 2.5em;
+}
+  
+.code-snippet-tabs button.selected {
+    font-family: Montserrat-SemiBold;
+    color: #42AD42;
+    border-bottom: 2px solid #42AD42;
+}
+  
+.code-snippet {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: #f5f2f0;
+    margin-bottom: 10px;
+}

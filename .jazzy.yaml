@@ -1,0 +1,1206 @@
+module: SciChart
+module_version: 4.4.0
+author: SciChart
+author_url: https://www.scichart.com
+github_url: https://github.com/ABTSoftware/SciChart.iOS.Examples
+
+# For local purposes and testing, you can generate sourcekit docs only, and then run jazzy against that.
+# sourcekitten doc --objc docs-headers/SciChart.h -- -x objective-c -isysroot $(xcrun --sdk iphonesimulator --show-sdk-path) -I $(pwd)/docs-headers/ > SciChart-SourceKit-Docs
+# And instead of `sdk`, `framework_root` and `umbrella_header` use `sourcekitten_sourcefile` like below
+sourcekitten_sourcefile: api/scichart-sourcekit-api-docs
+objc: true
+clean: true
+sdk: iphonesimulator
+# framework_root: api/docs-headers/
+# umbrella_header: api/docs-headers/SciChart.h
+
+readme: index.md
+documentation: "guides/**/*.md"
+abstract: "sections/*.md"
+theme: scichart-theme
+output: generated-docs
+
+custom_categories:
+  - name: SciChart iOS v4 SDK User Manual
+    children:
+      - Installation and System Requirements
+      - Setting up a Development Environment
+      - Integrating SciChart libraries
+      - Licensing SciChart iOS
+      - Online Resources and Help
+  - name: Quick Start Guide
+    children:
+      - SciChart iOS examples Suite
+      - SciChart macOS examples Suite
+      - Creating your first SciChart iOS App
+      - Creating your first SciChart macOS App
+      - Deploying your application to AppStore
+      - SciChart v3 Migration Guide
+      - SciChart v4 Migration Guide
+  - name: Tutorials 2D
+    children:
+      - Tutorial 01 - Create a simple 2D Chart
+      - Tutorial 02 - Zooming and Panning Behavior
+      - Tutorial 03 - Tooltips and Legends
+      - Tutorial 04 - Adding Realtime Updates
+      - Tutorial 05 - Annotations
+      - Tutorial 06 - Multiple Axis
+      - Tutorial 07 - Linking Multiple Charts
+  - name: Tutorials 3D
+    children:
+      - 3D Tutorial 01 - Create a simple Scatter Chart 3D
+      - 3D Tutorial 02 - Zooming and Rotating
+      - 3D Tutorial 03 - Cursors and Tooltips
+      - 3D Tutorial 04 - Plotting Realtime Data
+
+# SciChart iOS 2D Charts
+  - name: Axis APIs
+    children: 
+      - Add an Axis to a SCIChartSurface
+      - Axis Ranging - AutoRange
+      - Axis Ranging - VisibleRange and DataRange
+      - Axis Ranging - Get or Set VisibleRange
+      - Axis Ranging - Restricting VisibleRange
+      - Axis Ranging - How to listen to VisibleRange Changes
+      - Axis Labels - TextFormatting and CursorTextFormatting
+      - Axis Labels - LabelProvider API
+      - Axis Labels - Formatting for trading charts
+      - Axis Ticks - MajorDelta, MinorDelta and AutoTicks
+      - Axis Ticks - TickProvider and DeltaCalculator API
+      - Axis Ticks - TickCoordinatesProvider API
+      - Axis Alignment - Setting AxisAlignment
+      - Axis Alignment - Create a Vertical Chart
+      - Axis Styling - Title and Labels
+      - Axis Styling - Grid Lines, Ticks and Axis Bands
+      - Axis APIs - Convert Pixel to Data coordinates
+      - Axis APIs - Programmatically Zoom, Scroll
+      - Axis APIs - Value Axis vs. Category Axis
+      - Axis Layout - Central Axis
+      - Axis Layout - Stack Axes Vertically or Horizontally
+
+  - name: 2D Chart Types
+    children:
+      - DataSeries APIs
+      - 2D Chart Types - Line Series
+      - 2D Chart Types - Spline Line Series
+      - 2D Chart Types - Scatter Series
+      - 2D Chart Types - Mountain (Area) Series
+      - 2D Chart Types - Spline Mountain (Area) Series
+      - 2D Chart Types - Band Series
+      - 2D Chart Types - Spline Band Series
+      - 2D Chart Types - Fan Chart
+      - 2D Chart Types - Bubble Series
+      - 2D Chart Types - Column Series
+      - 2D Chart Types - Impulse (Stem) Series
+      - 2D Chart Types - Error Bars Series
+      - 2D Chart Types - OHLC Series
+      - 2D Chart Types - Candlestick Series
+      - 2D Chart Types - Uniform Heatmap Series
+      - 2D Chart Types - Stacked Column Series
+      - 2D Chart Types - Stacked Mountain Series
+      - 2D Chart Types - Pie Chart
+      - 2D Chart Types - Donut Chart
+      - 2D Chart Types - Custom RenderableSeries API
+      - PointMarker API
+      - PaletteProvider API
+      - Data Resampling
+      - Hit-Test API
+      - Animations API
+      - Animations API - Animate Appended Point
+      - Animations API - Animate Updated Point
+      
+  - name: Styling and Theming
+    children:
+      - SCIPenStyle, SCIBrushStyle and SCIFontStyle
+      - Templating and Styling Chart Parts
+      - Create a Custom Theme
+      - Modify built-in Themes
+
+  - name: Chart Modifier APIs
+    children: 
+      - Custom Modifiers - the SCIChartModifierBase API
+      - Custom Modifiers - the SCIGestureModifierBase API
+      - Zoom and Pan - SCIZoomExtentsModifier
+      - Zoom and Pan - SCIPinchZoomModifier
+      - Zoom and Pan - SCIZoomPanModifier
+      - Zoom and Pan - SCIXAxisDragModifier
+      - Zoom and Pan - SCIYAxisDragModifier
+      - Interactivity - SCITooltipModifier
+      - Interactivity - SCIRolloverModifier
+      - Interactivity - SCICursorModifier
+      - Interactivity - Tooltips Customization
+      - Interactivity - SCISeriesSelectionModifier
+      - Legend Modifier
+      - Series Value Modifier
+
+  - name: Annotations APIs
+    children: 
+      - BoxAnnotation
+      - LineAnnotation
+      - LineArrowAnnotation
+      - HorizontalLineAnnotation
+      - VerticalLineAnnotation
+      - TextAnnotation
+      - AxisLabelAnnotation
+      - AxisMarkerAnnotation
+      - CustomAnnotation
+
+  # - name: Advanced 2D chart Topics
+    # children: 
+      # - Placeholder
+
+# SciChart iOS 3D Charts
+  - name: Axis 3D APIs
+    children:
+      - SciChart 3D Basics - Coordinates in 3D Space
+      - SciChart 3D Basics - Camera 3D API
+      - Axis 3D Ranging - AutoRange & VisibleRange
+      - Axis 3D Labels - TextFormatting & LabelProvider API
+      - Axis 3D Labels - Labels Configuration
+      - Axis 3D Ticks - TickProvider, DeltaCalculator and TickCoordinatesProvider APIs
+      - Axis 3D Styling - Labels and GridLines
+      - Axis 3D APIs - Convert World to Data coordinates
+
+  - name: 3D Chart Types
+    children:
+      - PointLine Series 3D
+      - Scatter Series 3D
+      - Bubble Series 3D
+      - Column Series 3D
+      - Impulse Series 3D
+      - Surface Mesh Series 3D
+      - Waterfall Series 3D
+      - Free Surface Series 3D
+      - Free Surface Series 3D - Ellipsoid
+      - Free Surface Series 3D - Cylindroid
+      - Free Surface Series 3D - Polar
+      - Free Surface Series 3D - Custom Surface
+      - PointMarker 3D API
+      - MetadataProvider 3D API
+
+  - name: Chart Modifier 3D APIs
+    children:
+      - Zoom and Pan - Zoom Extents Modifier 3D
+      - Zoom and Pan - Pinch Zoom Modifier 3D
+      - Zoom and Pan - Orbit Modifier 3D
+      - Zoom and Pan - Free Look Modifier 3D
+      - Interactivity - Tooltip Modifier 3D
+      - Interactivity - Vertex Selection Modifier 3D
+
+  # We need to categorize structure manually until it's implemented in jazzy natively.
+  # - Group top-level declarations by folder structure: https://github.com/realm/jazzy/issues/105
+  # - support nested custom_categories: https://github.com/realm/jazzy/issues/624
+  # - Allow nested categories with recursive navigation: https://github.com/realm/jazzy/pull/982
+
+  - name: Core API Reference
+    children:
+      - ISCIComparable
+      - SCIDataType
+      - ISCIAttachable
+      - ISCICleanable
+      - ISCIDisposable
+      - SCIDisposableBase
+      - ISCIHitTestable
+      - ISCIInvalidatableElement
+      - ISCISuspendable
+      - ISCIUpdateSuspender
+      - SCIUpdateSuspender
+      - ISCIView
+      - ISCIViewContainer
+      - ISCIServiceProvider
+      - ISCIServiceContainer
+      - SCIServiceContainer
+      - SCIAttachableServiceContainer
+      - SCIAttachableCollectionPropertyHelper
+
+      # Event Handling
+      - ISCIPublishEvents
+      - ISCIReceiveEvents
+      - SCIModifierEventArgs
+      - ISCIEventManager
+
+      # Logger
+      - ISCIChartDebugLoggerFacade
+      - SCIChartDebugLogger
+
+      # Messaging
+      - ISCIEventAggregator
+      - ISCIMessage
+      - SCIMessageBase
+      - SCILoggedMessage
+      - ISCIMessageSubscription
+      - SCIMessageSubscriptionToken
+
+      # Observable
+      - SCICollectionChangedEventArgs
+      - SCICollectionObserver
+      - SCIObservableCollection
+      - SCIProjectionCollection
+      - SCIObservableSmartPropertyBool
+      - SCIObservableSmartPropertyDouble
+      - SCIObservableSmartPropertyFloat
+      - SCIObservableSmartPropertyInt
+      - SCIObservableSmartPropertyLong
+
+      # Core Utility
+      - SCIObjectPool
+      - UIColor(Util)
+      - SCIComparableUtil
+      - SCIDateUtil
+      - SCIDateIntervalUtil
+
+      # Smart Properties
+      - SCISmartProperty
+      - SCISmartPropertyBool
+      - SCISmartPropertyDouble
+      - SCISmartPropertyFloat
+      - SCISmartPropertyInt
+      - SCISmartPropertyLong
+
+      # Values
+      - ISCIValues
+      - SCIBoolValues
+      - SCIByteValues
+      - SCIDateValues
+      - SCIDoubleValues
+      - SCIFloatValues
+      - SCIIntegerValues
+      - SCILongValues
+      - SCIShortValues
+      - SCIUnsignedByteValues
+      - SCIUnsignedIntegerValues
+      - SCIUnsignedLongValues
+      - SCIUnsignedShortValues
+
+  - name: Data API Reference
+    children:
+      - SCISearchMode
+      - SCIResamplingMode
+      # Model
+      - ISCIDoubleValuesProvider
+      - ISCIDataDistributionProvider
+      - ISCIList
+      - SCIPoint2DSeries
+
+      # Math
+      - SCIGenericMathFactory
+      - ISCIMath
+
+      #Ranges
+      - SCIRangeFactory
+      - SCIRangeChangeObserver
+      - SCIRangeClipMode
+      - ISCIRange
+      - SCIRangeBase
+      - SCINumberRange
+      - SCIByteRange
+      - SCIShortRange
+      - SCIIndexRange
+      - SCIIntegerRange
+      - SCILongRange
+      - SCIFloatRange
+      - SCIDoubleRange
+      - SCIDateRange
+
+  - name: Drawing API Reference
+    children:
+      - SCIBitmap
+      - ISCIString
+      - ISCIAssetManager2D
+      - SCIAssetManagerUtil
+      - ISCIDrawable
+      - ISCIDrawingContext
+      - SCIDrawingContextFactoryBase
+      - ISCIPathColor
+      - ISCIPathDrawingContext
+      - ISCIPen2D
+      - ISCIBrush2D
+      - ISCIRenderContext2D
+      - ISCITexture2D
+      - SCICompositePathColor
+      - SCIDrawableText
+      - SCIFontStyle
+      - SCIMSAAMode
+      - SCIResourceId
+      - SCIStyle
+      - ISCIRenderSurfaceRenderer
+      - ISCIRenderSurface
+      - ISCIRenderSurfaceBase
+      - SCIMetalRenderSurfaceBase
+      - SCIMetalRenderSurface
+      - SCIOpenGLRenderSurfaceBase
+      - SCIOpenGLRenderSurface
+      # Pens
+      - SCIPenStyle
+      - SCISolidPenStyle
+      - SCILinearGradientPenStyle
+      - SCIRadialGradientPenStyle
+      - SCITexturePenStyle
+      # Brushes
+      - SCIBrushStyle
+      - SCISolidBrushStyle
+      - SCIGradientBrushStyle
+      - SCILinearGradientBrushStyle
+      - SCIRadialGradientBrushStyle
+      - SCITextureBrushStyle
+      # Paints
+      - ISCIFillPaint
+      - ISCIStrokePaint
+
+  - name: Charting API Reference
+    children:
+      - ISCIPropertyHolder
+      - SCIResizedMessage
+      - ISCIBezierControlPointsProvider
+      - ISCIReadWriteLock
+      - SCIReadWriteLock
+      - SCIBezierCurveInterpolator
+      - SCICosineInterpolationControlPointsProvider
+      - SCIDefaultBezierControlPointsProvider
+      
+      # Layout Managers
+      - ISCIAxisLayoutChangeListener
+      - ISCIAxisLayoutManager
+      - ISCILayoutable
+      - ISCILayoutManager
+      - SCIChartLayoutState
+      - SCILayoutManagerBase
+      - SCIDefaultLayoutManager
+      - ISCIAxisLayoutStrategy
+      - SCIAxisLayoutStrategyBase
+      - SCIVerticalAxisLayoutStrategy
+      - SCILeftAlignmentInnerAxisLayoutStrategy
+      - SCILeftAlignmentOuterAxisLayoutStrategy
+      - SCIRightAlignmentInnerAxisLayoutStrategy
+      - SCIRightAlignmentOuterAxisLayoutStrategy
+      - SCIHorizontalAxisLayoutStrategy
+      - SCITopAlignmentInnerAxisLayoutStrategy
+      - SCITopAlignmentOuterAxisLayoutStrategy
+      - SCIBottomAlignmentInnerAxisLayoutStrategy
+      - SCIBottomAlignmentOuterAxisLayoutStrategy
+
+      # Model
+      - SCIAnnotationCollection
+      - SCIAxisCollection
+      - SCIChartModifierCollection
+      - SCIChartModifierCollectionBase
+      - SCIAttachableObservableCollection
+      - SCIRenderableSeriesCollection
+
+      # Data Series
+      - SCIDataSeriesObserver
+      - SCIDataSeriesType
+      - SCIDataSeriesUpdateCore
+      - SCIDataSeriesUpdate
+      - ISCIDataSeriesCore
+      - SCIDataSeriesCore
+      - ISCIDataSeries
+      - SCIDataSeries
+      - ISCIXDataSeriesValues
+      - ISCIXDataSeries
+      - SCIXDataSeries
+      - ISCIXyDataSeriesValues
+      - ISCIXyDataSeries
+      - SCIXyDataSeries
+      - ISCIXyyDataSeriesValues
+      - ISCIXyyDataSeries
+      - SCIXyyDataSeries
+      - ISCIXyzDataSeriesValues
+      - ISCIXyzDataSeries
+      - SCIXyzDataSeries
+      - ISCIHlDataSeriesValues
+      - ISCIHlDataSeries
+      - SCIHlDataSeries
+      - ISCIOhlcDataSeriesValues
+      - ISCIOhlcDataSeries
+      - SCIOhlcDataSeries
+      - ISCIUniformHeatmapDataSeriesValues
+      - ISCIUniformHeatmapDataSeries
+      - SCIUniformHeatmapDataSeries
+
+      # Data Distribution Calculators
+      - ISCIBaseDataDistributionCalculator
+      - ISCIDataDistributionCalculator
+      - SCIBaseDataDistributionCalculator
+      - SCIDefaultDataDistributionCalculator
+      - SCIUserDefinedDistributionCalculator
+
+      # Modifiers
+      - ISCIChartModifier
+      - ISCIChartModifierCore
+      - ISCIChartModifierSurface
+      - SCIChartModifierSurface
+      - SCIChartModifierBase
+      - SCIChartModifierCore
+      - SCIExecuteOn
+      - SCIModifierGroup
+      - SCIPlacement
+      - SCISelectionMode
+      - SCIShiftTooltipHelper
+      - SCISourceMode
+      - SCITooltipPosition
+
+      # Modifier Behaviours
+      - SCIAxisTooltipsBehavior
+      - SCIAxisTooltipsBehaviorBase
+      - SCICrossDrawableBehavior
+      - SCICursorCrosshairDrawableBehavior
+      - SCICursorTooltipBehavior
+      - SCIDrawableBehavior
+      - SCIModifierBehavior
+      - SCIRolloverBehavior
+      - SCITooltipBehavior
+      - SCITooltipBehaviorBase
+      - SCIVerticalLineDrawableBehavior
+      - SCIVerticalSliceBehaviorBase
+
+      # Gesture Modifiers
+      - SCIGestureModifierBase
+      - SCIZoomExtentsModifier
+      - SCIZoomPanModifier
+      - SCIPinchZoomModifier
+      - SCIAxisDragModifierBase
+      - SCIXAxisDragModifier
+      - SCIYAxisDragModifier
+      
+      # Series Value Modifier
+      - ISCISeriesValueMarker
+      - ISCISeriesValueMarkerFactory
+      - SCIDefaultSeriesValueMarker
+      - SCIDefaultSeriesValueMarkerAnnotationHelper
+      - SCIDefaultSeriesValueMarkerFactory
+      - SCISeriesValueMarkerAnnotation
+      - SCISeriesValueMarkerAnnotationHelper
+      - SCISeriesValueMarkerBase
+      - SCISeriesValueModifier
+
+      # Legend
+      - SCILegendModifier
+      - ISCIChartLegend
+      - ISCILegendDataSource
+      - ISCILegendDataSourceObserver
+      - SCIChartLegend
+      - SCILegendCheckboxAction
+      - SCIDefaultLegendItem
+      - SCIDefaultLegendItemBase
+      - SCILegendDataSource
+      - SCISeriesInfoLegendDataSource
+      - SCIChartLegendLayout
+      - SCIChartLegendHorizontalLayout
+      - SCIChartLegendVerticalLayout
+
+      # Tooltips
+      - ISCITooltipContainer
+      - SCITooltipContainerBase
+      - SCICursorModifierTooltip
+      - SCITooltipModifierTooltip
+      - SCISlice
+      - SCISliceLayout
+      - SCITooltipLayoutHelper
+
+      # Touch Modifiers
+      - SCIMasterSlaveTouchModifierBase
+      - SCITooltipModifierBase
+      - SCITooltipModifier
+      - SCITooltipModifierWithAxisLabelsBase
+      - SCICursorModifier
+      - SCIRolloverModifier
+      - SCISeriesSelectionModifier
+
+      # Numerics
+      - ISCICoordinateCalculator
+      - ISCILogarithmicCoordinateCalculator
+      - SCICoordinateCalculatorFactory
+      - ISCIAxisDelta
+      - SCIAxisDelta
+      - ISCIDeltaCalculator
+      - SCINumericDeltaCalculator
+      - SCINumericDeltaCalculatorBase
+      - SCILogarithmicDeltaCalculator
+      - SCIDateDeltaCalculator
+      - SCIDateDeltaCalculatorBase
+
+      # Theming
+      - ISCIThemeable
+      - ISCIThemeProvider
+      - SCIThemeColorProvider
+      - SCIThemeManager
+      - SCIChartTheme
+
+      # Viewport
+      - ISCIViewportManager
+      - SCIViewportManagerBase
+      - SCIDefaultViewportManager
+
+      # Visuals
+      - ISCIUpdatable
+      - SCIRenderedMessage
+      - SCIRenderPassState
+      - SCIRenderPassStateCore
+      - ISCIChartSurfaceProvider
+      - ISCIAxesChangeListener
+      - ISCIChartResizeListener
+      - ISCIChartSurfaceChangeListener
+      - ISCIRenderableSeriesChangeListener
+      - ISCIRenderSurfaceChangedListener
+      - SCIChartSurfaceRenderedListener
+      - ISCITooltip
+      - SCITooltipBase
+      - SCIChartHeatmapColourMap
+      - SCIDirection2D
+      - SCIOrientation
+      - SCIClipMode
+      - SCIClipModeTarget
+      - SCIChartVerticalGroup
+      - ISCIChartListener
+      - ISCIChartListenerService
+      - SCIChartChangeServiceBase
+      - SCILayoutableView
+      - SCILayoutableViewContainer
+      - SCIViewContainer
+
+      # Chart Surface
+      - ISCIChartController
+      - ISCIChartSurfaceBase
+      - SCIChartSurfaceBase
+      - ISCIChartSurface
+      - SCIChartSurface
+
+      # Point Markers
+      - ISCISpritePointMarkerDrawer
+      - ISCIPointMarker
+      - SCIPointMarkerBase
+      - SCIDrawablePointMarker
+      - SCISpritePointMarker
+      - SCIEllipsePointMarker
+      - SCITrianglePointMarker
+      - SCISquarePointMarker
+      - SCICrossPointMarker
+
+      # Animations
+      - ISCIAnimatorListener
+      - SCIValueAnimator
+      - SCIAnimations
+      - SCITransformationHelpers
+      - ISCIRenderPassDataTransformation
+      - SCIBaseRenderPassDataTransformation
+      - SCICompositeTransformation
+      # Animations.EasingFunctions
+      - SCIEasingMode
+      - ISCIEasingFunction
+      - SCIEasingFunctionBase
+      - SCIBackEase
+      - SCIBounceEase
+      - SCISineEase
+      - SCIElasticEase
+      - SCICubicEase
+      - SCIQuadraticEase
+      - SCIExponentialEase
+
+      # Scale Transformations
+      - SCIScaleTransformationBase
+      - SCIScaleXyTransformation
+      - SCIScaleXyyTransformation
+      - SCIScaleXyzTransformation
+      - SCIScaleHlTransformation
+      - SCIScaleOhlcTransformation
+      - SCIScaleStackedXyTransformation
+      - SCISplineScaleXyTransformation
+      - SCISplineScaleXyyTransformation
+      # Sweep Transformations
+      - SCISplineSweepXyTransformation
+      - SCISplineSweepXyyTransformation
+      - SCISweepXyTransformation
+      - SCISweepXyyTransformation
+      # Translate Transformations
+      - SCISplineXyTranslateXTransformation
+      - SCISplineXyTranslateYTransformation
+      - SCISplineXyyTranslateXTransformation
+      - SCISplineXyyTranslateYTransformation
+      - SCITranslateXTransformation
+      - SCITranslateXyTransformationBase
+      - SCITranslateXyTransformation
+      - SCITranslateXyyTransformation
+      - SCITranslateHlTransformation
+      - SCITranslateOhlcTransformation
+      - SCITranslateStackedXyTransformation
+      # Wave Transformations
+      - SCISplineWaveXyTransformation
+      - SCISplineWaveXyyTransformation
+      - SCIWaveTransformationBase
+      - SCIWaveXyTransformation
+      - SCIWaveXyyTransformation
+      - SCIWaveHlTransformation
+      - SCIWaveOhlcTransformation
+      - SCIWaveStackedXyTransformation
+
+      # Annotations
+      - ISCIAdornerLayer
+      - ISCIAdornerProvider
+      - ISCIAnnotationAdornerAction
+      - ISCIAnnotationSelectionDrawable
+      - ISCIResizingGrip
+      - SCIAdornerLayer
+      - SCIEllipseResizingGrip
+      - ISCIFormattedValueProvider
+      - SCIDefaultFormattedValueProvider
+      - SCIHorizontalAnchorPoint
+      - SCIVerticalAnchorPoint
+      - SCIAnchorPointAnnotation
+      - SCIAnnotationCoordinateMode
+      - SCIAnnotationCoordinates
+      - SCILabelPlacement
+      - SCIAnnotationLabel
+      - SCIAnnotationLabelCollection
+      - SCIAnnotationSurfaceEnum
+
+      - ISCIAnnotation
+      - SCIAnnotationBase
+      - SCIBoxAnnotation
+      - SCICustomAnnotation
+      - SCILineAnnotationWithLabelsBase
+      - SCIHorizontalLineAnnotation
+      - SCIVerticalLineAnnotation
+      - SCILineAnnotation
+      - SCILineAnnotationBase
+      - SCILineArrowAnnotation
+      - SCITextLabelContainer
+      - SCITextAnnotationBase
+      - SCITextAnnotation
+      - SCIAxisLabelAnnotation
+      - SCIAxisMarkerAnnotation
+
+      - ISCIAnnotationDragListener
+      - SCIAnnotationIsHiddenChangedListener
+      - SCIAnnotationSelectionChangedListener
+      - SCIAxisAlignmentChangedListener
+
+      # Axes
+      - ISCIAxisCore
+      - SCIAxisCore
+      - ISCIAxis
+      - SCIAxisBase
+      - ISCINumericAxis
+      - SCINumericAxis
+      - ISCILogarithmicNumericAxis
+      - SCILogarithmicNumericAxis
+      - SCICategoryAxisBase
+      - ISCICategoryDateAxis
+      - SCICategoryDateAxis
+      - ISCIDateAxis
+      - SCIDateAxis
+
+      - ISCIAxisInfoUpdatable
+      - ISCIAxisModifierSurface
+      - SCIAxisModifierSurface
+      - SCIAxisParams
+      - SCIAxisLayoutState
+      - SCIAlignment
+      - SCIAutoRange
+      - SCIAxisAlignment
+      - SCIAxisTitleOrientation
+      - SCIAxisTitlePlacement
+      - SCIScientificNotation
+      - SCIDataRangeChangeListener
+      - SCIVisibleRangeChangeListener
+
+      - ISCIAxisInteractivityHelper
+      - ISCIVisibleRangeAnimator
+      - SCIAxisTickLabelStyle
+      - ISCIAxisTooltip
+      - SCIAxisTooltip
+
+      # Axis Providers
+      - ISCIAxisInfoProvider
+      - SCIAxisInfo
+      - SCIDefaultAxisInfoProvider
+      - ISCITickCoordinatesProvider
+      - SCIDefaultTickCoordinatesProvider
+      - SCITickCoordinates
+      - SCITickCoordinatesProviderBase
+      - SCIAxisTicks
+      - ISCITickProvider
+      - SCITickProvider
+      - SCIDeltaTickProvider
+      - SCINumericTickProviderBase
+      - SCINumericTickProvider
+      - SCICategoryTickProvider
+      - SCILogarithmicNumericTickProvider
+      - SCIDateTickProvider
+
+      # Label Providers
+      - ISCILabelFormatter
+      - SCINumericLabelFormatterBase
+      - SCINumericLabelFormatter
+      - SCILogarithmicNumericLabelFormatter
+      - SCILogBaseNumericLabelFormatter
+      - SCIScientificNumericLabelFormatter
+      - SCISimpleNumericLabelFormatter
+      - SCITradeChartAxisLabelFormatter
+      - SCIDateLabelFormatter
+      - ISCILabelProvider
+      - SCILabelProviderBase
+      - ISCICategoryLabelProvider
+      - SCICategoryLabelProviderBase
+      - SCIFormatterLabelProviderBase
+      - SCINumericLabelProvider
+      - SCILogarithmicNumericLabelProvider
+      - SCITradeChartAxisLabelProvider
+      - SCIDateLabelProvider
+      - ISCICalendarUnitDateFormatter
+      - ISCIDoubleLabelFormatter
+      - SCICursorCalendarUnitDateFormatter
+
+      # Range Calculators
+      - ISCIRangeCalculationHelperBase
+      - ISCIRangeCalculationHelper
+      - SCIRangeCalculatorHelperBase
+      - SCIRangeCalculationHelper2DBase
+      - SCICategoryRangeCalculationHelper
+      - SCIDateRangeCalculationHelper
+      - SCILogarithmicRangeCalculationHelper
+      - SCINumericRangeCalculationHelper
+
+      # Axis Renderers
+      - ISCIAxisRendererCore
+      - ISCIAxisRenderer
+      - SCIRenderOperationLayer
+      - SCIRenderOperationLayers
+      - ISCIAxisGridLinesDrawable
+      - ISCIAxisGridLinesRenderer
+      - ISCIAxisTitleRenderer
+
+      # Renderable Series
+      - ISCIRenderableSeriesArea
+      - SCIRenderableSeriesArea
+      - ISCISeriesDrawingManager
+      - SCISeriesDrawingManager
+      - SCIDrawingContextFactory
+      - ISCIDynamicPathColorProvider
+      - ISCICandlestickDynamicPathColorProvider
+      - ISCIStyle
+      - SCIStyleBase
+      - SCIColorMap
+      - SCIRenderableSeriesProviderBase
+      - SCIRenderableSeriesChangeListener
+
+      - SCIErrorDirection
+      - SCIErrorMode
+      - SCIErrorType
+      - SCILineDrawMode
+      - SCISpacingMode
+      - SCITextureMappingMode
+
+      # Render Pass Data
+      - ISCISeriesRenderPassData
+      - SCISeriesRenderPassData
+      - SCIXSeriesRenderPassData
+      - SCIXyRenderPassData
+      - SCIColumnRenderPassData
+      - SCILineRenderPassData
+      - SCIImpulseRenderPassData
+      - SCIMountainRenderPassData
+      - SCIOhlcRenderPassData
+      - SCIHlRenderPassData
+      - SCIErrorBarsRenderPassData
+      - SCIFixedErrorBarsRenderPassData
+      - SCIXyyRenderPassData
+      - SCIBandRenderPassData
+      - SCIXyzRenderPassData
+      - SCIBubbleRenderPassData
+      - SCIStackedColumnRenderPassData
+      - SCIStackedMountainRenderPassData
+      - SCIStackedSeriesRenderPassData
+      - SCIUniformHeatmapRenderPassData
+      - SCISplineBandRenderPassData
+      - SCISplineMountainRenderPassData
+      - SCISplineXyyRenderPassData
+
+      # Hit-Test
+      - ISCIHitTestInfoUpdatable
+      - SCIHitTestInfo
+
+      # Hit Providers
+      - ISCIHitProvider
+      - SCIHitProviderBase
+      - SCIBandHitProvider
+      - SCIBubbleHitProvider
+      - SCICandlestickHitProvider
+      - SCIColumnHitProvider
+      - SCICompositeHitProvider
+      - SCIErrorBarsHitProvider
+      - SCIImpulseHitProvider
+      - SCILineHitProvider
+      - SCIMountainHitProvider
+      - SCIPointMarkerHitProvider
+      - SCIStackedColumnHitProvider
+      - SCIStackedMountainHitProvider
+      - SCIUniformHeatmapHitProvider
+      - SCISplineBandHitProvider
+      - SCISplineLineHitProvider
+      - SCISplineMountainHitProvider
+
+      # Nearest Point Providers
+      - ISCINearestPointProvider
+      - SCINearestXPointProviderBase
+      - SCINearestXyPointProvider
+      - SCINearestXyyPointProvider
+      - SCINearestBubblePointProvider
+      - SCINearestColumnPointProvider
+      - SCINearestOhlcPointProvider
+      - SCINearestPointProviderBase
+      - SCINearestHorizontalPointProvider
+      - SCINearestStackedColumnPointProvider
+      - SCINearestUniformHeatmapPointProvider
+
+      # Series Info Providers
+      - ISCISeriesInfoProvider
+      - SCISeriesInfoProviderBase
+      - SCIDefaultXySeriesInfoProvider
+      - SCILerpXySeriesInfoProvider
+      - SCIDefaultXyzSeriesInfoProvider
+      - SCIDefaultBandSeriesInfoProvider
+      - SCILerpBandSeriesInfoProvider
+      - SCIDefaultErrorBarsSeriesInfoProvider
+      - SCIDefaultFixedErrorBarsSeriesInfoProvider
+      - SCIDefaultOhlcSeriesInfoProvider
+      - SCIDefaultUniformHeatmapSeriesInfoProvider
+      - SCIStackedSeriesCollectionInfoProviderBase
+      - SCIHorizontallyStackedSeriesCollectionInfoProvider
+      - SCIVerticallyStackedSeriesCollectionInfoProvider
+      - SCISplineBandSeriesInfoProvider
+      - SCISplineXySeriesInfoProvider
+
+      # Series Infos
+      - SCISeriesInfoCore
+      - SCISeriesInfo
+      - SCIXySeriesInfo
+      - SCILerpXySeriesInfo
+      - SCIXyzSeriesInfo
+      - SCIBandSeriesInfo
+      - SCILerpBandSeriesInfo
+      - SCIErrorBarsSeriesInfo
+      - SCIFixedErrorBarsSeriesInfo
+      - SCIHlSeriesInfo
+      - SCIOhlcSeriesInfo
+      - SCIStackedSeriesInfo
+      - SCIUniformHeatmapSeriesInfo
+      - SCISplineBandSeriesInfo
+      - SCISplineXySeriesInfo
+
+      # Palette Providers
+      - ISCIPaletteProvider
+      - ISCIFillPaletteProvider
+      - ISCIPointMarkerPaletteProvider
+      - ISCIStrokePaletteProvider
+      - ISCIUniformHeatmapPaletteProvider
+      - SCIPaletteProviderBase
+
+      # Series
+      - ISCIRenderableSeriesCore
+      - SCIRenderableSeriesCore
+      - ISCIRenderableSeries
+      - SCIRenderableSeriesBase
+      - SCIXyRenderableSeriesBase
+      - SCIXyScatterRenderableSeries
+      - SCIXyyRenderableSeriesBase
+      - SCIXyzRenderableSeriesBase
+      - SCIFastBandRenderableSeries
+      - SCIFastBubbleRenderableSeries
+      - SCIFastCandlestickRenderableSeries
+      - SCIBaseColumnRenderableSeries
+      - SCIFastColumnRenderableSeries
+      - SCIFastErrorBarsRenderableSeries
+      - SCIFastFixedErrorBarsRenderableSeries
+      - SCIFastImpulseRenderableSeries
+      - SCIFastLineRenderableSeries
+      - SCIBaseMountainRenderableSeries
+      - SCIFastMountainRenderableSeries
+      - SCIFastOhlcRenderableSeries
+      - SCIHlRenderableSeriesBase
+      - SCIOhlcRenderableSeriesBase
+      - SCIFastUniformHeatmapRenderableSeries
+      - ISCIStackedRenderableSeries
+      - ISCIStackedColumnRenderableSeries
+      - SCIStackedColumnRenderableSeries
+      - SCIStackedMountainRenderableSeries
+      - SCIStackedSeriesCollectionBase
+      - SCIVerticallyStackedSeriesCollection
+      - SCIVerticallyStackedMountainsCollection
+      - SCIVerticallyStackedColumnsCollection
+      - SCIHorizontallyStackedColumnsCollection
+
+      # Pie-Donut Series
+      - SCIPieRenderableSeriesCollection
+      - SCIPieSegmentCollection
+      - SCIPieHitTestInfo
+      - SCIPieHitProvider
+      - SCIPieSeriesInfo
+      - SCIPieDonutRenderableSeriesBase
+      - SCIPieSegment
+      - SCIPieChartSurface
+      - ISCIPieRenderableSeries
+      - SCIPieRenderableSeries
+      - SCIDonutRenderableSeries
+      - SCIPieChartLayoutState
+      - SCIPieRenderPassData
+      - SCIDonutRenderPassData
+      - SCIPieSegmentRenderPassData
+      - ISCIPieDonutRenderPassData
+      - SCIPieDonutRenderPassData
+      - SCIPieDonutRenderPassDataBase
+      - SCIPieSegmentSelectionModifier
+      - SCIPieChartGestureModifierBase
+      - SCIPieChartTooltipModifier
+      - SCIPieChartLegendModifier
+      - SCIPieSegmentsLegendDataSource
+      - SCIDefaultPieLegendItem
+      - SCIPieSeriesTooltip
+      - SCIPieSegmentLabelFormatterBase
+      - ISCIDonutDrawingManager
+      - ISCIPieDonutDrawingManagerBase
+      - ISCIPieDrawingManager
+      - ISCIPieSegmentLabelFormatter
+      - SCIDonutDrawingManager
+      - SCIPieDonutDrawingManagerBase
+      - SCIPieDrawingManager
+
+      # Series Tooltips
+      - ISCISeriesTooltipCore
+      - SCISeriesTooltipCore
+      - ISCISeriesTooltip
+      - SCISeriesTooltipBase
+      - SCIXySeriesTooltip
+      - SCIXyzSeriesTooltip
+      - SCIBandSeriesColorSelector
+      - SCIBandSeriesTooltip
+      - SCIBandSeriesRolloverTooltip
+      - SCIFixedErrorBarSeriesTooltip
+      - SCIHlSeriesTooltip
+      - SCIOhlcSeriesTooltip
+      - SCIStackedSeriesTooltip
+      - SCIStackedSeriesTooltipBase
+      - SCIHorizontallyStackedSeriesRolloverTooltip
+      - SCIVerticallyStackedSeriesRolloverTooltip
+      - SCIUniformHeatmapSeriesTooltip
+      - SCICursorTooltipWrapper
+      - ISCISeriesTooltipCallback
+
+  - name: SciChart.Charting 3D API Reference
+    children:
+      # Common
+      - SCIPoint3D
+      - SCIDoublePoint3D
+      - SCIVector3
+      - SCIWorldDimensions
+      - SCIMath3D
+      - ISCISelectionPassManager
+      - SCISelectionPassManager
+      - ISCIViewportManager3D
+      - SCIViewportManagerBase3D
+      - SCIDefaultViewportManager3D
+
+      # Model
+      - SCIChartModifier3DCollection
+      - SCIRenderableSeries3DCollection
+
+      - SCIDataSeries3DUpdate
+      - ISCIDataSeries3D
+      - SCIDataSeries3D
+      - ISCIXyzDataSeries3DValues
+      - ISCIXyzDataSeries3D
+      - SCIXyzDataSeries3D
+      - ISCIWaterfallDataSeriesValues
+      - SCIWaterfallDataSeries3D
+      - SCIGridData
+      - SCIIndexCalculator
+      - SCIMeshIndexCalculator
+      - ISCIGridDataSeries3DValues
+      - SCIBaseGridDataSeries3D
+      - ISCIUniformGridDataSeries3DValues
+      - SCIUniformGridDataSeries3D
+      - ISCIDisplaceableFreeSurfaceDataSeries3DValues
+      - ISCIFreeSurfaceDataSeries3DValues
+      - SCIFreeSurfaceDataSeries3D
+      - SCIDisplacementAxis3D
+      - SCIDisplaceableFreeSurfaceDataSeries3D
+      - SCIYDispsplaceableFreeSurfaceDataSeries3D
+      - SCIPolarDataSeries3D
+      - SCIXzDisplaceableFreeSurfaceDataSeries3D
+      - SCICylindroidDataSeries3D
+      - SCIXyzDisplaceableFreeSurfaceDataSeries3D
+      - SCIEllipsoidDataSeries3D
+      - SCIUVFunc
+      - SCIValueFunc
+      - SCICustomSurfaceDataSeries3D
+
+      # Modifiers
+      - SCICrosshairMode
+      - SCIProjectionMode
+      - SCILineProjectionMode
+
+      - SCICrosshairSceneEntityBase
+      - SCICrosshairLinesSceneEntity
+      - SCICrosshairPlanesSceneEntity
+      - SCITooltipBehaviorBase3D
+      - SCITooltipBehavior3D
+      - SCITooltipBehavioWithCrosshairBehavior3D
+
+      - ISCIChartModifier3D
+      - SCIChartModifier3DBase
+      - SCILegendModifier3D
+      - SCIModifierGroup3D
+
+      - SCIGestureModifierBase3D
+      - SCIFreeLookModifier3D
+      - SCIOrbitModifier3D
+      - SCIPinchZoomModifier3D
+      - SCIZoomExtentsModifier3D
+
+      - SCIMasterSlaveTouchModifierBase3D
+      - SCITooltipModifierBase3D
+      - SCITooltipModifier3D
+      - SCIVertexSelectionModifier3D
+
+      # Visuals 3D
+      - ISCICameraAnimator
+      - ISCICameraController
+      - SCICamera3D
+      - ISCIChartSurface3DChangeListener
+      - ISCIChartSurface3DProvider
+      - ISCIChartController3D
+      - ISCIChartSurface3D
+      - SCIChartSurface3D
+
+      # Axes 3D
+      - ISCIRangeCalculationHelper3D
+      - SCIRangeCalculationHelper3DBase
+      - SCINumericRangeCalculationHelper3D
+      - SCILogarithmicRangeCalculationHelper3D
+      - SCIDateRangeCalculationHelper3D
+
+      - ISCIAxis3D
+      - SCIAxisBase3D
+      - SCINumericAxis3D
+      - SCILogarithmicNumericAxis3D
+      - SCIDateAxis3D
+      - SCIAxisDirection3D
+      - SCIAxisSideClipping
+      - SCITextAlignment3D
+
+      # Point Markers 3D
+      - SCIMarkerType
+      - SCIBasePointMarker3D
+      - SCIPixelPointMarker3D
+      - SCIBaseMeshPointMarker3D
+      - SCICubePointMarker3D
+      - SCICylinderPointMarker3D
+      - SCIPyramidPointMarker3D
+      - SCISpherePointMarker3D
+      - SCIBaseTexturePointMarker3D
+      - SCIEllipsePointMarker3D
+      - SCIQuadPointMarker3D
+      - SCITrianglePointMarker3D
+
+      # Metadata Providers 3D
+      - ISCIMetadataProvider3D
+      - ISCIFillMetadataProvider3D
+      - ISCIPointMetadataProvider3D
+      - ISCIStrokeMetadataProvider3D
+      - ISCISelectableMetadataProvider3D
+      - ISCISurfaceMeshMetadataProvider3D
+      - SCIMetadataProvider3DBase
+      - SCIPointMetadata3D
+      - SCIPointMetadataProvider3D
+      - SCISelectableMetadataProvider3DBase
+      - SCIDefaultSelectableMetadataProvider3D
+
+      # Primitives 3D
+      - ISCIImediateDrawContext
+      - ISCIMeshBase
+      - ISCILinesMesh
+      - ISCIEntityIdProvider
+      - SCIDefaultEntityIdProvider
+      - ISCIBaseSceneEntity
+      - ISCIRootSceneEntity
+      - SCIBaseSceneEntity
+      - SCIChart3DRootSceneEntity
+
+      # Rendering
+      - ISCIUpdatable3D
+      - ISCIViewport3D
+      - SCIViewport3D
+      - ISCIRenderSurface3D
+      - SCIMetalRenderSurface3D
+      - SCIOpenGLRenderSurface3D
+      - ISCIRenderSurface3DRenderer
+      - SCIChart3DRenderer
+      - SCIRenderPassState3D
+      - SCIChartMeshTemplate
+      - SCIChartTextureTemplate
+
+      # Renderable Series 3D
+      - SCIBrushColorPalette
+      - SCIDrawMeshAs
+      - SCIGradientColorPalette
+      - SCIMeshColorPalette
+      - SCIMeshPaletteMode
+
+      - SCIBaseRenderableSeriesSceneEntity3D
+      - SCIPoints3DSceneEntity
+      - SCIPointLineSceneEntity
+      - SCIColumnSceneEntity
+      - SCIImpulseSceneEntity
+      - SCIContourMeshRenderableSeriesEntityBase
+      - SCISurfaceMeshSceneEntity
+      - SCIFreeSurfaceSceneEntity
+      - SCIWaterfallSceneEntity
+
+      - ISCISeriesRenderPassData3D
+      - SCISeriesRenderPassData3D
+      - SCIGridXyzRenderPassData3D
+      - SCIYSeriesRenderPassData3D
+      - SCIXyzRenderPassData3D
+      - SCIScatterRenderPassData3D
+      - SCIPointLineRenderPassData3D
+      - SCIColumnRenderPassData3D
+      - SCIImpulseRenderPassData3D
+      - SCIFreeSurfaceRenderPassData3D
+      - SCISurfaceMeshRenderPassData3D
+      - SCIWaterfallRenderPassData3D
+
+      - ISCIRenderableSeries3D
+      - SCIBaseRenderableSeries3D
+      - SCIXyzRenderableSeries3DBase
+      - SCIScatterRenderableSeries3D
+      - SCIPointLineRenderableSeries3D
+      - SCIImpulseRenderableSeries3D
+      - SCIColumnSpacingMode
+      - SCIColumnRenderableSeries3D
+      - SCIContourMeshRenderableSeries3DBase
+      - SCIFreeSurfacePaletteMinMaxMode
+      - SCIFreeSurfaceRenderableSeries3D
+      - SCIMeshResolution
+      - SCISurfaceMeshRenderableSeries3D
+      - SCIWaterfallClipMode
+      - SCIWaterfallRenderableSeries3D
+
+      # Hit-Test 3D
+      - ISCIHitTestInfoUpdatable3D
+      - ISCISeriesInfo3DProvider
+      - SCISeriesInfo3DProviderBase
+      - SCIDefaultXyzSeriesInfo3DProvider
+      - SCIDefaultMeshSeriesInfoProvider3D
+      - SCIDefaultWaterfallSeriesInfoProvider
+      - SCIHitTestInfo3D
+      - SCISeriesInfo3D
+      - SCIXyzSeriesInfo3D
+      - SCIMeshSeriesInfo3D
+      - SCIWaterfallSeriesInfo3D
+
+      # Tooltips 3D
+      - ISCISeriesTooltip3D
+      - SCISeriesTooltip3DBase
+      - SCIMeshSeriesTooltip3D
+      - SCIWaterfallSeriesTooltip3D
+      - SCIXyzSeriesTooltip3D

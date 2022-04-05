@@ -1,0 +1,5 @@
+.DS_Store
+**/SciChart.framework
+**/SciChart.xcframework
+**/generated-docs/**
+**/docs-headers/**
