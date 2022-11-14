@@ -71,6 +71,8 @@ It is also possible to set **MinorDelta** and **MajorDelta** manually. To change
     axis.MajorDelta = 10.FromComparable();
 </div>
 
+For `SCIDateAxis` the majorDelta and minorDelta should be set with a Date object whose tick value is the desired timespan.
+
 ## Altering Tick Spacing for the Logarithmic Axis
 `SCILogarithmicNumericAxis` is a special case that need to be mentioning here. Due to the exponential nature of this axis type, **MajorDelta** represents the **difference between exponents** of neighbouring major ticks, not between their actual values. For instance, having `ISCIAxisCore.majorDelta` = 3 and `ISCILogarithmicNumericAxis.logarithmicBase` = 10 on a `SCILogarithmicNumericAxis` specifies that major ticks and gridlines will be spaced at 10<sup>3</sup> intervals (exponents will be divisors of MajorDelta):
 

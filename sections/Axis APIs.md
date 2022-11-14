@@ -118,14 +118,14 @@ To create and configure a `SCIDateAxis`, use the following code:
     axis.axisAlignment = SCIAxisAlignment_Bottom;
     axis.autoRange = SCIAutoRange_Once;
     axis.growBy = [[SCIDoubleRange alloc] initWithMin:0.1 max:0.1];
-    axis.visibleRange = [[SCIDoubleRange alloc] initWithMin:dateMin max:dateMax];
+    axis.visibleRange = [[SCIDateRange alloc] initWithMin:dateMin max:dateMax];
 </div>
 <div class="code-snippet" id="swift">
     let axis = SCIDateAxis()
     axis.axisAlignment = .bottom;
     axis.autoRange = .once;
     axis.growBy = SCIDoubleRange(min: 0.1, max: 0.1)
-    axis.visibleRange = SCIDoubleRange(min: dateMin, max: dateMax)
+    axis.visibleRange = SCIDateRange(min: dateMin, max: dateMax)
 </div>
 <div class="code-snippet" id="cs">
     var axis = new SCIDateAxis
@@ -133,7 +133,7 @@ To create and configure a `SCIDateAxis`, use the following code:
         AxisAlignment = SCIAxisAlignment.Bottom,
         AutoRange = SCIAutoRange.Once,
         GrowBy = new SCIDoubleRange(0.1, 0.1),
-        VisibleRange = new SCIDoubleRange(dateMin, dateMax)
+        VisibleRange = new SCIDateRange(dateMin, dateMax)
     };
 </div>
 
