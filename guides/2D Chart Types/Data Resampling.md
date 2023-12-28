@@ -66,7 +66,7 @@ Most of the time, you don't need to set `SCIResamplingMode` manually. SciChart a
 </div>
 
 ## Resampling Performance
-Resampling makes drawing many millions of points possible with SciChart. For instance, in the [Performance Demo](https://www.scichart.com/example/ios-3x-series-perfomance-demo/) example, we push 1000 points every 10ms to three series on a chart. The point count quickly rises to the millions of points, and SciChart is still rendering at interactive rates. Also, the example allows to play around with different `SCIResamplingMode` and see their impact on performance.
+Resampling makes drawing many millions of points possible with SciChart. For instance, in the [Performance Demo](https://www.scichart.com/example/ios-chart/ios-3x-series-perfomance-demo/) example, we push 1000 points every 10ms to three series on a chart. The point count quickly rises to the millions of points, and SciChart is still rendering at interactive rates. Also, the example allows to play around with different `SCIResamplingMode` and see their impact on performance.
 
 In addition, we compared performance of the most popular iOS charting packages with SciChart. The results can be found in the [Performance Comparison](https://www.scichart.com/ios-chart-metal-opengl-performance/) article.
 

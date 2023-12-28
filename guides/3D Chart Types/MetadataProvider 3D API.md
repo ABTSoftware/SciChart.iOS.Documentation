@@ -26,7 +26,7 @@ Each **MetadataProvider** protocol declares method(s), which provides a way to u
 Mentioned methods are called every time **RenderableSeries 3D** requires a redraw, so it expects that the colors array should be updated there correspondingly.
 
 For the convenience, there is the `SCIMetadataProvider3DBase` class, which provides some basic implementation, so it's recommended to inherit from it while implementing custom **MetadataProvider**. There is also some predefined **MetadataProviders** listed below:
-- `SCIDefaultSelectableMetadataProvider3D` - allows provide different colors for selected points. You can find it in our examples which demonstrate selection such as - [Waterfall Chart 3D](https://www.scichart.com/example/ios-3d-chart-example-simple-waterfall/) and [Select Scatter Point 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-select-scatter-point/).
+- `SCIDefaultSelectableMetadataProvider3D` - allows provide different colors for selected points. You can find it in our examples which demonstrate selection such as - [Waterfall Chart 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-waterfall/) and [Select Scatter Point 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-select-scatter-point/).
 
 ## Create Custom MetadataProvider
 The following code snippet demonstrates how to create a custom **MetadataProvider** which conforms to the - **Stroke** and **PointMarker** - metadata providers and colors them respectively to the `ISCICameraController.orbitalYaw` and `ISCICameraController.orbitalPitch`.

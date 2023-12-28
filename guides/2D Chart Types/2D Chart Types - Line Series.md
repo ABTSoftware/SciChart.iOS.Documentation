@@ -117,4 +117,4 @@ To learn more about **Point Markers**, please refer to the [PointMarkers API](po
 
 #### Paint Line Segments With Different Colors
 In SciChart, you can draw line segments with different colors using the [PaletteProvider API](paletteprovider-api.html). 
-To Use palette provider for **Line Series** - a custom `ISCIStrokePaletteProvider` has to be provided to the `ISCIRenderableSeries.paletteProvider` property. For more information - please refer to the [PaletteProvider API](palette-provider-api.html) article.
+To Use palette provider for **Line Series** - a custom `ISCIStrokePaletteProvider` has to be provided to the `ISCIRenderableSeries.paletteProvider` property. For more information - please refer to the [PaletteProvider API](paletteprovider-api.html) article.

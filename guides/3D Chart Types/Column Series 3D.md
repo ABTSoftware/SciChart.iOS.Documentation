@@ -5,8 +5,8 @@ The 3D Column Charts are provided by the `SCIColumnRenderableSeries3D` class.
 
 > **_NOTE:_** Examples for the ***Column Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-uniform-column-series/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-uniform-column-series/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-uniform-column/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-uniform-column/)
 
 ## Create a Column Series 3D
 In SciChart you can achieve either ***[Uniform](#uniform-column-series-3d)*** or ***[Non-Uniform](#non-uniform-column-series-3d)*** **Column Series 3D**.

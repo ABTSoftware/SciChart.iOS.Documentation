@@ -7,8 +7,8 @@ A ***stem chart*** is visualized by small stems pointing up or down to a value w
 
 > **_NOTE:_** Examples for the ***Impulse Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-uniform-impulse-series/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-uniform-impulse-series/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-uniform-impulse-series/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-uniform-impulse-series/)
 
 ## Create a Impulse Series 3D
 In SciChart you can have either ***[Uniform](#uniform-impulse-series-3d)*** or ***[Non-Uniform](#non-uniform-impulse-series-3d)*** **Impulse Series 3D**.
