@@ -8,7 +8,7 @@ The `SCIAxisLabelAnnotation` allows to place a piece of **text** at a specific l
 > - Annotations are Easy - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-annotations-are-easy-example/), [Xamarin.iOS](https://www.scichart.com/example/xamarin-chart-annotations-example/)
 > - Interaction with Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-interaction-with-annotations-example/), [Xamarin.iOS](https://www.scichart.com/example/xamarin-chart-interaction-with-annotations-example/)
 
-Since `SCIAxisLabelAnnotation` is nearly the same as [SCITextAnnotation](TextAnnotation.html), hence everything about configuring it is the same. Please see the [TextAnnotation](TextAnnotation.html) article to learn more.
+Since `SCIAxisLabelAnnotation` is nearly the same as [SCITextAnnotation](textannotation.html), hence everything about configuring it is the same. Please see the [TextAnnotation](textannotation.html) article to learn more.
 
 The only difference is that `SCIAxisLabelAnnotation` can be placed on the **X-Axis** or the **Y-Axis** instead of the **Chart Surface**.
 That's is specified via the `ISCIAnnotation.annotationSurface` property.
@@ -127,7 +127,7 @@ A `SCIAxisLabelAnnotation` can be added onto a chart using the following code:
 > **_NOTE:_** To learn more about other **Annotation Types**, available out of the box in SciChart, please find the comprehensive list in the [Annotation APIs](Annotations APIs.html) article.
 
 ## Edit SCIAxisLabelAnnotation in Run-Time
-Similarly to the [TextAnnotation](TextAnnotation.html) - `SCIAxisLabelAnnotation` can be edited in run-time. To turn that on - just set `SCITextAnnotationBase.canEditText` to `YES` on your annotation.
+Similarly to the [TextAnnotation](textannotation.html) - `SCIAxisLabelAnnotation` can be edited in run-time. To turn that on - just set `SCITextAnnotationBase.canEditText` to `YES` on your annotation.
 
 <video autoplay loop muted playsinline src="img/annotations/axis-label-annotation-editing.mp4"></video>
 

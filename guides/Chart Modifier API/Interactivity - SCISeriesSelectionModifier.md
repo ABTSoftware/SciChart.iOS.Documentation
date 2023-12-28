@@ -5,8 +5,8 @@ SciChart features the `SCISeriesSelectionModifier`, which allows selection of th
 
 > **_NOTE:_** Examples of the `SCISeriesSelectionModifier` usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-series-selection/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-series-selection-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-series-selection/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-series-selection-example/)
 
 ## SCISeriesSelectionModifier Usage
 The `SCISeriesSelectionModifier` allows setting of **SelectedSeriesStyle** of `ISCIStyle` type, which is applied to a [RenderableSeries](renderableseries-apis.html) after it has been selected by the modifier. 

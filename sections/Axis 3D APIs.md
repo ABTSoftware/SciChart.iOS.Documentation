@@ -133,4 +133,4 @@ To create and configure a `SCIDateAxis3D`, use the following code:
 Please take a look at the examples from the [iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) listed below to see these axis 3D types in action:
 - [Custom Free Surface Chart 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-create-custom-free-surface/) with `SCINumericAxis3D`
 - [Logarithmic Axis 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-logarithmic-axis-3d/) with `SCILogarithmicNumericAxis`
-- [Date Axis 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-date-axis-3d/ with `SCIDateAxis3D`
+- [Date Axis 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-date-axis-3d/) with `SCIDateAxis3D`

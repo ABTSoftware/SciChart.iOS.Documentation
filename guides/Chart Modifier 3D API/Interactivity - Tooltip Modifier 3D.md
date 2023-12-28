@@ -6,8 +6,8 @@ It's derived from the `SCIChartModifier3DBase` and executes on touch over the **
 
 > **_NOTE:_** Examples of the **`SCITooltipModifier3D`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-series-tooltips/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-series-tooltips/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-series-tooltips/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-series-tooltips/)
 
 ## SCITooltipModifier3D Usage
 The `SCITooltipModifier3D` allows inspecting [RenderableSeries 3D](3D Chart Types.html) at a touch point.
