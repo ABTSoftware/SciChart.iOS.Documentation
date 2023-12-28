@@ -14,8 +14,8 @@ The ***size*** of the `SCICylindroidDataSeries3D` is defined by following proper
 
 > **_NOTE:_** Examples for the ***Polar Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-polar/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-polar/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-polar/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-polar/)
 
 ## Create a Polar 3D Chart
 To create a **Polar 3D Chart**, use the following code:

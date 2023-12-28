@@ -5,8 +5,8 @@ The 3D Point-Line Charts are provided by the `SCIPointLineRenderableSeries3D` cl
 
 > **_NOTE:_** Examples of the ***Point-Line 3D*** Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-point-lines/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-point-lines/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-point-lines/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-point-lines/)
 
 Besides the [Common Features](3D Chart Types.html#common-renderableseries-3d-features) which are shared between all [3D Chart Types](3D Chart Types.html),
 the `SCIPointLineRenderableSeries3D` allows you to customize it's specific properties:

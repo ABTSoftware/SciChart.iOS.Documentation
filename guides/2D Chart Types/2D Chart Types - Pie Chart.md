@@ -10,7 +10,7 @@ This value appears drawn on every segment and can be set in code.
 > **_NOTE:_** Examples of the Pie Chart can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
 > - [Obj-C/Swift Example](https://www.scichart.com/example/ios-pie-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-pie-chart-example/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-pie-chart-example/)
 
 The `ISCIPieSegment` allows you to specify different styles to control rendering of the segments, e.g.:
 - `ISCIPieSegment.fillStyle`

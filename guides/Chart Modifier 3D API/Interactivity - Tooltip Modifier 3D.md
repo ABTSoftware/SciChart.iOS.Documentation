@@ -77,8 +77,8 @@ Moreover - tooltips can be made **unique** per a **RenderableSeries** instance v
 
 > **_NOTE:_** Examples of the `SCITooltipModifier3D` **customization** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-custom-series-tooltips/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-custom-series-tooltips/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-custom-series-tooltips/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-custom-series-tooltips/)
 
 To have ***fully custom*** tooltip for your modifier, you will need to provide **custom** `ISCISeriesInfo3DProvider` for your **RenderableSeries** via inheriting from `SCISeriesInfo3DProviderBase` which contains some base functionality.
 From there - you might want to override one of the following (or both):
@@ -215,7 +215,7 @@ Let's see the code below:
     scatterSeries3D.SeriesInfoProvider = new CustomSeriesInfo3DProvider();
 </div>
 
-> **_NOTE:_** Full example sources are available in [3D Charts -> Tooltips and HitTest 3D Charts -> Custom Serieis Tooltips 3D Charts](https://www.scichart.com/example/ios-3d-chart-example-custom-series-tooltips/)
+> **_NOTE:_** Full example sources are available in [3D Charts -> Tooltips and HitTest 3D Charts -> Custom Serieis Tooltips 3D Charts](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-custom-series-tooltips/)
 
 This will result in the following:
 

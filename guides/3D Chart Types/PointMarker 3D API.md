@@ -1,5 +1,5 @@
 # PointMarker 3D API
-SciChart features a rich **PointMarkers 3D API** to annotate the data-points of certain 3D series with markers, e.g. **Pyramid**, **Sphere**, **Ellipse**, **Quad** or even a **Custom Shape** marker. Some series types, such as **[Scatter RenderableSeries 3D](scatter-3d-series.html)** or **[Impulse RenderableSeries 3D](impulse-3d-series.html)**, require a **PointMarker3D** assigned to them unless they won't render at all.
+SciChart features a rich **PointMarkers 3D API** to annotate the data-points of certain 3D series with markers, e.g. **Pyramid**, **Sphere**, **Ellipse**, **Quad** or even a **Custom Shape** marker. Some series types, such as **[Scatter RenderableSeries 3D](scatter-series-3d.html)** or **[Impulse RenderableSeries 3D](impulse-series-3d.html)**, require a **PointMarker3D** assigned to them unless they won't render at all.
 
 This article is about how to configure and add PointMarkers 3D to a `ISCIRenderableSeries3D` to render markers for every data point.
 
@@ -7,8 +7,8 @@ This article is about how to configure and add PointMarkers 3D to a `ISCIRendera
 
 > **_NOTE:_** Examples of using PointMarkers API can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-point-cloud-3d-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-point-cloud-3d-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-point-cloud-3d-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-point-cloud/)
 
 ## PointMarker 3D Types
 SciChart provides several **PointMarker 3D** shapes out of the box, which are of 2 types: ***Flat-Texture*** and ***Mesh (Volumetric)*** which can be found below:
@@ -70,7 +70,7 @@ After an instance of it has been created, it can be configured and then applied 
     var rSeries = new SCIPointLineRenderableSeries3D { PointMarker = pointMarker };
 </div>
 
-The code above will produce the following chart (assuming that the data has been added to the **[PointLine Series](pointline-3d-series.html)**):
+The code above will produce the following chart (assuming that the data has been added to the **[PointLine Series](pointline-series-3d.html)**):
 
 ![PointMarker 3D Example](img/chart-types-3d/pointmarker-3d-example.png)
 

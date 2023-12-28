@@ -15,8 +15,8 @@ The ***size*** of the `SCIEllipsoidDataSeries3D` is defined by following propert
 
 > **_NOTE:_** Examples for the ***Ellipsoid Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-ellipsoid/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-ellipsoid/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-ellipsoid/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-ellipsoid/)
 
 ## Create a Ellipsoid 3D Chart
 To create a **Ellipsoid 3D Chart**, use the following code:

@@ -9,8 +9,8 @@ This value appears drawn on every segment and can be set in code.
 
 > **_NOTE:_** Examples for the Donut Chart can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-donut-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-donut-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-donut-chart-demo/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-donut-chart-example/)
 
 The `SCIPieSegment` allows you to specify different styles to control rendering of the segments, e.g.:
 - `ISCIPieSegment.fillStyle`
@@ -260,5 +260,5 @@ In SciChart you can have both [Pie Chart]() and [Donut Chart]() placed inside th
 
 > **_NOTE:_** Examples of the Multi Pie Donut Chart can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-nested-pie-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-nested-pie-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-nested-pie-chart-demo/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-nested-pie-chart-example/)
