@@ -31,11 +31,11 @@ Read on to learn more about the features, that all [RenderableSeries have in com
 > **_NOTE:_** For more information about which DataSeries are used for which RenderableSeries, see the [DataSeries Types](dataseries-apis.html) page.
 
 ## Common RenderableSeries Features
-As mentioned above - all 2D series types in SciChart iOS conforms to the `ISCIRenderableSeries` protocol. One of the main features of RenderableSeries API is its **extensibility**. New series types can be created via the [Custom RenderableSeries API](custom-renderableseries-api.html). The list of other features shared by all the series types can be found below:
+As mentioned above - all 2D series types in SciChart iOS conforms to the `ISCIRenderableSeries` protocol. One of the main features of RenderableSeries API is its **extensibility**. New series types can be created via the [Custom RenderableSeries API](2d-chart-types---custom-renderableseries-api.html). The list of other features shared by all the series types can be found below:
 
 | **ISCIRenderableSeries property**                             | **Description**                                                            |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `ISCIRenderableSeries.dataSeries`                             | A DataSeries is the data-source for a RenderableSeries. Please see the [DataSeries API](DataSeries APIs.html) section for a complete walkthrough of the DataSeries API. |
+| `ISCIRenderableSeries.dataSeries`                             | A DataSeries is the data-source for a RenderableSeries. Please see the [DataSeries API](dataseries-apis.html) section for a complete walkthrough of the DataSeries API. |
 | `ISCIRenderableSeriesCore.isVisible`                          | Allows to hide or show a series.                                           |
 | `ISCIRenderableSeriesCore.isSelected`                         | A series can be made Selected to be drawn on the top of other RenderableSeries. Also, the series can alter its appearance in response to changes in the selection state. Please refer to the [SeriesSelectionModifier](interactivity---sciseriesselectionmodifier.html) article for more details. |
 | `ISCIRenderableSeries.pointMarker`                            | This feature lets you set an optional marker on data points, e.g. Ellipse, Square, Triangle or a custom shape. Its usage is described minutely in the [PointMarker API](pointmarker-api.html) article. |

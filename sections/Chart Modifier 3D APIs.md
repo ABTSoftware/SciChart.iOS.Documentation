@@ -20,14 +20,14 @@ The following modifiers can be used if you want to add zooming or panning behavi
 | [SCIZoomExtentsModifier3D](zoom-and-pan---zoom-extents-modifier-3d.html) | **Resets the zoom** to the data extents via the ***double-tapping***. Available almost everywhere, e.g. see the [Surface Mesh 3D Floor and Ceiling](https://www.scichart.com/example/ios-3d-chart-example-surface-mesh-floor-and-ceiling/) example. |
 | [SCIPinchZoomModifier3D](zoom-and-pan---pinch-zoom-modifier-3d.html)     | **Zooms** a chart in and out via the ***pinch and spread gestures*** correspondingly. Available almost everywhere, e.g. see the [Logarithmic Axis 3D](https://www.scichart.com/example/ios-3d-chart-example-logarithmic-axis-3d/) example. |
 | [SCIOrbitModifier3D](zoom-and-pan---orbit-modifier-3d.html)              | Performs the **orbital motion** of the camera performs giving the appearance of ***rotating*** the 3D world. Available almost everywhere, e,g. see the [Ellipsoid Free Surface Chart 3D](https://www.scichart.com/example/ios-3d-chart-example-simple-ellipsoid/) example. |
-| [SCIFreeLookModifier3D](zoom-and-pan---free-look-modifier-3d.html)      | Allows simple movement - Left, Right, Up or Down - of the chart camera imitating the ***free-look*** motion. Available almost everywhere, e.g. see the [Bubble Chart 3D](https://www.scichart.com/example/ios-3d-chart-example-simple-bubble-3d-chart/) example. |
+| [SCIFreeLookModifier3D](zoom-and-pan---free-look-modifier-3d.html)      | Allows simple movement - Left, Right, Up or Down - of the chart camera imitating the ***free-look*** motion. Available almost everywhere, e.g. see the [Bubble Chart 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-bubble/) example. |
 
 #### Interactivity Modifiers 3D
 These modifiers allow to interact with chart series or inspect them:
 
 | **Modifier Name**                                                                 | **Description**                                                                                                                                            |
 | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [SCIVertexSelectionModifier3D](interactivity---vertex-selection-modifier-3d.html) | Provides **selection** of points via tapping on them. See the [Select Scatter Point 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-select-scatter-point/) example. |
+| [SCIVertexSelectionModifier3D](interactivity---vertex-selection-modifier-3d.html) | Provides **selection** of points via tapping on them. See the [Select Scatter Point 3D Chart](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-select-scatter-point/) example. |
 | [SCITooltipModifier3D](interactivity---tooltip-modifier-3d.html)                  | Provides a **tooltip** for the nearest point on a series under the finger. See the [Series Tooltips 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-series-tooltips/) example. |
 
 #### Miscellaneous Modifiers 3D
@@ -36,7 +36,7 @@ Modifiers below are used as helpers and can be a useful addition to a chart:
 | **Modifier Name**                                  | **Description**                                                                                                                                            |
 | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [SCIModifierGroup3D](#scimodifiergroup3d-features) | Can be used to **group** chart modifiers together. This can useful in **multi-chart** scenarios, to unite ModifierGroups into one **EventGroup** of modifiers. If an **Event** occurs on a chart, it will be propagated to modifiers from other charts that are in the same **EventGroup**. |
-| `SCILegendModifier3D`                              | Allows to creates and configure a **Legend** for a 3D chart. See the [Add Remove Series](https://www.scichart.com/example/ios-3d-chart-example-add-remove-series/) example. |
+| `SCILegendModifier3D`                              | Allows to creates and configure a **Legend** for a 3D chart. See the [Add Remove Series](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-add-remove-series/) example. |
 
 > **_NOTE:_** To learn more about **ChartModifiers 3D API**, please read the [Common ChartModifiers 3D Features](#common-chart-modifier-3d-features) section. 
 > To find out more about a **specific** 3D ChartModifier, please refer to a corresponding article about this Modifier type.

@@ -23,7 +23,7 @@ From there - you might want to override one of the following (or both):
 Let's consider [Customization of Rollover Modifier Tooltips](#customization-of-rollover-modifier-tooltips) as an example, since customizations for other modifiers are nearly the same.
 ![Customization Rollover Modifier](img/modifiers-2d/customization-rollover-modifier.png)
 
-> **_NOTE:_** Full example sources are available in [2D Charts -> Tooltips and Hit Test -> Customization RolloverModifier](https://www.scichart.com/example/ios-customization-rollover-modifier/)
+> **_NOTE:_** Full example sources are available in [2D Charts -> Tooltips and Hit Test -> Customization RolloverModifier](https://www.scichart.com/example/ios-chart/ios-customization-rollover-modifier/)
 
 First thing, we will need to create custom `ISCISeriesTooltip` and implement `-internalUpdate:` method in which we update tooltip instance based on passed in `SCISeriesInfo` instance. 
 Then, in custom `ISCISeriesInfoProvider` we override `-getSeriesTooltipInternalWithSeriesInfo:modifierType` and provide our custom tooltip for `SCIRolloverModifier` type, since we want to customize tooltips only for **RolloverModifier**.
@@ -162,10 +162,10 @@ Let's see the code below:
 #### Customization of Cursor Modifier Tooltips
 ![Customization Cursor Modifier](img/modifiers-2d/customization-cursor-modifier.png)
 
-> **_NOTE:_** Full example sources is available in [2D Charts -> Tooltips and Hit Test -> Customization CursorModifier](https://www.scichart.com/example/ios-customization-cursor-modifier/)
+> **_NOTE:_** Full example sources is available in [2D Charts -> Tooltips and Hit Test -> Customization CursorModifier](https://www.scichart.com/example/ios-chart/ios-customization-cursor-modifier/)
 
 ## Axis Tooltips Customization
-Axes tooltips for modifiers are customized the same way as **Series Tooltips** - via custom `SCIAxisTooltip` and `ISCIAxisInfoProvider`. Please see the code below, which is from the same [Customization RolloverModifier](https://www.scichart.com/example/ios-customization-rollover-modifier/) example:
+Axes tooltips for modifiers are customized the same way as **Series Tooltips** - via custom `SCIAxisTooltip` and `ISCIAxisInfoProvider`. Please see the code below, which is from the same [Customization RolloverModifier](https://www.scichart.com/example/ios-chart/ios-customization-rollover-modifier/) example:
 
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>

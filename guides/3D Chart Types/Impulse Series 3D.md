@@ -18,7 +18,7 @@ Both are provided by the `SCIImpulseRenderableSeries3D` but underlying `ISCIData
 - `SCIPointLineRenderableSeries3D.stroke`
 - `SCIPointLineRenderableSeries3D.strokeThickness`
 
-In addition, in the same manner as a [Scatter Series 3D](scatter-series-3d) - **Impulse Series 3D** requires a shape to be specified using one of the `SCIBasePointMarker3D` and assigning it to the `ISCIRenderableSeries3D.pointMarker` property.
+In addition, in the same manner as a [Scatter Series 3D](scatter-series-3d.html) - **Impulse Series 3D** requires a shape to be specified using one of the `SCIBasePointMarker3D` and assigning it to the `ISCIRenderableSeries3D.pointMarker` property.
 There are number of **PointMarkers** available out of the box:
 
 | **Flat-Texture PointMarkers** | **Mesh (Volumetric) PointMarkers** |
@@ -282,5 +282,5 @@ which will result in the following chart:
 
 > **_NOTE:_** Full example code for the ***Impulse Column Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-sparse-impulse-series/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-sparse-impulse-series/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-sparse-impulse-series/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-sparse-impulse-series/)

@@ -40,8 +40,8 @@ Most of the parts within SciChart can be template and styled independently of [T
 
 ## Styling Axis
 **Each and Every** aspect of the axis can be styled. The Axis is responsible for drawing the following parts:
-- [Title](axis-styling---title-and-labels#axis-title)
-- [Axis Labels](axis-styling---title-and-labels#axis-labels)
+- [Title](axis-styling---title-and-labels.html#axis-title)
+- [Axis Labels](axis-styling---title-and-labels.html#axis-labels)
 - [Tick Lines](axis-styling---grid-lines-ticks-and-axis-bands.html#axis-ticks) - small marks on the outside of an axis **next to labels**
 - [Gridlines](axis-styling---grid-lines-ticks-and-axis-bands.html#grid-lines) - major and minor
 - [Axis Bands](axis-styling---grid-lines-ticks-and-axis-bands.html#axis-bands) - shading between the **major** gridlines

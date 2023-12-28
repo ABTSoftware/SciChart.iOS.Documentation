@@ -9,8 +9,8 @@ The **Spline Band Series** can be used to render profit & loss (green / red abov
 
 > **_NOTE:_** Examples for the Spline Band Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-spline-band-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-spline-band-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-spline-band-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-spline-band-chart-example/)
 
 The `SCISplineBandRenderableSeries` class allows to specify **Fill**, **FillY1** brushes and **Stroke**, **StrokeY1** pens via the following properties:
 - `SCISplineBandRenderableSeries.fillBrushStyle`

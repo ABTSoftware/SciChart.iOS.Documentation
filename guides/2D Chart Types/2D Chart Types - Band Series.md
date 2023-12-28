@@ -1,7 +1,7 @@
 # The Band Series Type
 High-Low Fill or **Band Series** are provided by the `SCIFastBandRenderableSeries` type. This accepts data (`X, Y, Y1`) from a `SCIXyyDataSeries` and renders two lines with a polygon, which changes color depending on whether `Y > Y1` or vice versa.
 
-> **_NOTE:_** For more info about `SCIXyyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIXyyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 The **Band Series** can be used to render profit & loss (green / red above or below a zero line), shaded areas of interest, technical indicators such as MACD and Ichimoku, or to simply shade an area above or below a threshold.
 

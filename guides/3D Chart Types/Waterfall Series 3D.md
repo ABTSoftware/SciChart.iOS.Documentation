@@ -11,8 +11,8 @@ As an example, it can be used for the following:
 
 > **_NOTE:_** Examples of the ***Waterfall 3D*** Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-waterfall/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-waterfall/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-waterfall/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-waterfall/)
 
 In the Surface Mesh 3D Series, the data is stored in the `SCIWaterfallDataSeries3D`.
 This represents a ***2-dimensional grid***, typically of type `double`.
@@ -317,5 +317,5 @@ In SciChart, it's possible to create real-time **Waterfall 3D Charts** which is 
 
 > **_NOTE:_** Examples of the ***Real-Time Waterfall 3D*** Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-realtime-waterfall/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-realtime-waterfall/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-realtime-waterfall/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-realtime-waterfall/)

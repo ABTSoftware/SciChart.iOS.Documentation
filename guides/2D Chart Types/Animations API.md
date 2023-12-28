@@ -156,8 +156,8 @@ There are several animation types provided out of the box in SciChart:
 
 > **_NOTE:_** Examples which uses **Wave** animation can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-column-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-column-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-column-chart-demo/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-stacked-column-chart-example/)
 
 #### Translate-X Animation
 <div class="code-snippet-tabs">

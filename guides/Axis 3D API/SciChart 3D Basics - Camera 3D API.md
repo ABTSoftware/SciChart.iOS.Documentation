@@ -32,5 +32,5 @@ The **Modify Camera3D Properties** example shows how to manipulate the camera, a
 
 > **_NOTE:_** The **Modify Camera3D Properties** example can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-modify-camera-3d-properties/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-modify-camera-3d-properties/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-modify-camera-3d-properties/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-modify-camera-3d-properties/)

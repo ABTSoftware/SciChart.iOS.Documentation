@@ -15,7 +15,7 @@ The Scatter Series requires a shape to be specified for **Point Markers**. SciCh
 - `SCITrianglePointMarker`;
 - `SCISpritePointMarker`.
 
-It is also possible to define custom shapes of the Point Markers. Please refer to the [PointMarkers API](pointmarker-api.html) article to learn more. You can also override colors of the **Point Markers** individually using [The PaletteProvider API](paletteprovider.api-html).
+It is also possible to define custom shapes of the Point Markers. Please refer to the [PointMarkers API](pointmarker-api.html) article to learn more. You can also override colors of the **Point Markers** individually using [The PaletteProvider API](paletteprovider-api.html).
 
 > **_NOTE:_** In multi axis scenarios, a series has to be assigned to **particular X and Y axes**. This can be done passing the axes IDs to the `ISCIRenderableSeries.xAxisId`, `ISCIRenderableSeries.yAxisId` properties.
 

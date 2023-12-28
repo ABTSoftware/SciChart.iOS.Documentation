@@ -5,8 +5,8 @@
 
 > **_NOTE:_** Examples of the Spline Line Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 >
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-spline-line-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-spline-line-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-spline-line-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-spline-line-chart-example/)
 
 ## Create a Spline Line Series
 To create a `SCISplineLineRenderableSeries`, use the following code:

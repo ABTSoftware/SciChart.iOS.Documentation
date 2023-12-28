@@ -77,7 +77,7 @@ Column Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-column-area-parts-with-different-colors).
 
 #### Render a Gap in a Column Series
-It's possible to render a Gap in **Column series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **Column series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Paint Column Area Parts With Different Colors
 ![Paletted Column Series Type](img/chart-types-2d/paletted-column-chart-example.png)

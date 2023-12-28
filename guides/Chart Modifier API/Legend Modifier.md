@@ -5,8 +5,8 @@ In SciChart, the easiest way to add a **Legend** onto a chart is to use a `SCILe
 
 > **_NOTE:_** Example of the `SCILegendModifier` usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart-legends-api-example/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-with-legends-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-legends-api-example/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-with-legends-example/)
 
 The `SCILegendModifier` class exposes several **configurational** properties. Please find them explained in the table below:
 

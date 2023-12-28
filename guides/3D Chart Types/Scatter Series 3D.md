@@ -5,8 +5,8 @@
 
 > **_NOTE:_** Examples for the ***Scatter Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-scatter-3d-char/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-scatter-3d-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-scatter-3d-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-scatter/)
 
 The Scatter Series 3D requires a shape to be specified using the **Point Markers 3D**. SciChart provides several shapes out of the box:
 

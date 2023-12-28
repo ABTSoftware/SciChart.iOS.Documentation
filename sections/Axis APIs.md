@@ -1,4 +1,4 @@
-There are several axis types in SciChart iOS. Although they all differ in types of data values that can be rendered, the most fundamental difference is in their behavior. By that, the axes can be divided into two groups, Category and Value axis types. Please read the [Value Axis vs. Category Axis](value-axis-vs-category-axis.html) article elaborating on what the difference is.
+There are several axis types in SciChart iOS. Although they all differ in types of data values that can be rendered, the most fundamental difference is in their behavior. By that, the axes can be divided into two groups, Category and Value axis types. Please read the [Value Axis vs. Category Axis](axis-apis---value-axis-vs-category-axis.html) article elaborating on what the difference is.
 
 A list of the axis types are found below:
 
