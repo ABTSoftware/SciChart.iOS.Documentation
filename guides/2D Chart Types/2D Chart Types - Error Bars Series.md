@@ -1,7 +1,7 @@
 # The Error Bars Type
 In SciChart, Error Bar Series is represented by the `SCIFastErrorBarsRenderableSeries` and `SCIFastFixedErrorBarsRenderableSeries` types. Those accepts (`X, Y, ErrorHigh, ErrorLow`) data from a `SCIHlDataSeries` and (`X, Y`) data from `SCIXyDataSeries` respectively. Then it renders error bars above and below the **Y-value**.
 
-> **_NOTE:_** For more info about `SCIHlDataSeries` or `SCIXyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIHlDataSeries` or `SCIXyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 ![Error Bars Type](img/chart-types-2d/error-bars-chart-example.png)
 

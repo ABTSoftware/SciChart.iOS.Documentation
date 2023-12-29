@@ -5,8 +5,8 @@
 
 > **_NOTE:_** Examples of the Spline Line Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 >
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-spline-line-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-spline-line-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-spline-line-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-spline-line-chart-example/)
 
 ## Create a Spline Line Series
 To create a `SCISplineLineRenderableSeries`, use the following code:
@@ -62,7 +62,7 @@ Spline Line Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#paint-spline-line-segments-with-different-colors)
 
 #### Render a Gap in a Spline Line Series
-It is possible to show a gap in a **Spline Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCISplineLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It is possible to show a gap in a **Spline Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCISplineLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 > **_NOTE:_** Please note, even though Gaps via NaN values in spline series is supported, ClosedGaps feature, which is available in [regular (non-spline)](2d-chart-types---line-series.html) series, aren't supported with splines.
 

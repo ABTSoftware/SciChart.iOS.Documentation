@@ -6,8 +6,8 @@ If you develop some trading application, most likely, your chart will display so
 
 > **_NOTE:_** Example of the trading charts label formatter usage can be found in the **"Multi-Panel Stock Chart"** example in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-multi-pane-stock-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-multi-pane-stock-charts-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-multi-pane-stock-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-multi-pane-stock-charts-example/)
 
 The most suitable type of X-Axis for trading charts is `SCICategoryDateAxis`. It uses `SCITradeChartAxisLabelProvider` to dynamically change its Text and Cursor Labels depending on Data-value and current zoom.
 

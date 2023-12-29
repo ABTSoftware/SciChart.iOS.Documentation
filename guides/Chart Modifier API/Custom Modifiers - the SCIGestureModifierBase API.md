@@ -7,8 +7,8 @@ Any time you want to do something to alter the behavior of any built-in gesture 
 
 > **_NOTE:_** Example of the Custom Gesture-Based Modifier can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-custom-gesture-modifier/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-custom-gesture-modifier-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-custom-gesture-modifier/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-custom-gesture-modifier/)
 
 ## Custom Gesture-Based Modifier
 An example below shows how to use `SCIGestureModifierBase` API to create a chart custom gesture-based modifier.

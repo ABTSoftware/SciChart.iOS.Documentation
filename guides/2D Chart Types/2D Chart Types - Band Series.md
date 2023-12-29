@@ -1,7 +1,7 @@
 # The Band Series Type
 High-Low Fill or **Band Series** are provided by the `SCIFastBandRenderableSeries` type. This accepts data (`X, Y, Y1`) from a `SCIXyyDataSeries` and renders two lines with a polygon, which changes color depending on whether `Y > Y1` or vice versa.
 
-> **_NOTE:_** For more info about `SCIXyyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIXyyDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 The **Band Series** can be used to render profit & loss (green / red above or below a zero line), shaded areas of interest, technical indicators such as MACD and Ichimoku, or to simply shade an area above or below a threshold.
 
@@ -89,7 +89,7 @@ Band Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-band-area-parts-with-different-colors)
 
 #### Render a Gap in a Band Series
-It's possible to render a Gap in **Band series**, by passing a data point with a `NaN` as the `Y and Y1` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastBandRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It's possible to render a Gap in **Band series**, by passing a data point with a `NaN` as the `Y and Y1` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastBandRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 #### Add Point Markers onto a Band Series
 Every data point of a **Band Series** can be marked with a `ISCIPointMarker`. To add Point Markers to a **Band Series** use the `ISCIRenderableSeries.pointMarker` property. For more information and code examples, please refer to the [PointMarkers API](pointmarker-api.html) article.

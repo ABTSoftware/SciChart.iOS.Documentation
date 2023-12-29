@@ -774,4 +774,4 @@ visibleRange. And to synchronize modifiers - you'll need just create an SCICharM
 
 > **_NOTE:_** The full **Sync Multiple Charts** example can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-multiple-surfaces-demo//)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-example-sync-mutiple-charts/)

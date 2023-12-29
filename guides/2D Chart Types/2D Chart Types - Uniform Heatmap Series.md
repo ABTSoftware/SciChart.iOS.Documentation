@@ -2,7 +2,7 @@
 Heatmaps are provided by the `SCIFastUniformHeatmapRenderableSeries`, which consumes data from a `SCIUniformHeatmapDataSeries`. 
 This is designed to display **2D array of data** with real values. Every item in the 2D array is represented as a colored rectangle - **cell**. The color depends on corresponding item’s `Z-Value`.
 
-> **_NOTE:_** For more info about `SCIUniformHeatmapDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIUniformHeatmapDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 ![OHLC Series Type](img/chart-types-2d/heatmap-chart-example.png)
 

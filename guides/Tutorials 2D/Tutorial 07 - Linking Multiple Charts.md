@@ -310,7 +310,7 @@ It's just line charts up. See the code below which showcases how to use it:
 We used this technique in our **Multi-Pane Stock Chart** example, which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
 > - [Obj-C/Swift Example](https://www.scichart.com/example/ios-multi-pane-stock-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-multi-pane-stock-charts-example/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-multi-pane-stock-charts-example/)
 
 ![Multi-Pane Stock Chart](img/tutorials-2d/tutorials-2d-multi-pane-stock-chart-example.png)
 

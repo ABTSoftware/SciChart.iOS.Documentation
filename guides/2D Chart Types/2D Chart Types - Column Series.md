@@ -3,8 +3,8 @@ Column Chart is provided by the `SCIFastColumnRenderableSeries` class. It accept
 
 > **_NOTE:_** Examples for the Column Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-column-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-column-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-column-chart-demo/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-stacked-column-chart-example/)
 
 The `SCIFastColumnRenderableSeries` class allows to specify **Fill** brush, **Stroke** pen and relative **DataPointWidth** which will be applied to every column. You can also choose the `SCITextureMappingMode` for Fill brush which defines how columns are filled when a gradient is used. The **DataPointWidth** specifies how much space a single column occupies, varying from 0 to 1 (when columns are conjoined). 
 
@@ -77,7 +77,7 @@ Column Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-column-area-parts-with-different-colors).
 
 #### Render a Gap in a Column Series
-It's possible to render a Gap in **Column series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **Column series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Paint Column Area Parts With Different Colors
 ![Paletted Column Series Type](img/chart-types-2d/paletted-column-chart-example.png)

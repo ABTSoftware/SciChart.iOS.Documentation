@@ -138,7 +138,7 @@ As the result, the **X Axis** should be placed **at the center** of a chart. It 
 ![Pinned Central Axis](img/axis-2d/pinned-central-axis.png)
 
 ## Floating Axes
-Another possible scenario, **floating axes**, can be found in the example called [Shifted Axes](https://www.scichart.com/example/ios-shifted-axes/) from the [SciChart iOS Example Suite](https://www.scichart.com/examples/ios-chart/).
+Another possible scenario, **floating axes**, can be found in the example called [Shifted Axes](https://www.scichart.com/example/ios-chart/ios-shifted-axes/) from the [SciChart iOS Example Suite](https://www.scichart.com/examples/ios-chart/).
 
 In this case each axis is pinned to 0 value of the other axis. To achieve this, the pixel coordinate of the `0` data value is looked for during every layout pass, using the [Coordinate Transformation API](axis-apis---convert-pixel-to-data-coordinates.html):
 
@@ -207,7 +207,7 @@ In this case each axis is pinned to 0 value of the other axis. To achieve this, 
     }
 </div>
 
-As it can be seen in the example, both axes are **pinned to a given data value**, not to a specific position inside the chart area. Thus they will adjust their positions accordingly to VisibleRange changes. Please refer to the [Shifted Axes Example](https://www.scichart.com/example/ios-shifted-axes/) to find the complete code sample.
+As it can be seen in the example, both axes are **pinned to a given data value**, not to a specific position inside the chart area. Thus they will adjust their positions accordingly to VisibleRange changes. Please refer to the [Shifted Axes Example](https://www.scichart.com/example/ios-chart/ios-shifted-axes/) to find the complete code sample.
 
 ![Floating Central Axis](img/axis-2d/floating-central-axis.png)
 

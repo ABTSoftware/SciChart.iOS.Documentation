@@ -7,11 +7,11 @@ Tooltips may be added to the `SCIChartSurface` using the `SCITooltipModifier`.
 
 > **_NOTE:_** Examples of the **`SCITooltipModifier`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-using-tooltip-modifier/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-using-tooltip-modifier/)
 > - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-using-tooltipmodifier-tooltips-example/)
 
 ## SCITooltipModifier Usage
-The `SCITooltipModifier` allows inspecting [RenderableSeries](renderableseries-apis.html) at a touch point. 
+The `SCITooltipModifier` allows inspecting [RenderableSeries](2D Chart Types.html) at a touch point. 
 For convenience, the actual **hit-test point** is located a bit upper. It is marked with a small "X" sign. 
 Tooltips will appear to the side of it, showing the hit-test result for all RenderableSeries at the "X" location:
 
