@@ -1,7 +1,7 @@
 # The Candlestick Series type
 The **Candlestick charts** are provided by the `SCIFastCandlestickRenderableSeries` type. This accepts data (`X, Open, High, Low, Close`) from a `SCIOhlcDataSeries` and renders candlesticks at each `X-Value` coordinate.
 
-> **_NOTE:_** For more info about `SCIOhlcDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIOhlcDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 ![Candlestick Series Type](img/chart-types-2d/candlestick-chart-example.png)
 
@@ -89,7 +89,7 @@ Candlestick Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#specify-color-for-individual-bars).
 
 #### Render a Gap in a Candlestick Series
-It's possible to render a Gap in **Candlestick series**, by passing a data point with a `NaN` as the `Open, High, Low, Close` values. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **Candlestick series**, by passing a data point with a `NaN` as the `Open, High, Low, Close` values. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Specify Color for Individual Candlesticks
 In SciChart, you can draw each bar of the **Candlestick Series** with different colors using the [PaletteProvider API](paletteprovider-api.html). 

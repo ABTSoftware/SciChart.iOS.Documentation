@@ -1,5 +1,5 @@
 # What is Data Resampling and how does it work?
-By default, SciChart uses **resampling (culling)** of data to ensure the minimum viable data-set is displayed on the screen. Resampling is intended to be **lossless, and automatic**. It occurs for every [RenderableSeries](renderableseries-apis.html) before the series is rendered, if required.
+By default, SciChart uses **resampling (culling)** of data to ensure the minimum viable data-set is displayed on the screen. Resampling is intended to be **lossless, and automatic**. It occurs for every [RenderableSeries](2D Chart Types.html) before the series is rendered, if required.
 
 Resampling methods make assumptions about the data in order to produce a valid output. SciChart provides variety of the `SCIResamplingMode`, and auto detects the most suitable one. 
 

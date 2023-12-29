@@ -5,7 +5,7 @@ While creating your [First SciChart iOS App](creating-your-first-scichart-ios-ap
 
 You can also place axes **in the centre** of the chart or **swap X and Y axes** over to create a **vertical chart**. Please see these examples from the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) for reference:
 - [Multiple Axis Demo](https://www.scichart.com/example/ios-multiple-axis-demo/)
-- [Shifted Axes](https://www.scichart.com/example/ios-shifted-axes/)
+- [Shifted Axes](https://www.scichart.com/example/ios-chart/ios-shifted-axes/)
 - [Vertical Charts Example](https://www.scichart.com/example/ios-chart-example-vertical-charts/)
 
 Axes can be added to either the `ISCIChartSurface.xAxes` or `ISCIChartSurface.yAxes` collection of `SCIChartSurface`. In case of having **multiple X or Y** axes, every axis should have a **unique ID** assigned to it. All axes are positioned on a chart according to their `SCIAxisAlignment`.
@@ -97,6 +97,6 @@ It is also possible to configure chart layout to have **axes** placed **one next
 
 ![Default](img/axis-2d/vertically-stacked-axes-example.png)
 
-> **_NOTE:_** Every **RenderableSeries** (chart types e.g. `SCIFastLineRenderableSeries`, `SCIFastCandlestickRenderableSeries` etc.), every **[Annotation](Annotation API.html)** and some **Chart Modifiers** (e.g. `SCIPinchZoomModifier`, `SCIZoomPanModifier`) requires to be measured against **particular axis** (in other words - **attached** to it). You **must** specify the **Axis ID** for them via the `ISCIRenderableSeries.xAxisId` and `ISCIRenderableSeries.yAxisId` properties.
+> **_NOTE:_** Every **RenderableSeries** (chart types e.g. `SCIFastLineRenderableSeries`, `SCIFastCandlestickRenderableSeries` etc.), every **[Annotation](Annotations APIs.html)** and some **Chart Modifiers** (e.g. `SCIPinchZoomModifier`, `SCIZoomPanModifier`) requires to be measured against **particular axis** (in other words - **attached** to it). You **must** specify the **Axis ID** for them via the `ISCIRenderableSeries.xAxisId` and `ISCIRenderableSeries.yAxisId` properties.
 >
 > However, If you have only a **single X and Y Axis**, setting these ID properties **isn't required**. This is **required** only for the **multiple axis** cases.

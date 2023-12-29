@@ -102,7 +102,7 @@ Impulse Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#specify-color-for-individual-bars).
 
 #### Render a Gap in a Impulse Series
-It's possible to render a Gap in an **Impulse series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in an **Impulse series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Specify Color for Individual Bars
 In SciChart, you can draw each bar of the **Impulse Series** with different colors using the [PaletteProvider API](paletteprovider-api.html). 

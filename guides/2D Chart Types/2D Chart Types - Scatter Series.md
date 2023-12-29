@@ -93,7 +93,7 @@ Scatter Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#paint-scatters-with-different-colors).
 
 #### Render a Gap in a Scatter Series
-It's possible to render a Gap in **Scatter series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **Scatter series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Paint Scatters With Different Colors
 In SciChart, you can draw each scatter of the **Scatter Series** with different colors using the [PaletteProvider API](paletteprovider-api.html). 

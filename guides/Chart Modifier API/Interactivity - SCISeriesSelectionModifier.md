@@ -1,5 +1,5 @@
 # SCISeriesSelectionModifier
-SciChart features the `SCISeriesSelectionModifier`, which allows selection of the upmost [RenderableSeries](renderableseries-apis.html) at a touch position:
+SciChart features the `SCISeriesSelectionModifier`, which allows selection of the upmost [RenderableSeries](2D Chart Types.html) at a touch position:
 
 ![Series Selection Modifier](img/modifiers-2d/series-selection-modifier.png)
 
@@ -9,14 +9,14 @@ SciChart features the `SCISeriesSelectionModifier`, which allows selection of th
 > - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-series-selection-example/)
 
 ## SCISeriesSelectionModifier Usage
-The `SCISeriesSelectionModifier` allows setting of **SelectedSeriesStyle** of `ISCIStyle` type, which is applied to a [RenderableSeries](renderableseries-apis.html) after it has been selected by the modifier. 
+The `SCISeriesSelectionModifier` allows setting of **SelectedSeriesStyle** of `ISCIStyle` type, which is applied to a [RenderableSeries](2D Chart Types.html) after it has been selected by the modifier. 
 Internally, the modifier modifies the `ISCIRenderableSeriesCore.isSelected` property on the topmost **RenderableSeries** to make it selected and tries to apply the `ISCIStyle` onto `ISCIRenderableSeriesCore.selectedSeriesStyle` property.
 
 The **SelectedSeriesStyle** has to conform to the `ISCIStyle` protocol, which requires implementation of the following:
 
 | **Method**                          | **Description**                                                                                                                                        |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `-[ISCIStyle tryApplyStyleTo:]`     | In this method you have to **make** the desired changes to a [RenderableSeries](renderableseries-apis.html). It is called when a series gets selected. |
+| `-[ISCIStyle tryApplyStyleTo:]`     | In this method you have to **make** the desired changes to a [RenderableSeries](2D Chart Types.html). It is called when a series gets selected. |
 | `-[ISCIStyle tryDiscardStyleFrom:]` | In this method you have to **discard** all the changes made in the `-[ISCIStyle tryApplyStyleTo:]` call.                                               |
 | `ISCIStyle.styleableObjectType`     | Provides the type of an object (**RenderableSeries**) that this Style is to be applied to.                                                             |
 

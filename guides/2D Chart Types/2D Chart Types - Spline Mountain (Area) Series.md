@@ -5,7 +5,7 @@
 
 > **_NOTE:_** Examples of the Spline Mountain Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 >
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-spline-mountain-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-spline-mountain-chart/)
 > - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-spline-mountain-chart-example/)
 
 The `SCISplineMountainRenderableSeries` class allows to specify **Stroke** pen and **Area** brush. Those values can be assigned through the corresponding properties - `ISCIRenderableSeries.strokeStyle` and `SCIBaseMountainRenderableSeries.areaStyle` accordingly.

@@ -13,7 +13,7 @@ To achieve that we'd need to perform 2 steps:
 
 > **_NOTE:_** A complete project of the Animated Stacked Column Series example you can find in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart-animating-stacked-column-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-animating-stacked-column-chart-example/)
 
 ## Create transformation
 Creating transformation is fairly simple. We have to create a class that implements an `ISCIRenderPassDataTransformation` protocol and pass an `ISCISeriesRenderPassData` type suitable for your Renderable Series. In our case we will subclass an abstract class `SCIBaseRenderPassDataTransformation`, pass `SCIStackedColumnRenderPassData` type and implement few required methods.
