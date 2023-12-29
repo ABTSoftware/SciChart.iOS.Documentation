@@ -1,7 +1,7 @@
 # The Bubble Series Type
 Bubble Chart is provided by the `SCIFastBubbleRenderableSeries` class. It accepts data (`X, Y, Z`) from a `SCIXyzDataSeries` and renders a **bubble** at each `[X, Y]` with `Z` bubble scale.
 
-> **_NOTE:_** For more info about `SCIXyzDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](Data Series APIs.html) article.
+> **_NOTE:_** For more info about `SCIXyzDataSeries`, as well as other DataSeries types in SciChart, see the [DataSeries API](dataseries-apis.html) article.
 
 ![Bubble Series Type](img/chart-types-2d/bubble-chart-example.png)
 
@@ -82,7 +82,7 @@ Bubble Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-bubbles-with-different-colors).
 
 #### Render a Gap in a Bubble Series
-It's possible to render a Gap in **Bubble series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **Bubble series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
 
 #### Paint Bubbles with Different Colors
 In SciChart, you can draw each bubble of the **Bubble Series** with different colors using the [PaletteProvider API](paletteprovider-api.html). 

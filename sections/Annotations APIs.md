@@ -149,5 +149,5 @@ As mentioned [above](#common-annotations-features) - that's can be controlled vi
 <video autoplay loop muted playsinline src="img/annotations/interaction-with-annotations-example.mp4"></video>
 
 This is demonstrated in the **Interaction with Annotations** example which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
-- [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart-chart-interaction-with-annotations-example/)
-- [Xamarin Example](https://www.scichart.com/example/xamarin-chart-interaction-with-annotations-example/)
+- [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-chart-interaction-with-annotations-example/)
+- [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-interaction-with-annotations-example/)

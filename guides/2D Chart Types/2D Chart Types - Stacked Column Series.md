@@ -12,8 +12,8 @@ There are 2 available collections to work with `SCIStackedColumnRenderableSeries
 
 > **_NOTE:_** Examples of the Stacked Column Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart-stacked-column-chart-example/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-stacked-column-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-stacked-column-chart-example/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-stacked-column-chart-example/)
 
 ## How the Stacking Works for Column Series
 For **Stacked Column Series**, it's possible to perform either [Vertical](#vertical-stacking) or [Horizontal](#horizontal-stacking) stacking, or even **both** at the same time.

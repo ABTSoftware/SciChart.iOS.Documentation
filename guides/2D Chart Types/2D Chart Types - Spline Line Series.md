@@ -62,7 +62,7 @@ Spline Line Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#paint-spline-line-segments-with-different-colors)
 
 #### Render a Gap in a Spline Line Series
-It is possible to show a gap in a **Spline Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCISplineLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It is possible to show a gap in a **Spline Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCISplineLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 > **_NOTE:_** Please note, even though Gaps via NaN values in spline series is supported, ClosedGaps feature, which is available in [regular (non-spline)](2d-chart-types---line-series.html) series, aren't supported with splines.
 

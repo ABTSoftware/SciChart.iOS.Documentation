@@ -16,9 +16,9 @@ The `SCILegendModifier` class exposes several **configurational** properties. Pl
 | `SCILegendModifier.margins`           | Allows to specify **margins** `UIEdgeInsets` for the Legend.                    |
 | `SCILegendModifier.orientation`       | Determines **orientation** of the Legend. Can be either Horizontal or Vertical. |
 | `SCILegendModifier.showLegend`        | Allows to **hide or show** the Legend.                                          |
-| `SCILegendModifier.showCheckBoxes`    | Determines whether to show **visibility checkboxes** for every [RenderableSeries](renderableseries-apis.html) in the Legend or not. These allow hiding or showing their corresponding RenderableSeries. |
-| `SCILegendModifier.showSeriesMarkers` | Determines whether to show **colored markers** for every [RenderableSeries](renderableseries-apis.html) in the Legend or not.                                                                           |
-| `SCILegendModifier.sourceMode`        | Allows to specify which [RenderableSeries](renderableseries-apis.html) should appear in the Legend, e.g. Visible, Selected, etc. Series. Other will be ignored by the modifier. Expects a member of the `SCISourceMode` enumeration. |
+| `SCILegendModifier.showCheckBoxes`    | Determines whether to show **visibility checkboxes** for every [RenderableSeries](2D Chart Types.html) in the Legend or not. These allow hiding or showing their corresponding RenderableSeries. |
+| `SCILegendModifier.showSeriesMarkers` | Determines whether to show **colored markers** for every [RenderableSeries](2D Chart Types.html) in the Legend or not.                                                                           |
+| `SCILegendModifier.sourceMode`        | Allows to specify which [RenderableSeries](2D Chart Types.html) should appear in the Legend, e.g. Visible, Selected, etc. Series. Other will be ignored by the modifier. Expects a member of the `SCISourceMode` enumeration. |
 
 ## Adding the SCILegendModifier to a Chart
 Any [Chart Modifier](Chart Modifier APIs.html) can be [added](Chart Modifier APIs.html#adding-a-chart-modifier)  to a `SCIChartSurface` via the`ISCIChartSurface.chartModifiers` property and `SCILegendModifier` is no difference.

@@ -68,7 +68,7 @@ Line Series also has some features similar to other series, such as:
 - [Draw Series With Different Colors](#paint-line-segments-with-different-colors)
 
 #### Render a Gap in a Line Series
-It is possible to show a gap in a **Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It is possible to show a gap in a **Line Series** by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastLineRenderableSeries`, however, allows to specify how a gap should appear. You can treat `NAN` values as **gaps** or close the line. That's defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 #### Add Point Markers onto a Line Series
 Every data point of a **Line Series** can be marked with a `ISCIPointMarker`. To add Point Markers to the Line Series, use the following code:

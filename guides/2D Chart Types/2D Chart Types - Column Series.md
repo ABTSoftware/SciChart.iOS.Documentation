@@ -3,8 +3,8 @@ Column Chart is provided by the `SCIFastColumnRenderableSeries` class. It accept
 
 > **_NOTE:_** Examples for the Column Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-column-chart-demo/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-column-chart-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-column-chart-demo/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-stacked-column-chart-example/)
 
 The `SCIFastColumnRenderableSeries` class allows to specify **Fill** brush, **Stroke** pen and relative **DataPointWidth** which will be applied to every column. You can also choose the `SCITextureMappingMode` for Fill brush which defines how columns are filled when a gradient is used. The **DataPointWidth** specifies how much space a single column occupies, varying from 0 to 1 (when columns are conjoined). 
 
