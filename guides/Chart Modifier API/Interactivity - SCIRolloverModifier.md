@@ -7,8 +7,8 @@ The `SCIRolloverModifier` can be used to show tooltips for **all the series** un
 
 > **_NOTE:_** Examples of the **`SCIRolloverModifier`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart-tooltips-using-rollovermodifier/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-using-rollovermodifier-tooltips-example/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-chart-tooltips-using-rollovermodifier/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-using-rollovermodifier-tooltips-example/)
 
 ## SCIRolloverModifier Features
 Besides the SCIRolloverModifier [specific features](#specific-features), there are some [common features](#common-features) which are shared between [SCITooltipModifier](interactivity---scitooltipmodifier.html), [SCIRolloverModifier](interactivity---scirollovermodifier.html) and [SCICursorModifier](interactivity---scicursormodifier.html) via common `SCITooltipModifierBase` class.

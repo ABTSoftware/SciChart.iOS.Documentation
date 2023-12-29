@@ -4,7 +4,7 @@ In this SciChart iOS 3D tutorial, you will learn to:
 - add `X and Y` [Axes](Axis APIs.html) to a Chart;
 - render a Simple [Line](2d-chart-types---line-series.html) and [Scatter](2d-chart-types---scatter-series.html) Series.
 
-> **_NOTE:_** This ***tutorial*** assumes that you’ve already know how to [Link SciChart iOS](integrating-scichart-framework.html) and [Add SCIChartSurface instance](creating-your-first-scichart-ios-app.html#adding-axes-to-the-scichartsurface) into your `ViewController`. If you need more information - please read the following articles:
+> **_NOTE:_** This ***tutorial*** assumes that you’ve already know how to [Link SciChart iOS](integrating-scichart-libraries.html) and [Add SCIChartSurface instance](creating-your-first-scichart-ios-app.html#adding-axes-to-the-scichartsurface) into your `ViewController`. If you need more information - please read the following articles:
 >
 > - [Integrating SciChart.framework](integrating-scichart-libraries.html)
 > - [The SCIChartSurface Type](creating-your-first-scichart-ios-app.html#the-scichartsurface-type)

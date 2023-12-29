@@ -8,9 +8,9 @@ The `SCIVerticalLineAnnotation` draws the **vertical line** between `Y1` and `Y2
 > **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
 > - Annotations are Easy - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-annotations-are-easy-example/), [Xamarin.iOS](https://www.scichart.com/example/xamarin-chart-annotations-example/)
-> - Interaction with Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-interaction-with-annotations-example/), [Xamarin.iOS](https://www.scichart.com/example/xamarin-chart-interaction-with-annotations-example/)
+> - Interaction with Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart/ios-chart-chart-interaction-with-annotations-example/), [Xamarin.iOS](https://www.scichart.com/example/xamarin-chart/xamarin-chart-interaction-with-annotations-example/)
 
-The `SCIVerticalLineAnnotation` class is inherited from [SCILineAnnotation](lineannotation.htm), and hence, provides the `SCILineAnnotationBase.stroke` property which is used to define the line annotation color. It expects a `SCIPenStyle` object.
+The `SCIVerticalLineAnnotation` class is inherited from [SCILineAnnotation](lineannotation.html), and hence, provides the `SCILineAnnotationBase.stroke` property which is used to define the line annotation color. It expects a `SCIPenStyle` object.
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle and SCIFontStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
 
 > **_NOTE:_** To learn more about **Annotations** in general - please see the [Common Annotation Features](Annotations APIs.html#common-annotations-features) article.

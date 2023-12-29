@@ -64,7 +64,7 @@ The simplest case is the `SCINumericAxis3D`. `ISCICoordinateCalculator` for Nume
 >**_NOTE:_** The exact **data-values** and **coordinates** might differ depending on your **visibleRange, viewport** etc...
 
 ### SCIDateAxis3D conversions
-Similarly to `SCINumericAxis3D` - the `SCIDateAxis3D` is quite simple with one difference - it's `ISCICoordinateCalculator` works with **double representation** of **Date**, which is **[timeIntervalSince1970](https://developer.apple.com/documentation/foundation/nsdate/1407504-timeintervalsince1970?language=objc)**. So let's take our [Date Axis 3D](https://www.scichart.com/example/ios-3d-chart-example-date-axis-3d/) as an example, and try do some conversions. 
+Similarly to `SCINumericAxis3D` - the `SCIDateAxis3D` is quite simple with one difference - it's `ISCICoordinateCalculator` works with **double representation** of **Date**, which is **[timeIntervalSince1970](https://developer.apple.com/documentation/foundation/nsdate/1407504-timeintervalsince1970?language=objc)**. So let's take our [Date Axis 3D](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-date-axis-3d/) as an example, and try do some conversions. 
 
 >**_NOTE:_** Since the `ISCICoordinateCalculator` works with double representation of Date in `timeIntervalSince1970`, you will need to do all the needed conversions on your own. See the code below:
 

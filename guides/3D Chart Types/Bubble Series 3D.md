@@ -8,8 +8,8 @@ It is exactly the same Chart Type that **[Scatter Chart 3D](scatter-series-3d.ht
 
 > **_NOTE:_** Examples for the ***Bubble Series 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 >
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-bubble-3d-char/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-bubble-3d-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-bubble/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-bubble/)
 
 There is a special class `SCIPointMetadataProvider3D` which stores collection of `SCIPointMetadata3D`.
 Is expects to have metadata for each point in your `ISCIDataSeries3D`.

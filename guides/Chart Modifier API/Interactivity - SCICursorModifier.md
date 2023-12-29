@@ -11,7 +11,7 @@ The `SCICursorModifier` is also able to display an aggregated tooltip (all serie
 > - [Xamarin Example](https://www.scichart.com/example/xamarin-chart-using-cursormodifier-tooltips-example/)
 
 ## SCICursorModifier Usage
-The `SCICursorModifier` allows inspecting [RenderableSeries](renderableseries-apis.html) at a touch point. 
+The `SCICursorModifier` allows inspecting [RenderableSeries](2D Chart Types.html) at a touch point. 
 For convenience, the actual **hit-test point** is located a bit upper.
 Tooltips will appear to the side of it, showing the hit-test result for all RenderableSeries above the cursor horizontal line.
 Also, the `SCICursorModifier` shows labels on axes for its horizontal, vertical lines.

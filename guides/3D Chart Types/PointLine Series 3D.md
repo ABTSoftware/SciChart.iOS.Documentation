@@ -5,8 +5,8 @@ The 3D Point-Line Charts are provided by the `SCIPointLineRenderableSeries3D` cl
 
 > **_NOTE:_** Examples of the ***Point-Line 3D*** Series can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-simple-point-lines/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-simple-point-lines/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-simple-point-lines/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-simple-point-lines/)
 
 Besides the [Common Features](3D Chart Types.html#common-renderableseries-3d-features) which are shared between all [3D Chart Types](3D Chart Types.html),
 the `SCIPointLineRenderableSeries3D` allows you to customize it's specific properties:
@@ -27,7 +27,7 @@ That's achieved via the `SCIPointLineRenderableSeries3D.isLineStrips` property.
 
 ![Line Strips Example](img/chart-types-3d/line-strips-example.png)
 
-> **_NOTE:_** Full example sources are available in [3D Charts -> Tooltips and Hit-Test 3D Charts -> Series Tooltips 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-series-tooltips/)
+> **_NOTE:_** Full example sources are available in [3D Charts -> Tooltips and Hit-Test 3D Charts -> Series Tooltips 3D Chart](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-series-tooltips/)
 
 ## Create a Line Series
 To create a `SCIPointLineRenderableSeries3D`, use the following code:
@@ -190,7 +190,7 @@ To add Point Markers to the Point-Line 3D, use the following code:
 
 To learn more about **Point Markers 3D**, please refer to the [PointMarkers 3D API](pointmarker-3d-api.html) article.
 
-> **_NOTE:_** This feature can be used to create a [Scatter 3D Series](scatter-3d-series.html).
+> **_NOTE:_** This feature can be used to create a [Scatter 3D Series](scatter-series-3d.html).
 
 #### Paint Line Segments With Different Colors
 Is SciChart, you can draw line segments with different colors using the [MetadataProvider 3D API](metadataprovider-3d-api.html).

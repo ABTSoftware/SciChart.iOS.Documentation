@@ -77,7 +77,7 @@ The code above will produce the following chart (assuming that the data has been
 ![PointMarker Example](img/chart-types-2d/pointmarker-example.jpg)
 
 ## Custom PointMarkers
-There are two ways of creating custom **PointMarkers** in SciChart. The [first one](#extend-scidrawablepointmarker) involves using our [RenderContext2D API](rendercontext-api.html) for drawing, and [the second](#implement-iscispritepointmarkerdrawer) allows to use CoreGraphics drawing capabilities.
+There are two ways of creating custom **PointMarkers** in SciChart. The [first one](#extend-scidrawablepointmarker) involves using our **RenderContext2D API** for drawing, and [the second](#implement-iscispritepointmarkerdrawer) allows to use CoreGraphics drawing capabilities.
 
 #### Extend SCIDrawablePointMarker
 This technique requires extending the `SCIDrawablePointMarker` class and overriding the its `-[SCIDrawablePointMarker internalDrawWithContext:at:withStrokePen:andFillBrush:]` method which is called for every data point in a series. 

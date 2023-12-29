@@ -77,7 +77,7 @@ Mountain Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-area-parts-with-different-colors)
 
 #### Render a Gap in a Mountain Series
-It's possible to render a Gap in **Mountain series**, by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastMountainRenderableSeries`, itself, allows to specify how a gap would appear. You can treat `NAN` values as a **gap** or a **close the line**. That appearance is defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It's possible to render a Gap in **Mountain series**, by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCIFastMountainRenderableSeries`, itself, allows to specify how a gap would appear. You can treat `NAN` values as a **gap** or a **close the line**. That appearance is defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 #### Add Point Markers onto a Mountain Series
 Every data point of a **Mountain Series** can be marked with a `ISCIPointMarker`. To add Point Markers to a **Mountain Series** use the `ISCIRenderableSeries.pointMarker` property. For more information and code examples, please refer to the [PointMarkers API](pointmarker-api.html) article.

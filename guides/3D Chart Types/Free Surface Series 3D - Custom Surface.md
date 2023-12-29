@@ -28,8 +28,8 @@ Some of the `SCICustomSurfaceDataSeries3D` **[Constructor](Classes/SCICustomSurf
 
 > **_NOTE:_** Examples for the ***Custom Free Surface 3D*** can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-create-custom-free-surface-3d-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-create-custom-free-surface-3d-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-create-custom-free-surface/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-create-custom-free-surface/)
 
 Let's see some examples of declaring some **3D Free Surfaces**:
 - [Custom Free Surface 3D](#create-a-custom-free-surface-3d-chart)

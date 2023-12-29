@@ -14,10 +14,10 @@ Many aspects of the axis 3D can be styled. Same way, like in SciChart 2D the Axi
 
 > **_NOTE:_** The **Style 3D Chart** example can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-3d-chart-example-style-chart/)
-> - [Xamarin Example](https://www.scichart.com/example/xamarin-3d-chart-example-style-chart/)
+> - [Obj-C/Swift Example](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-style-chart/)
+> - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-3d-chart-example-style-chart/)
 
-Please take a look at the code snippet from the [Style 3D Chart](https://www.scichart.com/example/ios-3d-chart-example-style-chart/) example which showcase some `ISCIAxis3D` styling:
+Please take a look at the code snippet from the [Style 3D Chart](https://www.scichart.com/example/ios-chart/ios-3d-chart-example-style-chart/) example which showcase some `ISCIAxis3D` styling:
 
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>

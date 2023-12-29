@@ -106,8 +106,6 @@ For example, let's try to create a **RenderableSeries**, which draws [PointMarke
 
 As showed in the code above, the main method, which has to be implemented is the `internalDraw`, which allows you to perform any **custom drawings** you want. The `ISCIRenderContext2D` and `ISCIAssetManager2D` are passed into it, which should be used to draw to the screen and which are the parts of the graphics context for this render pass.
 
-> **_NOTE:_** For a full walk-through on utilizing Immediate Mode RenderContext API, please see the [RenderContext API](rendercontext-api.html) article.
-
 ## The current Data to Draw - ISCISeriesRenderPassData protocol
 The data to draw is contained in the `ISCISeriesRenderPassData` passed in to the `internalDraw` method. Using the **RenderPassData** object you can access the **data values** and **coordinates** to draw, the **xPointRange** (the indices of the data to draw, inclusive), the **X and Y Coordinate Calculators**, that transforms data to pixel coordinates. All the above accessed through the following properties:
 - `SCIXyRenderPassData.yValues` (other **RenderPassData** types might have other properties)

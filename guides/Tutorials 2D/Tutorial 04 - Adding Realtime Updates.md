@@ -312,6 +312,6 @@ Our documentation contains lots of useful information, some of the articles you 
 Finally, start exploring. The SciChart iOS is quite extensive. 
 You can look into our [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) which are full of 2D and 3D examples, which are also available on our [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
 
-In particular, you might want to take a look at our [Fifo Scrolling Chart](https://www.scichart.com/example/ios-fifo-scrolling-chart/):
+In particular, you might want to take a look at our [Fifo Scrolling Chart](https://www.scichart.com/example/ios-chart/ios-fifo-scrolling-chart/):
 
 <video autoplay loop muted playsinline src="img/tutorials-2d/fifo-scrolling-chart-example.mp4"></video>

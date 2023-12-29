@@ -10,7 +10,7 @@ In SciChart, the **Ticks** are small marks around the chart on an axis. There ar
 ![Ticks and Deltas](img/axis-2d/major-minor-ticks.png)
 <center><sub><sup>majorDelta = 2; minorDelta = 0.4; autoTicks = NO</sub></sup></center>
 
-To learn more about possible options for Axis Ticks, Gridlines and Labels, please refer to the [Styling Gridlines, Ticks and Axis Bands](axis-styling---styling-grid-lines-tick-lines-and-axis-bands.html) and [Styling Title and Axis Labels](styling-the-axis-title-and-labels.html) articles.
+To learn more about possible options for Axis Ticks, Gridlines and Labels, please refer to the [Styling Gridlines, Ticks and Axis Bands](/axis-styling---grid-lines-ticks-and-axis-bands.html) and [Styling Title and Axis Labels](axis-styling---title-and-labels.html) articles.
 
 ## Automatic Tick Spacing
 In SciChart, the **difference** between two Major Ticks **is called MajorDelta**, and that between two minor Ticks - **MinorDelta**. By default, both delta values, and therefore the Tick spacing, are calculated automatically according to the VisibleRange and size of an axis. As zoom level changes, the `ISCIAxisCore.majorDelta`, `ISCIAxisCore.minorDelta` of every axis will be updated correspondingly, and the tick frequency may change.

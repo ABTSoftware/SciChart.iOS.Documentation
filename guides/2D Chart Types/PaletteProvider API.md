@@ -376,7 +376,7 @@ The code above results in a chart with renderableSeries listed below:
 - [Scatter Series](2d-chart-types---scatter-series.html)
 - [Mountain (Area) Series](2d-chart-types---mountain-area-series.html)
 
-These charts are changing colors depending on the threshold levels provided by two [Horizontal Line Annotations](annotations---horizontal-line.html):
+These charts are changing colors depending on the threshold levels provided by two [Horizontal Line Annotations](horizontallineannotation.html):
 
 <video autoplay loop muted playsinline src="img/chart-types-2d/palette-provider-thresholds.mp4"></video>
 
