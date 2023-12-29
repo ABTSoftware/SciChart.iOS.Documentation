@@ -17,8 +17,6 @@ From there - you might want to override one of the following (or both):
 - `-getSeriesInfoInternal` - allows to provide custom implementation of `SCISeriesInfo`, which simply contains information about a **RenderableSeries** and should be created based on it
 - `-getSeriesTooltipInternalWithSeriesInfo:modifierType:` - allows to provide **custom tooltip** for your series, based on `seriesInfo` and `modifierType`
 
-> **_NOTE:_** For more information about **SCISeriesInfo**, its types and place inside SciChart, read the [SCISeriesInfo – Models for Tooltips and Legends](sciseriesinfo---models-for-tooltips-and-legends.html) article.
-
 #### Customization of Rollover Modifier Tooltips
 Let's consider [Customization of Rollover Modifier Tooltips](#customization-of-rollover-modifier-tooltips) as an example, since customizations for other modifiers are nearly the same.
 ![Customization Rollover Modifier](img/modifiers-2d/customization-rollover-modifier.png)
