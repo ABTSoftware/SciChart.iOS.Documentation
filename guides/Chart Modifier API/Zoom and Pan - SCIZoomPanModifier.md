@@ -16,6 +16,10 @@ There are several modes defined by the `SCIClipMode` enumeration:
 - `ClipAtMax` - Forces the panning operation to stop suddenly at the maximum of the data, but expand at the minimum.
 - `ClipAtExtents` - Forces the panning operation to stop suddenly at the extents of the data.
 
+There are two touch events defined by the `SCIZoomState` enumeration, which can be used to get or set current interaction state of the surface:
+- AtExtents indicates that the zoom level is at extents.
+- UserZooming indicates User has initiated a Zoom operation.
+
 ## Adding a SCIZoomPanModifier to a Chart
 Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurface`](Chart Modifier APIs.html#adding-a-chart-modifier) via the`ISCIChartSurface.chartModifiers` property and `SCIZoomPanModifier` is no difference:
 
@@ -68,3 +72,8 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
 </div>
 
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
+
+> **_NOTE:_**  The `setDisableTouchEvent:` method is used to allow or prevent userInteraction of a surface view when it is inside a scroll view. 
+It accepts `disableTouchEvent`, a Boolean value that determines whether user touch events are ignored or not.
+ `YES` - Touch events will be ignored (i.e., user interaction is disabled).
+ `NO` - Touch events will be recognized (i.e., user interaction is enabled).
