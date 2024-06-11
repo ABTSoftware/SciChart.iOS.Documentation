@@ -20,6 +20,14 @@ There are two touch events defined by the `SCIZoomState` enumeration, which can 
 - AtExtents indicates that the zoom level is at extents.
 - UserZooming indicates User has initiated a Zoom operation.
 
+The `allowsGestureOnAxis` property enables or disables the application of modifiers, such as pan and pinch gestures, specifically on axis elements.
+This property controls whether dragging or pinching gestures performed by the user on the axis will trigger the associated modifier actions. 
+- `true`- Enables the modifier actions (pan, pinch) on the axis.
+- `false` - Disables the modifier actions (pan, pinch) on the axis.
+The default value for allowsGestureOnAxis is `false`.
+
+It is particularly useful in scenarios where you may want to restrict or allow user interactions specifically on the axis, while still allowing interactions elsewhere on the chart surface.
+
 ## Adding a SCIZoomPanModifier to a Chart
 Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurface`](Chart Modifier APIs.html#adding-a-chart-modifier) via the`ISCIChartSurface.chartModifiers` property and `SCIZoomPanModifier` is no difference:
 
