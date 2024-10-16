@@ -19,7 +19,6 @@ The `SCITextAnnotation` can be configured using the properties listed in the tab
 | `SCITextAnnotationBase.padding`        | Defines the **padding** around the text                                                              |
 | `SCITextAnnotationBase.canEditText`    | When set to `YES` - allows to **modify the text in run-time** after selecting an annotation. See the [Edit SCITextAnnotation in Run-Time](#edit-scitextannotation-in-run-time) section. |
 | `SCITextAnnotationBase.rotationAngle`  | **Rotates** an annotation through the specified angle in **degrees**.                                 |
-| `SCITextAnnotationBase.backgroundColor`  |Sets the **background color** for the annotation text.                                        |
 
 Position of the `SCITextAnnotation` is defined by the `X1` or `Y1` coordinate, depending on the axis. 
 Those values can be accessed via the `ISCIAnnotation.x1` and `ISCIAnnotation.y1` properties.
@@ -47,12 +46,6 @@ A `SCITextAnnotation` can be added onto a chart using the following code:
 
     // Set the text
     textAnnotation.text = @"Text can be Rotated";
- 
-    // Specify desired padding
-    textAnnotation.padding = SCIEdgeInsetsMake(20, 20, 20, 20);
-
-    // Specify a desired background color
-    textAnnotation.backgroundColor = [SCIColor whiteColor];
 
     // Specify a SCIFontStyle for the text
     textAnnotation.fontStyle = [[SCIFontStyle alloc] initWithFontSize:20 andTextColorCode:0xBBFC9C29];
@@ -83,12 +76,6 @@ A `SCITextAnnotation` can be added onto a chart using the following code:
     
     // Set the text
     textAnnotation.text = "Text can be Rotated"
-
-    // Specify desired padding
-    textAnnotation.padding = SCIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-
-    // Specify a desired background color
-    textAnnotation1.backgroundColor = SCIColor.white
 
     // Specify a SCIFontStyle for the text
     textAnnotation.fontStyle = = SCIFontStyle(fontSize: 20, andTextColorCode: 0xBBFC9C29)
