@@ -41,7 +41,8 @@ Besides the SCICursorModifier [specific features](#specific-features), there are
 | `SCICursorModifier.customPointOffset` | Specifies **how far** the hit-test point is **from** the actual **touch point**. As opposed to `offset`, both `X` and `Y` coordinate will always be applied.                              |
 | `SCICursorModifier.markerPlacement`   | Allows to specify the **position** of the hit-test point relative to the **touch point**, e.g. Left, Top, etc... Expects a member of the `SCIPlacement` enumeration.                      |
 | `SCICursorModifier.tooltipPosition`   | Allows to specify the **position** of modifier's Tooltips relative to the **hit-test point**, e.g. TopLeft, BottomRight, etc.... Expects a member of the `SCITooltipPosition` enumeration. |
-| `SCICursorModifier.crosshairPenStyle` | Allows to specify `SCIPenStyle` which will be used to draw cursor **crosshair** lines.
+| `SCICursorModifier.crosshairPenStyle` | Allows to specify `SCIPenStyle` which will be used to draw cursor **crosshair** lines.                                                                                                    |
+| `SCICursorModifier.displayTooltipOverAxis` | Allows to display the tooltip when drag over the Axis area. |
 
 ## Adding a SCICursorModifier to a Chart
 Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurface`](Chart Modifier APIs.html#adding-a-chart-modifier) via the `ISCIChartSurface.chartModifiers` property and `SCICursorModifier` with no difference:
