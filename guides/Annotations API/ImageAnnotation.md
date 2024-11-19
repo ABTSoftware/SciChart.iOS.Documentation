@@ -104,7 +104,7 @@ A simple `SCIImageAnnotation` can be added onto a chart using the following code
     self.surface.annotations.add(boxImageAnnotation)
 </div>
 
-## Create an ImageAnnotation using `[X1, Y1]` and Desier size
+## Create an ImageAnnotation using `[X1, Y1]` and Desired size
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
