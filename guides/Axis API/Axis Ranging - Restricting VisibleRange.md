@@ -199,6 +199,31 @@ In the code above, VisibleRange should show `no less than 10` data points as wel
     axis.MaximumZoomConstrain = new NSNumber(max).FromComparable();
 </div>
 
+### Specifying ZoomConstrains for SCIIndexDateAxis
+`SCIIndexDateAxis` has its specifics as well. It's VisibleRange is of `SCIDateRange` type, so the Zoom Constraints is designed to specify the difference between two dates in seconds. Setting Zoom Constraints on a SCIDateRange, you ensure that your `axis.visibleRange.diff` will never become less than the `ISCIAxisCore.minimalZoomConstrain` value and more than `ISCIAxisCore.maximumZoomConstrain`.
+
+> **_NOTE:_** For convenience, SciChart provides a bunch of helper methods in the `SCIDateIntervalUtil` class:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec">
+    SCIIndexDateAxis axis = [SCIIndexDateAxis new];
+    double min = [SCIDateIntervalUtil fromMonths:2];
+    double max = [SCIDateIntervalUtil fromMonths:10];
+    axis.minimalZoomConstrain = @(min);
+    axis.maximumZoomConstrain = @(max);
+</div>
+<div class="code-snippet" id="swift">
+    let axis = SCIIndexDateAxis()
+    let min = SCIDateIntervalUtil.fromMonths(2)
+    let max = SCIDateIntervalUtil.fromMonths(10)
+    axis.minimalZoomConstrain = NSNumber(value: min)
+    axis.maximumZoomConstrain = NSNumber(value: max)
+</div>
+
 In the code above, the VisibleRange will satisfy the  following equation: `2 months < VisibleRange < 10 month`
 
 ## See Also

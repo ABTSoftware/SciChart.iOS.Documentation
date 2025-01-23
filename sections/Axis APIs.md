@@ -7,6 +7,7 @@ A list of the axis types are found below:
 | [SCINumericAxis](#scinumericaxis)                       | Value Axis                 |
 | [SCILogarithmicNumericAxis](#scilogarithmicnumericaxis) | Value Axis                 |
 | [SCIDateAxis](#scidateaxis)                             | Value Axis                 |
+| [SCIIndexDateAxis](#sciindexdateaxis)                   | Value Axis                 |
 | [SCICategoryDateAxis](#scicategorydateaxis)             | Category Axis              |
 
 All the axis types in SciChart conforms to the `ISCIAxis` protocol.
@@ -137,6 +138,36 @@ To create and configure a `SCIDateAxis`, use the following code:
     };
 </div>
 
+## SCIIndexDateAxis
+The `SCIIndexDateAxis` is a **Value axis**, which is suitable for **X and Y Axis** and is designed to work with dates only. 
+> **_NOTE:_** The `SCIIndexDateAxis` is not suitable for *numeric data types*.
+
+To create and configure a `SCIIndexDateAxis`, use the following code:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec" >
+    SCIOhlcDataSeries *historicalData = [[SCIOhlcDataSeries alloc] initWithXType:SCIDataType_Date yType:SCIDataType_Double];
+    SCIDataSeriesIndexDataProvider *indexDataProvider = [[SCIDataSeriesIndexDataProvider alloc] initWithDataSeriesValues:historicalData];
+    
+    SCIIndexDateAxis *xAxis = [SCIIndexDateAxis new];
+    [xAxis setIndexDataProvider:indexDataProvider];
+    xAxis.visibleRange = [[SCIDateRange alloc] initWithMin:[dateData getValueAt:count - 30] max:[dateData getValueAt:count - 1]];
+    xAxis.growBy = [[SCIDoubleRange alloc] initWithMin:0.0 max:0.1];
+</div>
+<div class="code-snippet" id="swift">
+    let historicalData = SCIOhlcDataSeries(xType: .date, yType: .double)
+    let indexDataProvider = SCIDataSeriesIndexDataProvider(dataSeriesValues: historicalData)
+        
+    let xAxis = SCIIndexDateAxis()
+    xAxis.setIndexDataProvider(indexDataProvider)
+    xAxis.visibleRange = SCIDateRange(min: dateData.getValueAt(count - 30), max: dateData.getValueAt(count - 1))
+    xAxis.growBy = SCIDoubleRange(min: 0.0, max: 0.1)
+</div>
+
 ## SCICategoryDateAxis
 The `SCICategoryDateAxis` is a **Category axis** and is suitable for the **XAxis only**. It is designed to handle a special case when **data is discontinuous** or contains breaks at regular intervals. Unlike the other axis types, it works with with **data indices, not actual data values**.
 > **_NOTE:_** The `SCICategoryDateAxis` is not suitable for *YAxis* or *numeric data types*.
@@ -187,4 +218,5 @@ Please take a look at the examples from the iOS Examples Suite listed below to s
 - [Column Chart](https://www.scichart.com/example/ios-column-chart-demo/) with `SCINumericAxis`
 - [Logarithmic Axis](https://www.scichart.com/example/ios-chart-example-logarithmic-axis/) with `SCILogarithmicNumericAxis`
 - [Fan Chart](https://www.scichart.com/example/ios-fan-chart/) with `SCIDateAxis`
+- [Easy Stock Chart with IndexDateAxis](https://www.scichart.com/example/ios-easy-stock-chart-with-indexDateAxis/) with `SCIDateAxis` 
 - [Candlestick Chart](https://www.scichart.com/example/ios-candlestick-chart-demo/) with `SCICategoryDateAxis`
