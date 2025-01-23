@@ -107,6 +107,35 @@ You can find simple examples how to do the conversions below.
     var dataValue = xAxis.GetDataValue(coordinate).ToComparable();
 </div>
 
+**SCIIndexDateAxis conversions**
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec">
+    NSDate *date = [NSDate dateWithYear:2011 month:5 day:1];
+    float coordinate = [xAxis getCoordinateFrom:date];
+    
+    // Convert back:
+    NSDate *dataValue = [xAxis getDataValueFrom:coordinate];
+</div>
+<div class="code-snippet" id="swift">
+    let date = NSDate(year: 2011, month: 5, day: 1)
+    let coordinate = xAxis.getCoordinate(date)
+    
+    // Convert back:
+    let dataValue = xAxis.getDataValue(coordinate)
+</div>
+<div class="code-snippet" id="cs">
+    var date = new DateTime(2011, 5, 1);
+    var coordinate = xAxis.GetCoordinate(date.FromComparable());
+
+    // Convert back:
+    var dataValue = xAxis.GetDataValue(coordinate).ToComparable();
+</div>
+
 ## Getting a CoordinateCalculator instance
 There is a `ISCIAxisCore.currentCoordinateCalculator` property, which is `readonly`, and which provides a coordinate calculator instance which is valid for the current render pass.
 
@@ -124,6 +153,7 @@ But in addition to the above, coordinate calculators API, provides methods, to p
 As you might guess, converting Pixels to Data-Coordinates and vise versa slightly differs for different axis types due to difference in underlying **data-types**. In particular the following ones:
 - [SCINumericAxis](#scinumericaxis-conversions)
 - [SCIDateAxis](#scidateaxis-conversions)
+- [SCIIndexDateAxis](#sciindexdateaxis-conversions)
 - [SCICategoryDateAxis](#scicategorydateaxis-conversions)
 
 Read on to get better understanding of such conversions.
@@ -163,6 +193,48 @@ The simplest case is the `SCINumericAxis`. `ISCICoordinateCalculator` for Numeri
 
 ### SCIDateAxis conversions
 Similarly to `SCINumericAxis` - the `SCIDateAxis` is quite simple with one difference - it's `ISCICoordinateCalculator` works with **double representation** of **Date**, which is **[timeIntervalSince1970](https://developer.apple.com/documentation/foundation/nsdate/1407504-timeintervalsince1970?language=objc)**. So let's take our [Mountain Line Chart](https://www.scichart.com/example/ios-mountain-chart-demo/) as an example, and try do some conversions. 
+
+>**_NOTE:_** Since the `ISCICoordinateCalculator` works with double representation of Date in `timeIntervalSince1970`, you will need to do all the needed conversions on your own. See the code below:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec">
+    id&lt;ISCICoordinateCalculator&gt; calculator = xAxis.currentCoordinateCalculator;
+    NSDate *date = [NSDate dateWithYear:2011 month:5 day:1];
+    float coordinate = [calculator getCoordinateFrom:date.timeIntervalSince1970];
+    
+    // Convert back:
+    double intervalSince1970 = [calculator getDataValueFrom:coordinate];
+    NSDate *dateValue = [NSDate dateWithTimeIntervalSince1970:intervalSince1970];
+</div>
+<div class="code-snippet" id="swift">
+    let calculator = xAxis.currentCoordinateCalculator!
+    
+    let date = NSDate(year: 2011, month: 5, day: 1)!
+    let coordinate = calculator.getCoordinate(date.timeIntervalSince1970)
+    
+    // Convert back:
+    let intervalSince1970 = calculator.getDataValue(coordinate)
+    let dateValue = Date(timeIntervalSince1970: intervalSince1970)
+</div>
+<div class="code-snippet" id="cs">
+    var calculator = xAxis.CurrentCoordinateCalculator;
+    var date = new DateTime(2011, 5, 1);
+    var coordinate = calculator.GetCoordinate(date.ToUnixTime());
+
+    // Convert back:
+    var intervalSince1970 = calculator.GetDataValue(coordinate);
+    var dateValue = NSDate.FromTimeIntervalSince1970(intervalSince1970).FromDate();
+</div>
+<center><sub><sup>VisibleRange = [2010-09-28, 2011-12-09], Data-Value = "2011-05-01", Pixel-Coordinate = 374.658417</sub></sup></center>
+
+>**_NOTE:_** The exact **data-values** and **coordinates** might differ depending on your **visibleRange, viewport** etc...
+
+### SCIIndexDateAxis conversions
+Similarly to `SCINumericAxis` - the `SCIIndexDateAxis` is quite simple with one difference - it's `ISCICoordinateCalculator` works with **double representation** of **Date**, which is **[timeIntervalSince1970](https://developer.apple.com/documentation/foundation/nsdate/1407504-timeintervalsince1970?language=objc)**. So let's take our [Mountain Line Chart](https://www.scichart.com/example/ios-mountain-chart-demo/) as an example, and try do some conversions. 
 
 >**_NOTE:_** Since the `ISCICoordinateCalculator` works with double representation of Date in `timeIntervalSince1970`, you will need to do all the needed conversions on your own. See the code below:
 
