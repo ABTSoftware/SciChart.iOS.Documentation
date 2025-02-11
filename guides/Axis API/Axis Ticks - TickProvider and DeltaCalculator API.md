@@ -85,6 +85,7 @@ By default each axis has a `ISCITickProvider` created and assigned to it. The ty
 | `SCINumericTickProvider`            | `SCINumericAxis`            |
 | `SCILogarithmicNumericTickProvider` | `SCILogarithmicNumericAxis` |
 | `SCIDateTickProvider`               | `SCIDateAxis`               |
+| `SCIIndexDateAxis`                  | `SCIIndexDateAxis`          |
 | `SCICategoryTickProvider`           | `SCICategoryDateAxis`       |
 
 To create a custom `SCITickProvider`, you need to inherit from the correct class, according to the [Axis Type](Axis APIs.html) you have, and override `-updateMinorTicks:andMajorTicks:` method which is called internally for every axis when it needs to recalculate major and minor ticks for drawing.
