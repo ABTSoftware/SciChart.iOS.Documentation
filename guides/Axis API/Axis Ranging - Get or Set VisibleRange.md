@@ -9,6 +9,7 @@ For more information about setting VisibleRange on particular Axis type - please
 - [SCINumericAxis](Axis APIs.html#scinumericaxis)
 - [SCILogarithmicNumericAxis](Axis APIs.html#scilogarithmicnumericaxis)
 - [SCIDateAxis](Axis APIs.html#scidateaxis)
+- [SCIIndexDateAxis](Axis APIs.html#sciindexdateaxis)
 - [SCICategoryDateAxis](Axis APIs.html#scicategorydateaxis)
 
 ## Adding Padding or Spacing with GrowBy

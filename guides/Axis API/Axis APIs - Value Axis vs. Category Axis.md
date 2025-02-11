@@ -26,6 +26,7 @@ SciChart features both Value-Axis and Category-Axis types.
 | [SCINumericAxis](#scinumericaxis)                       | Value Axis                 |
 | [SCILogarithmicNumericAxis](#scilogarithmicnumericaxis) | Value Axis                 |
 | [SCIDateAxis](#scidateaxis)                             | Value Axis                 |
+| [SCIIndexDateAxis](axis-apis---Index-Date-Axiss.html)   | Value Axis                 |
 | [SCICategoryDateAxis](#scicategorydateaxis)             | Category Axis              |
 
 For more information, refer to the [Axis APIs](Axis APIs.html) article.
