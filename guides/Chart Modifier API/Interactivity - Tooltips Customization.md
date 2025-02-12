@@ -35,14 +35,14 @@ Let's see the code below:
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
 </div>
 <div class="code-snippet" id="objectivec">
-    #import &lt;SciChart/SCISeriesTooltipBase+Protected.h&gt;
-    #import &lt;SciChart/SCISeriesInfoProviderBase+Protected.h&gt;
+    #import <SciChart/SCISeriesTooltipBase+Protected.h>
+    #import <SciChart/SCISeriesInfoProviderBase+Protected.h>
 
     @interface FirstCustomXySeriesTooltip : SCIXySeriesTooltip
     @end
     @implementation FirstCustomXySeriesTooltip
     - (void)internalUpdateWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo {
-        NSString *string = NSString.Empty;
+        NSString *string = NSString.empty;
         string = [string stringByAppendingFormat:@"X: %@\n", seriesInfo.formattedXValue.rawString];
         string = [string stringByAppendingFormat:@"Y: %@\n", seriesInfo.formattedYValue.rawString];
         if (seriesInfo.seriesName != nil) {
@@ -60,7 +60,7 @@ Let's see the code below:
     @interface FirstCustomRolloverSeriesInfoProvider : SCIDefaultXySeriesInfoProvider
     @end
     @implementation FirstCustomRolloverSeriesInfoProvider
-    - (id<&lt;SCISeriesTooltip&gt;)getSeriesTooltipInternalWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo modifierType:(Class)modifierType {
+    - (id<ISCISeriesTooltip>)getSeriesTooltipInternalWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo modifierType:(Class)modifierType {
         if (modifierType == SCIRolloverModifier.class) {
             return [[FirstCustomXySeriesTooltip alloc] initWithSeriesInfo:seriesInfo];
         } else {
@@ -78,10 +78,10 @@ Let's see the code below:
 
     private class FirstCustomSeriesInfoProvider: SCIDefaultXySeriesInfoProvider {
         class FirstCustomXySeriesTooltip: SCIXySeriesTooltip {
-            override func internalUpdate(with seriesInfo: SCIXySeriesInfo!) {
+            override func internalUpdate(with seriesInfo: SCIXySeriesInfo) {
                 var string = NSString.empty;
-                string += "X: \(seriesInfo.formattedXValue.rawString!)\n"
-                string += "Y: \(seriesInfo.formattedXValue.rawString!)\n"
+                string += "X: \(seriesInfo.formattedXValue.rawString)\n"
+                string += "Y: \(seriesInfo.formattedXValue.rawString)\n"
                 if let seriesName = seriesInfo.seriesName {
                     string += "\(seriesName)\n"
                 }
@@ -94,11 +94,11 @@ Let's see the code below:
             }
         }
         
-        override func getSeriesTooltipInternal(with seriesInfo: SCIXySeriesInfo!, modifierType: AnyClass!) -> ISCISeriesTooltip! {
+        override func getSeriesTooltipInternal(seriesInfo: SCIXySeriesInfo, modifierType: AnyClass) -> ISCISeriesTooltip {
             if (modifierType == SCIRolloverModifier.self) {
                 return FirstCustomXySeriesTooltip(seriesInfo: seriesInfo)
             } else {
-                return super.getSeriesTooltipInternal(with: seriesInfo, modifierType: modifierType)
+                return super.getSeriesTooltipInternal(seriesInfo: seriesInfo, modifierType: modifierType)
             }
         }
     }
