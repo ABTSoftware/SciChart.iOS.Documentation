@@ -35,8 +35,8 @@ Let's see the code below:
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
 </div>
 <div class="code-snippet" id="objectivec">
-    #import <SciChart/SCISeriesTooltipBase+Protected.h>
-    #import <SciChart/SCISeriesInfoProviderBase+Protected.h>
+    #import &lt;SciChart/SCISeriesTooltipBase+Protected.h&gt;
+    #import &lt;SciChart/SCISeriesInfoProviderBase+Protected.h&gt;
 
     @interface FirstCustomXySeriesTooltip : SCIXySeriesTooltip
     @end
