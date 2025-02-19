@@ -9,8 +9,10 @@ Annotation available out of the box in SciChart are listed below:
 - [SCIHorizontalLineAnnotation](horizontallineannotation.html)
 - [SCIVerticalLineAnnotation](verticallineannotation.html)
 - [SCITextAnnotation](textannotation.html)
+- [SCIImageAnnotation](imageannotation.html)
 - [SCIAxisLabelAnnotation](axislabelannotation.html)
 - [SCIAxisMarkerAnnotation](axismarkerannotation.html)
+- [SCIAxisMarkerCustomAnnotation](axismarkercustomannotation.html)
 - [SCICustomAnnotation](customannotation.html)
 
 ## Getting Started
