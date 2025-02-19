@@ -20,8 +20,10 @@ The annotations which are available out the box in SciChart are listed below:
 | [SCIHorizontalLineAnnotation](horizontallineannotation.html) | Draws a **horizontal line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                             |
 | [SCIVerticalLineAnnotation](verticallineannotation.html)     | Draws a **vertical line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                               |
 | [SCITextAnnotation](textannotation.html)                     | Allows to place a piece of **text** at specific `[X1, Y1]` coordinates on a chart.                                     |
+| [SCIImageAnnotation](imageannotation.html)                     | Allows to place a **image** at specific `[X1, Y1]` coordinates on a chart or use it as a background image for a chart.                                    |
 | [SCIAxisLabelAnnotation](axislabelannotation.html)           | Allows to place a piece of **text** at specific `X1` or  `Y1` coordinate on a chart **Axis**.                          |
-| [SCIAxisMarkerAnnotation](axismarkerannotation.html)         | Allows to place **markers** with custom text onto `X or Y axes`. By default, shows the axis **value at its location**. | 
+| [SCIAxisMarkerAnnotation](axismarkerannotation.html)         | Allows to place **markers** with custom text onto `X or Y axes`. By default, shows the axis **value at its location**. |
+| [SCIAxisMarkerCustomAnnotation](axismarkercustomannotation.html)         | Allows to place **markers** with custom `UIView` onto `X or Y axes`.                                 | 
 | [SCICustomAnnotation](customannotation.html)                 | Allows to place any `UIView` at a specific `[X1, Y1]` coordinates on a chart.                                          |
 
 > **_NOTE:_** To learn more about **Annotation API**, please read the [Common Annotations Features](#common-annotations-features) section. 

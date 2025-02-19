@@ -75,6 +75,8 @@ custom_categories:
       - Axis APIs - Convert Pixel to Data coordinates
       - Axis APIs - Programmatically Zoom, Scroll
       - Axis APIs - Value Axis vs. Category Axis
+      - Axis APIs - Index Date Axis
+      - Axis Thickness - Setting AxisThickness
       - Axis Layout - Central Axis
       - Axis Layout - Stack Axes Vertically or Horizontally
 
@@ -141,8 +143,10 @@ custom_categories:
       - HorizontalLineAnnotation
       - VerticalLineAnnotation
       - TextAnnotation
+      - ImageAnnotation
       - AxisLabelAnnotation
       - AxisMarkerAnnotation
+      - AxisMarkerCustomAnnotation
       - CustomAnnotation
 
   # - name: Advanced 2D chart Topics
@@ -667,8 +671,10 @@ custom_categories:
       - SCITextLabelContainer
       - SCITextAnnotationBase
       - SCITextAnnotation
+      - SCIImageAnnotation
       - SCIAxisLabelAnnotation
       - SCIAxisMarkerAnnotation
+      - SCIAxisMarkerCustomAnnotation
 
       - ISCIAnnotationDragListener
       - SCIAnnotationIsHiddenChangedListener
@@ -689,6 +695,7 @@ custom_categories:
       - SCICategoryDateAxis
       - ISCIDateAxis
       - SCIDateAxis
+      - SCIIndexDateAxis
 
       - ISCIAxisInfoUpdatable
       - ISCIAxisModifierSurface
