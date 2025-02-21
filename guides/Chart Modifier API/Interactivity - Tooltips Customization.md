@@ -42,7 +42,7 @@ Let's see the code below:
     @end
     @implementation FirstCustomXySeriesTooltip
     - (void)internalUpdateWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo {
-        NSString *string = NSString.Empty;
+        NSString *string = NSString.empty;
         string = [string stringByAppendingFormat:@"X: %@\n", seriesInfo.formattedXValue.rawString];
         string = [string stringByAppendingFormat:@"Y: %@\n", seriesInfo.formattedYValue.rawString];
         if (seriesInfo.seriesName != nil) {
@@ -60,7 +60,7 @@ Let's see the code below:
     @interface FirstCustomRolloverSeriesInfoProvider : SCIDefaultXySeriesInfoProvider
     @end
     @implementation FirstCustomRolloverSeriesInfoProvider
-    - (id<&lt;SCISeriesTooltip&gt;)getSeriesTooltipInternalWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo modifierType:(Class)modifierType {
+    - (id<ISCISeriesTooltip>)getSeriesTooltipInternalWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo modifierType:(Class)modifierType {
         if (modifierType == SCIRolloverModifier.class) {
             return [[FirstCustomXySeriesTooltip alloc] initWithSeriesInfo:seriesInfo];
         } else {
@@ -78,10 +78,10 @@ Let's see the code below:
 
     private class FirstCustomSeriesInfoProvider: SCIDefaultXySeriesInfoProvider {
         class FirstCustomXySeriesTooltip: SCIXySeriesTooltip {
-            override func internalUpdate(with seriesInfo: SCIXySeriesInfo!) {
+            override func internalUpdate(with seriesInfo: SCIXySeriesInfo) {
                 var string = NSString.empty;
-                string += "X: \(seriesInfo.formattedXValue.rawString!)\n"
-                string += "Y: \(seriesInfo.formattedXValue.rawString!)\n"
+                string += "X: \(seriesInfo.formattedXValue.rawString)\n"
+                string += "Y: \(seriesInfo.formattedXValue.rawString)\n"
                 if let seriesName = seriesInfo.seriesName {
                     string += "\(seriesName)\n"
                 }
@@ -94,11 +94,11 @@ Let's see the code below:
             }
         }
         
-        override func getSeriesTooltipInternal(with seriesInfo: SCIXySeriesInfo!, modifierType: AnyClass!) -> ISCISeriesTooltip! {
+        override func getSeriesTooltipInternal(seriesInfo: SCIXySeriesInfo, modifierType: AnyClass) -> ISCISeriesTooltip {
             if (modifierType == SCIRolloverModifier.self) {
                 return FirstCustomXySeriesTooltip(seriesInfo: seriesInfo)
             } else {
-                return super.getSeriesTooltipInternal(with: seriesInfo, modifierType: modifierType)
+                return super.getSeriesTooltipInternal(seriesInfo: seriesInfo, modifierType: modifierType)
             }
         }
     }
