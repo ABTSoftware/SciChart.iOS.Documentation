@@ -123,4 +123,4 @@ To Create **Error Bars** Series, use the following code:
 </div>
 
 ## Render a Gap in a ErrorBars Series
-It's possible to render a Gap in **ErrorBars series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details.
+It's possible to render a Gap in **ErrorBars series**, by passing a data point with a `NaN` as the `Y` value. Please refer to the [RenderableSeries APIs](2D Chart Types.html#adding-a-gap-onto-a-renderableseries) article for more details.
