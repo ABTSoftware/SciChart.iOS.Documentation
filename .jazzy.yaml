@@ -127,6 +127,7 @@ custom_categories:
       - Zoom and Pan - SCIZoomPanModifier
       - Zoom and Pan - SCIXAxisDragModifier
       - Zoom and Pan - SCIYAxisDragModifier
+      - ChartOverview
       - Interactivity - SCITooltipModifier
       - Interactivity - SCIRolloverModifier
       - Interactivity - SCICursorModifier
@@ -562,6 +563,8 @@ custom_categories:
       - SCILayoutableView
       - SCILayoutableViewContainer
       - SCIViewContainer
+      - SCIChartOverview
+      - SCIOverviewAnnotationDragListener
 
       # Chart Surface
       - ISCIChartController
