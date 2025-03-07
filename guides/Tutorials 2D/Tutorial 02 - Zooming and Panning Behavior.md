@@ -16,7 +16,7 @@ First of all, make sure, you've read the [Tutorial 01 - Create a simple Chart 2D
 Now, let's extend previous tutorial with some [Chart Modifiers](Chart Modifier APIs.html)
 
 ## ChartModifiers
-In SciChart, chart interactions are defined by the [Chart Modifiers](Chart Modifiers APIs.html).
+In SciChart, chart interactions are defined by the [Chart Modifiers](Chart Modifier APIs.html).
 In addition to the SciChart modifiers available out of the box, you can write [custom modifiers](custom-modifiers---the-scichartmodifierbase-api.html) or extends existing ones.
 
 Here is the list of modifiers available out of the box in SciChart:
