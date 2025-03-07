@@ -86,8 +86,6 @@ From there - you might want to override one of the following (or both):
 - `-getSeriesInfoInternal` - allows to provide custom implementation of `SCISeriesInfo3D`, which simply contains information about a **RenderableSeries** and should be created based on it
 - `-getSeriesTooltipInternalWithSeriesInfo:modifierType:` - allows to provide **custom tooltip** for your series, based on `seriesInfo` and `modifierType`
 
-> **_NOTE:_** For more information about **SCISeriesInfo3D**, its types and place inside SciChart, you can read corresponding article from 2D Documentation - [SCISeriesInfo – Models for Tooltips and Legends](sciseriesinfo---models-for-tooltips-and-legends.html).
-
 ##### Customization SCITooltipModifier3D Example
 First thing, we will need to create custom `ISCISeriesTooltip3D` and implement `-internalUpdate:` method in which we update tooltip instance based on passed in `SCISeriesInfo3D` instance. 
 Then, in custom `ISCISeriesInfo3DProvider` we override `-getSeriesTooltipInternalWithSeriesInfo:modifierType` and provide our custom tooltip there.
