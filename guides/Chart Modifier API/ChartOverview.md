@@ -10,7 +10,7 @@ Benefits of the SCIChartOverview:
 ## Adding SCIChartOverview via the .storyboard
 Add UIView onto the ViewController and set it’s class to the `SCIChartOverview`. Then add an IBOutlet for your SCIChartSurface in your ViewController code to be able to manipulate with it later on.
 
-![SCIChartOverview storyboard](img/modifiers-2d/overviewChart-storyboard.png)
+![SCIChartOverview storyboard](img/modifiers-2d/overview-chart-storyboard.png)
 
 ## Adding SCIChartOverview purely from code
 In your ViewController you will need to import `SciChart` and instantiate the `SCIChartOverview`. See the code below:
@@ -65,34 +65,34 @@ In your ViewController you will need to import `SciChart` and instantiate the `S
 </div>
 <div class="code-snippet" id="objectivec">
 
-    __weak typeof(self) wSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [wSelf.overviewChart createOverviewChartForParentSurface:wSelf.mainSurface];
-    });
+    [self.overviewChart createOverviewChartForParentSurface:self.surface];
+
 </div>
 <div class="code-snippet" id="swift">
 
-    DispatchQueue.main.async { [weak self] in
-            guard let surface = self?.surface else {return}
-            self?.overviewChart.createOverviewChart(forParentSurface: surface)
-        }
+    self.overviewChart.createOverviewChart(forParentSurface: self.surface)
+
 </div>
 
 ## Adding Zoom / Pan Modifiers to demonstrate the overview
 Dragging or resizing the selection area on the overview will automatically update the visible range of the main chart, and zooming/panning the main chart will update the selection on the overview.
 
 To demonstrate this, let's add some zoom / pan modifiers to the chart.
-  <div class="code-snippet-tabs">
+<div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
 </div>
 <div class="code-snippet" id="objectivec">
+
 ...
-    [self.mainSurface.chartModifiers addAll:[SCIZoomPanModifier new], [SCIPinchZoomModifier new], [SCIZoomExtentsModifier new], nil];
+    [self.surface.chartModifiers addAll:[SCIZoomPanModifier new], [SCIPinchZoomModifier new], [SCIZoomExtentsModifier new], nil];
+
 </div>
 <div class="code-snippet" id="swift">
+
 ...
-   surface.chartModifiers.add(items: SCIZoomPanModifier(), SCIPinchZoomModifier(), SCIZoomExtentsModifier())
+   self.surface.chartModifiers.add(items: SCIZoomPanModifier(), SCIPinchZoomModifier(), SCIZoomExtentsModifier())
+
 </div>
 
 ## Customizing the Selection and Range Annotations
@@ -103,20 +103,17 @@ SciChart Overview also allows you to specify a custom view for the selection con
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
 </div>
 <div class="code-snippet" id="objectivec">
+
 ...
-    __weak typeof(self) wSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [wSelf.overviewChart createOverviewChartForParentSurface:wSelf.mainSurface gripView:customView options:[SCIOverviewOptions new]];
-        wSelf.overviewChart.fillBrush = [[SCISolidBrushStyle alloc] initWithColorCode:0x33A4EBC6];
-    });
+[self.overviewChart createOverviewChartForParentSurface:self.surface gripView:customView options:[SCIOverviewOptions new]];
+self.overviewChart.fillBrush = [[SCISolidBrushStyle alloc] initWithColorCode:0x33A4EBC6];
+
 </div>
 <div class="code-snippet" id="swift">
 ...
-   DispatchQueue.main.async { [weak self] in
-            guard let surface = self?.mainSurface else {return}
-            self?.overviewChart.createOverviewChart(forParentSurface: surface, grip: customView ?? UIView(), options: SCIOverviewOptions())
-            self?.overviewChart.fillBrush = SCISolidBrushStyle(color: 0x33A4EBC6)
-        }
+self.overviewChart.createOverviewChart(forParentSurface: self.surface, grip: customView, options: SCIOverviewOptions())
+self.overviewChart.fillBrush = SCISolidBrushStyle(color: 0x33A4EBC6)
+
 </div>
 
 ## Optional Parameters for creating SciChartOverview
@@ -131,44 +128,58 @@ Another important parameter is SCIOverviewOptions.renderableSeries, which is use
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
 </div>
 <div class="code-snippet" id="objectivec">
+
 ...
-    __weak typeof(self) wSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-       
-        SCIFastMountainRenderableSeries *rSeries = [SCIFastMountainRenderableSeries new];
-        rSeries.dataSeries = self->_ohlcDataSeries;
+    SCIOverviewOptions *options = [SCIOverviewOptions new];
         
-        SCIOverviewOptions *options = [SCIOverviewOptions new];
-        options.renderableSeries = rSeries;
-        options.xAxisId = @"axis";
-        options.yAxisId = @"axis";
-        [wSelf.overviewChart createOverviewChartForParentSurface:wSelf.mainSurface gripView:customView options:options];
+    NSMutableArray *filteredSeries = [NSMutableArray new];
+    for (id<ISCIRenderableSeries> series in self.surface.renderableSeries) {
+        if ([series isKindOfClass:[SCIFastCandlestickRenderableSeries class]])
+        {
+            SCIFastMountainRenderableSeries *rSeries = [SCIFastMountainRenderableSeries new];
+            rSeries.xAxisId = @"axis";
+            rSeries.yAxisId = @"axis";
+            rSeries.dataSeries = series.dataSeries;
+            [filteredSeries addObject:rSeries];
+        }
+    }
         
-        wSelf.overviewChart.fillBrush = [[SCISolidBrushStyle alloc] initWithColorCode:0x33A4EBC6];
-        wSelf.overviewChart.theme = wSelf.mainSurface.theme;
-    });
+    options.renderableSeries = filteredSeries;
+    options.xAxisId = @"axis";
+    options.yAxisId = @"axis";
+    [self.overviewChart createOverviewChartForParentSurface:self.surface options:options];   
+
 </div>
 <div class="code-snippet" id="swift">
+
 ...
-   DispatchQueue.main.async { [weak self] in
-            guard let surface = self?.mainSurface else {return}
+    let options = SCIOverviewOptions()
             
-            let rSeries = SCIFastMountainRenderableSeries()
-            rSeries.dataSeries = self?._ohlcDataSeries
-            
-            let options = SCIOverviewOptions()
-            let renderableSeries = rSeries
-            options.renderableSeries = renderableSeries
-            options.xAxisId = "axis"
-            options.yAxisId = "axis"
-            
-            self?.overviewChart.createOverviewChart(forParentSurface: surface, grip: customView ?? UIView(), options: options)
-            self?.overviewChart.fillBrush = SCISolidBrushStyle(color: 0x33A4EBC6)
-            self?.overviewChart.theme = surface.theme
+    var filteredSeries: [ISCIRenderableSeries]
+    filteredSeries = self.surface.renderableSeries.toArray().filter({ series in
+        if series.isKind(of: SCIFastCandlestickRenderableSeries.self) {
+            return true
         }
+            return false
+    }).map { series in
+        if series.isKind(of: SCIFastCandlestickRenderableSeries.self) {
+            let rSeries = SCIFastMountainRenderableSeries()
+            rSeries.dataSeries = series.dataSeries
+            rSeries.xAxisId = "axis"
+            rSeries.yAxisId = "axis"
+            return rSeries
+        }
+            return series
+    }
+            
+    options.renderableSeries = NSMutableArray(array: filteredSeries)
+    options.xAxisId = "axis"
+    options.yAxisId = "axis"
+    self.overviewChart.createOverviewChart(forParentSurface: self.surface, grip: customView, options: options)
+    
 </div>
 
-![Overview Optional Param](img/modifiers-2d/overviewChartOptionalParam.png)
+![Overview Optional Param](img/modifiers-2d/overview-chart-optional-param.png)
 
 ## Update the chart overview
 To refresh or replace the current chart overview, you can use the method `-[SCIChartOverview updateOverviewChartForParentSurface:series:]`. This method updates the existing overview by setting a new SCIChartSurface and associated renderable series.
@@ -178,4 +189,4 @@ If you also need to update the grip view in addition to the chart surface and se
 ## Using the SciChartOverview in a Vertical Chart
 To create a vertical chart, set the axis alignment as follows: align the xAxis to the left and the yAxis to the bottom of the chart. Additionally, you may need to adjust the positioning of the overview container view to fit your specific layout requirements. These adjustments will convert the chart into a vertical orientation, enabling the overview to be resizable and movable in the vertical direction.
 
-![Overview Vertical Chart](img/modifiers-2d/overviewVerticalChart.png)
+![Overview Vertical Chart](img/modifiers-2d/overview-vertical-chart.png)
