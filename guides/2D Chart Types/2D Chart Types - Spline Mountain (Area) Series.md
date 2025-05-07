@@ -71,7 +71,7 @@ Spline Mountain Series also has some features similar to other series, such as:
 - [Draw Series with Different Colors](#paint-area-parts-with-different-colors).
 
 #### Render a Gap in a Spline Mountain Series
-It's possible to render a Gap in **Spline Mountain series**, by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](renderableseries-apis.html#adding-a-gap-onto-a-renderableseries) article for more details. The `SCISplineMountainRenderableSeries`, itself, allows to specify how a gap would appear. You can treat `NAN` values as a **gap** or a **close the line**. That appearance is defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
+It's possible to render a Gap in **Spline Mountain series**, by passing a data point with a `NaN` as the Y value. Please refer to the [RenderableSeries APIs](https://www.scichart.com/documentation/ios/current/dataseries-apis.html) article for more details. The `SCISplineMountainRenderableSeries`, itself, allows to specify how a gap would appear. You can treat `NAN` values as a **gap** or a **close the line**. That appearance is defined by the `SCIRenderableSeriesBase.drawNaNAs` property (Please see `SCILineDrawMode` enumeration).
 
 > **_NOTE:_** Please note, even though Gaps via NaN values in spline series is supported, ClosedGaps feature, which is available in [regular (non-spline)](2d-chart-types---mountain-area-series.html) series, aren't supported with splines.
 
