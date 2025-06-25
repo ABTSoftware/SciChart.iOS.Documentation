@@ -116,6 +116,16 @@ self.overviewChart.fillBrush = SCISolidBrushStyle(color: 0x33A4EBC6)
 
 </div>
 
+### Grip Helpers in custom selection controls
+
+The SCIOverview displays grip helpers for the custom selection control when the left and right selection controls in the range selection view are too close together to be easily manipulated.
+
+You can control the visibility of these grip helpers using the `shouldShowGripHelper` property.
+
+- Set `shouldShowGripHelper` to **true** to enable grip helpers when the controls are close.
+- Set it to **false** to disable grip helpers entirely, regardless of control proximity.
+The default value is true.
+
 ## Optional Parameters for creating SciChartOverview
 `-[SCIOverviewChart createOverviewChartForParentSurface:options:]` method accepts optional params object described in `SCIOverviewOptions`. These params allow to specify axis ids and renderanle series which should be used for binding overview chart.
 
