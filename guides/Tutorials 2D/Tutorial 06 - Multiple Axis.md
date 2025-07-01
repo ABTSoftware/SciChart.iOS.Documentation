@@ -1,16 +1,19 @@
 # SciChart iOS Tutorial - Multiple Axis
+
 So far, in our series of tutorials, all the charts have had one `X-Axis` and one `Y-Axis`.
 
 SciChart supports unlimited, multiple X, and Y Axis on the left, right, bottom and top of the chart.
 You can change Axis alignment, **rotate charts**, **mix axis** (have both XAxis/YAxis on the left), horizontally or vertically **stack axes**.
-The possibilities are literally ***endless***!
+The possibilities are literally **_endless_**!
 
 In this tutorial, we are going to:
+
 - add a second `Y-Axis` to the chart.
 - show how to register annotations and line series on **the second axis**.
 - ensure Axis **drag behaviors** work on both axis.
 
 ## Getting Started
+
 This tutorial is suitable for **Objective-C**, **Swift** and **C#** with Xamarin.iOS.
 
 > **_NOTE:_** Source code for this tutorial can be found at our Github Repository:
@@ -19,6 +22,7 @@ This tutorial is suitable for **Objective-C**, **Swift** and **C#** with Xamarin
 > - [Xamarin](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-xamarin/tutorials-2d/tutorial-06)
 
 First of all, make sure, you've went through the previous the tutorials:
+
 - [Tutorial 01 - Create a simple Chart 2D](tutorial-01---create-a-simple-2d-chart.html)
 - [Tutorial 05 - Annotations](tutorial-05---annotations.html)
 
@@ -27,10 +31,12 @@ And have at least basic understanding of how to use SciChart.
 Also, you might want to read our documentation about [Axis APIs](Axis APIs.html).
 
 ## Adding a Second Y-Axis
+
 The procedure to add a second axis to a `SCIChartSurface` is pretty much the same as with one axis with one difference.
 You must assign a **unique string ID** to all axes if there is more than one.
 
 To see the axis to appear to the either side of a chart, you set `SCIAxisAlignment` to e.g.:
+
 - `SCIAxisAlignment.SCIAxisAlignment_Left`
 - `SCIAxisAlignment.SCIAxisAlignment_Right`
 - etc...
@@ -95,6 +101,7 @@ To have a different scale on the secondary axis, we are going to **enlarge** its
     Surface.XAxes.Add(new SCINumericAxis());
     Surface.YAxes.Add(yAxisLeft);
     Surface.YAxes.Add(yAxisRight);
+
 </div>
 
 Now we can see the second axis in our application:
@@ -104,7 +111,8 @@ Now we can see the second axis in our application:
 > **_NOTE:_** **Annotations** and **RenderableSeries** don't get rendered now
 
 ## Registering RenderableSeries on the Second Y-Axis
-If there are ***several Y or X axes***, you need to register other chart parts, like **RenderableSeries** and **Annotations**, on a particular axis to be measured against its scale.
+
+If there are **_several Y or X axes_**, you need to register other chart parts, like **RenderableSeries** and **Annotations**, on a particular axis to be measured against its scale.
 
 From the tutorial, we are going to attach one series to the right axis and the other to the left axis, passing corresponding IDs to the **RenderableSeries**:
 
@@ -119,6 +127,7 @@ From the tutorial, we are going to attach one series to the right axis and the o
 
     SCIXyScatterRenderableSeries *scatterSeries = [SCIXyScatterRenderableSeries new];
     scatterSeries.yAxisId = @"Secondary Y-Axis";
+
 </div>
 <div class="code-snippet" id="swift">
     let lineSeries = SCIFastLineRenderableSeries()
@@ -126,6 +135,7 @@ From the tutorial, we are going to attach one series to the right axis and the o
 
     let scatterSeries = SCIXyScatterRenderableSeries()
     scatterSeries.yAxisId = "Secondary Y-Axis"
+
 </div>
 <div class="code-snippet" id="cs">
     var lineSeries = new SCIFastLineRenderableSeries { DataSeries = lineDataSeries, YAxisId = "Primary Y-Axis" };
@@ -142,6 +152,7 @@ Which results in the following:
 <video autoplay loop muted playsinline src="img/tutorials-2d/tutorials-2d-two-axis-two-series.mp4"></video>
 
 ## Registering Annotations on the Second Y-Axis
+
 Annotations also need to be registered on a certain axis in a **multi-axis** scenario.
 So we are going to **alternate** the axis IDs to annotations in on our chart for the left or right axes in the following way:
 
@@ -183,17 +194,20 @@ If you now add `SCIYAxisDragModifier` you can see which series and annotation ar
 <video autoplay loop muted playsinline src="img/tutorials-2d/tutorials-2d-two-axis-annotations.mp4"></video>
 
 ## Where to Go From Here?
+
 You can download the final project from our GitHub Repository:
+
 - [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2006%20-%20Multiple%20Axis)
 - [Xamarin](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-xamarin/tutorials-2d/tutorial-06)
 
-Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - Linking Multiple Charts](tutorial-06---multiple-axis.html)
+Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - Linking Multiple Charts](tutorial-07---linking-multiple-charts.html)
 
 Of course, this is not the limit of what you can achieve with the SciChart iOS. You might want to read some of the following articles:
+
 - [Axis APIs](Axis APIs.html)
 - [Annotations API](Annotations APIs.html)
 - [2D Chart Types](2D Chart Types.html)
 - [Chart Modifiers](Chart Modifier APIs.html)
 
-Finally, start exploring. The SciChart iOS is quite extensive. 
+Finally, start exploring. The SciChart iOS is quite extensive.
 You can look into our [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) which are full of 2D and 3D examples, which are also available on our [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
