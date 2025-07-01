@@ -3,15 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9C3E08DE267B752800BFA973 /* SciChart in Frameworks */ = {isa = PBXBuildFile; productRef = 9C3E08DD267B752800BFA973 /* SciChart */; };
 		9CC2053D23833298001189FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2053C23833298001189FE /* AppDelegate.swift */; };
 		9CC2054123833298001189FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC2054023833298001189FE /* ViewController.swift */; };
 		9CC205462383329A001189FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CC205452383329A001189FE /* Assets.xcassets */; };
 		9CE66E44238C3F21005312A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CE66E43238C3F21005312A2 /* LaunchScreen.storyboard */; };
+		C22824EF2E13BD0F007D6480 /* SciChart in Frameworks */ = {isa = PBXBuildFile; productRef = C22824EE2E13BD0F007D6480 /* SciChart */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3E08DE267B752800BFA973 /* SciChart in Frameworks */,
+				C22824EF2E13BD0F007D6480 /* SciChart in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			);
 			name = "Tutorial 04 - Adding Realtime Updates";
 			packageProductDependencies = (
-				9C3E08DD267B752800BFA973 /* SciChart */,
+				C22824EE2E13BD0F007D6480 /* SciChart */,
 			);
 			productName = "Tutorial 04 - Adding Realtime Updates";
 			productReference = 9CC2053923833298001189FE /* Tutorial 04 - Adding Realtime Updates.app */;
@@ -111,7 +111,7 @@
 			);
 			mainGroup = 9CC2053023833298001189FE;
 			packageReferences = (
-				9C3E08DC267B752800BFA973 /* XCRemoteSwiftPackageReference "SciChart-SP" */,
+				C22824ED2E13BD0F007D6480 /* XCRemoteSwiftPackageReference "SciChart-SP" */,
 			);
 			productRefGroup = 9CC2053A23833298001189FE /* Products */;
 			projectDirPath = "";
@@ -323,20 +323,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9C3E08DC267B752800BFA973 /* XCRemoteSwiftPackageReference "SciChart-SP" */ = {
+		C22824ED2E13BD0F007D6480 /* XCRemoteSwiftPackageReference "SciChart-SP" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:ABTSoftware/SciChart-SP.git";
+			repositoryURL = "https://github.com/ABTSoftware/SciChart-SP";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
+				minimumVersion = 4.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9C3E08DD267B752800BFA973 /* SciChart */ = {
+		C22824EE2E13BD0F007D6480 /* SciChart */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9C3E08DC267B752800BFA973 /* XCRemoteSwiftPackageReference "SciChart-SP" */;
+			package = C22824ED2E13BD0F007D6480 /* XCRemoteSwiftPackageReference "SciChart-SP" */;
 			productName = SciChart;
 		};
 /* End XCSwiftPackageProductDependency section */

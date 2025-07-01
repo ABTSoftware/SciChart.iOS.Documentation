@@ -22,4 +22,7 @@
    <FileRef
       location = "group:Tutorial 07 - Linking Multiple Charts/Tutorial 07 - Linking Multiple Charts.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Tutorial 08 - Accessibility hooks/Tutorial 08 - Accessibility Hooks.xcodeproj">
+   </FileRef>
 </Workspace>
