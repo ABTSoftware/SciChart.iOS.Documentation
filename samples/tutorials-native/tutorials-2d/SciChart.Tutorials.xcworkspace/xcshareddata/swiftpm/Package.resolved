@@ -1,0 +1,15 @@
+{
+  "originHash" : "91a44d3fc24a977b1ff72baf4af5319d7a7a3e1b07484e276717eb7c7afa66a8",
+  "pins" : [
+    {
+      "identity" : "scichart-sp",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ABTSoftware/SciChart-SP",
+      "state" : {
+        "revision" : "b8eeeaff21b619077f4849a5ecde0b950b72ce89",
+        "version" : "4.6.0"
+      }
+    }
+  ],
+  "version" : 3
+}
