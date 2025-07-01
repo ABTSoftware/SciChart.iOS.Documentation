@@ -1,13 +1,54 @@
-# SciChart iOS Tutorial - Accessibility hooks
+# SciChart iOS Tutorial - Accessibility Hooks
+
 SciChart for iOS provides accessibility hooks to enhance usability for users relying on assistive technologies like VoiceOver. This guide shows how to enable and customize accessibility on a SCIChartSurface.
 
 #### Use-cases:
+
 - VoiceOver announces axis range when the visible range changes.
 - VoiceOver reads out the x/y values when a user selects a data point.
 - Tick labels respect Dynamic Type settings.
 - Themes adapt to system appearance (Dark/Light Mode).
 
+### Accessibility Support for Chart Surfaces
+
+you can enable and configure accessibility properties on the chart surface. This allows users to understand the purpose and data content of the chart through descriptive labels, hints, and value summaries.
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec">
+    // Enable accessibility on the chart surface
+    surface.isAccessibilityElement = YES;
+
+    // Provide a concise description of the chart
+    surface.accessibilityLabel = @"Sine Wave Line Chart";
+
+    // Offer a hint explaining what the chart shows
+    surface.accessibilityHint = @"Displays a sine wave with 1000 data points from X equals 0 to 10.";
+
+    // Add value details for additional context
+    surface.accessibilityValue = @"Y values range from negative one to one, with smooth curve transitions.";
+
+</div>
+<div class="code-snippet" id="swift">
+    // Enable accessibility on the chart surface
+    surface.isAccessibilityElement = true 
+
+    // Provide a concise description of the chart
+    surface.accessibilityLabel = "Sine Wave Line Chart"
+
+    // Offer a hint explaining what the chart shows
+    surface.accessibilityHint = "Displays a sine wave with 1000 data points from X equals 0 to 10."
+
+    // Add value details for additional context
+    surface.accessibilityValue = "Y values range from negative one to one, with smooth curve transitions."
+
+</div>
+
 ### Announcing Axis Range Changes
+
 When the user interacts with the chart and the visible range of an axis changes, a VoiceOver announcement is triggered.
 
 <div class="code-snippet-tabs">
@@ -32,6 +73,7 @@ When the user interacts with the chart and the visible range of an axis changes,
 </div>
 
 ### Making Data Points Accessible
+
 Data points can be exposed to VoiceOver by creating UIAccessibilityElements and assigning them to the chart surface.
 
 <div class="code-snippet-tabs">
@@ -97,11 +139,60 @@ Data points can be exposed to VoiceOver by creating UIAccessibilityElements and 
             }
 
             surface.renderSurface.view.accessibilityElements = accessibilityElements
-        } 
+        }
+
+</div>
+
+### Custom Actions
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'cs')">XAMARIN</button>
+</div>
+<div class="code-snippet" id="objectivec">
+- (void)viewDidLoad {
+    ...
+    UIAccessibilityCustomAction *zoomExtentsAction = [[UIAccessibilityCustomAction alloc]
+        initWithName:@"Zoom to Extents"
+              target:self
+            selector:@selector(zoomExtentsCustomAction)];
+
+    self.accessibilityCustomActions = @[zoomExtentsAction];
+
+}
+
+- (BOOL)zoomExtentsCustomAction {
+[self.surface zoomExtents];
+return YES;
+}
+</div>
+<div class="code-snippet" id="swift">
+       override var accessibilityCustomActions: [UIAccessibilityCustomAction]? {
+            get {
+                return [
+                    UIAccessibilityCustomAction(
+                        name: "Zoom to Extents",
+                        target: self,
+                        selector: #selector(zoomExtentsCustomAction)
+                    )
+                ]
+            }
+            set {
+                super.accessibilityCustomActions = newValue
+            }
+        }
+    
+    @objc func zoomExtentsCustomAction() -> Bool {
+        surface.zoomExtents()
+        return true
+    }
 </div>
 
 ### Supporting Dynamic Type
+
 Tick label fonts scale automatically with system text size preferences.
+
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
@@ -118,56 +209,58 @@ Tick label fonts scale automatically with system text size preferences.
 }
 
 - (void)handleContentSizeCategoryChange {
-    id<ISCIAxis> primaryXAxis = self.surface.xAxes.primaryAxis;
-    if (primaryXAxis) {
-        primaryXAxis.tickLabelStyle = [self scaledFontStyleFor:primaryXAxis.tickLabelStyle];
-    }
-    id<ISCIAxis> primaryYAxis = self.surface.yAxes.primaryAxis;
-    if (primaryYAxis) {
-        primaryYAxis.tickLabelStyle = [self scaledFontStyleFor:primaryYAxis.tickLabelStyle];
-    }
-}
+  id<ISCIAxis> primaryXAxis = self.surface.xAxes.primaryAxis;
+  if (primaryXAxis) {
+  primaryXAxis.tickLabelStyle = [self scaledFontStyleFor:primaryXAxis.tickLabelStyle];
+  }
+  id<ISCIAxis> primaryYAxis = self.surface.yAxes.primaryAxis;
+  if (primaryYAxis) {
+  primaryYAxis.tickLabelStyle = [self scaledFontStyleFor:primaryYAxis.tickLabelStyle];
+  }
+  }
 
-- (SCIFontStyle *)scaledFontStyleFor:(SCIFontStyle *)fontStyle {
-    UIFontDescriptor *fontDescriptor = fontStyle.fontDescriptor;
-    UIFontMetrics *fontMetrics = [UIFontMetrics metricsForTextStyle:UIFontTextStyleBody];
-    UIFont *scaledFont = [fontMetrics scaledFontForFont:[UIFont fontWithDescriptor:fontDescriptor size:fontDescriptor.pointSize]];
+- (SCIFontStyle _)scaledFontStyleFor:(SCIFontStyle _)fontStyle {
+  UIFontDescriptor *fontDescriptor = fontStyle.fontDescriptor;
+  UIFontMetrics *fontMetrics = [UIFontMetrics metricsForTextStyle:UIFontTextStyleBody];
+  UIFont \*scaledFont = [fontMetrics scaledFontForFont:[UIFont fontWithDescriptor:fontDescriptor size:fontDescriptor.pointSize]];
 
-    return [[SCIFontStyle alloc] initWithFontDescriptor:scaledFont.fontDescriptor andTextColor:fontStyle.color];
-}
-</div>
-<div class="code-snippet" id="swift">
-    override func viewDidLoad() {
-    ...
-    NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleContentSizeCategoryChange),
-            name: UIContentSizeCategory.didChangeNotification,
-            object: nil
-        )
-    }
+      return [[SCIFontStyle alloc] initWithFontDescriptor:scaledFont.fontDescriptor andTextColor:fontStyle.color];
 
-        @objc func handleContentSizeCategoryChange() {
-        // Update fonts if necessary
-        if let primaryXAxis = surface.xAxes.primaryAxis {
-            primaryXAxis.tickLabelStyle = scaledFontStyle(for: primaryXAxis.tickLabelStyle)
-        }
-        if let primaryYAxis = surface.yAxes.primaryAxis {
-            primaryYAxis.tickLabelStyle = scaledFontStyle(for: primaryYAxis.tickLabelStyle)
-        }
-    }
+  }
+  </div>
+  <div class="code-snippet" id="swift">
+      override func viewDidLoad() {
+      ...
+      NotificationCenter.default.addObserver(
+              self,
+              selector: #selector(handleContentSizeCategoryChange),
+              name: UIContentSizeCategory.didChangeNotification,
+              object: nil
+          )
+      }
 
-    func scaledFontStyle(for fontStyle: SCIFontStyle) -> SCIFontStyle {
-        let fontDescriptor = fontStyle.fontDescriptor
-        let fontMetrics = UIFontMetrics(forTextStyle: UIFont.TextStyle.body)
-        let font = fontMetrics.scaledFont(for: UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize))
-        
-        return SCIFontStyle(fontDescriptor: font.fontDescriptor, andTextColor: fontStyle.color)
-    }
+          @objc func handleContentSizeCategoryChange() {
+          // Update fonts if necessary
+          if let primaryXAxis = surface.xAxes.primaryAxis {
+              primaryXAxis.tickLabelStyle = scaledFontStyle(for: primaryXAxis.tickLabelStyle)
+          }
+          if let primaryYAxis = surface.yAxes.primaryAxis {
+              primaryYAxis.tickLabelStyle = scaledFontStyle(for: primaryYAxis.tickLabelStyle)
+          }
+      }
+
+      func scaledFontStyle(for fontStyle: SCIFontStyle) -> SCIFontStyle {
+          let fontDescriptor = fontStyle.fontDescriptor
+          let fontMetrics = UIFontMetrics(forTextStyle: UIFont.TextStyle.body)
+          let font = fontMetrics.scaledFont(for: UIFont(descriptor: fontDescriptor, size: fontDescriptor.pointSize))
+
+          return SCIFontStyle(fontDescriptor: font.fontDescriptor, andTextColor: fontStyle.color)
+      }
 
 </div>
 
 ### Adapting to System Theme (Dark/Light Mode)
+
 Change chart theme based on system appearance:
 
 <div class="code-snippet-tabs">
@@ -198,3 +291,23 @@ Change chart theme based on system appearance:
         }
     }
 </div>
+
+## Where to Go From Here?
+
+You can download the final project from our GitHub Repository:
+
+- [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2008%20-%20Accessibility%20Hooks)
+
+Of course, this is not the limit of what you can achieve with the SciChart iOS. You might want to read some of the following articles:
+
+- [Axis APIs](Axis APIs.html)
+- [Annotations API](Annotations APIs.html)
+- [2D Chart Types](2D Chart Types.html)
+- [Chart Modifiers](Chart Modifier APIs.html)
+
+Finally, start exploring. The SciChart iOS is quite extensive.
+You can look into our [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) which are full of 2D and 3D examples, which are also available on our [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
+
+For instance - take a look at our **Sync Multi Chart** example, which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
+
+![Sync Multi Chart Example](img/tutorials-2d/tutorials-2d-sync-multi-chart-example.png)

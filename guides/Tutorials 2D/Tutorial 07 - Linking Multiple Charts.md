@@ -1,14 +1,17 @@
 # SciChart iOS Tutorial - Linking Multiple Charts
-In our ***series of tutorials***, up until now we have added a chart with two `Y-Axis`, one `X-Axis`, two series, added tooltips, legends and zooming, panning behavior, and added some annotations. All of that was with the only `SCIChartSurface`. 
+
+In our **_series of tutorials_**, up until now we have added a chart with two `Y-Axis`, one `X-Axis`, two series, added tooltips, legends and zooming, panning behavior, and added some annotations. All of that was with the only `SCIChartSurface`.
 
 In SciChart, there is **no restriction** on the number of `SCIChartSurface` you can have in an application.
 
 In the previous tutorial - [Multiple Axis](tutorial-06---multiple-axis.html) - we've manipulated one `SCIChartSurface` instance.
 In this tutorial you will learn how to:
+
 - add a **second** `SCIChartSurface` (or potentially unlimited surfaces).
 - **link** multiple **charts** and modifiers on them together
 
 ## Getting Started
+
 This tutorial is suitable for **Objective-C**, **Swift** and **C#** with Xamarin.iOS.
 
 > **_NOTE:_** Source code for this tutorial can be found at our Github Repository:
@@ -17,11 +20,13 @@ This tutorial is suitable for **Objective-C**, **Swift** and **C#** with Xamarin
 > - [Xamarin](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-xamarin/tutorials-2d/tutorial-07)
 
 First of all, make sure, you've went through the previous the tutorials, to have a better grasp of SciChart functionality, such as:
+
 - [Tutorial 01 - Create a simple Chart 2D](tutorial-01---create-a-simple-2d-chart.html)
 - [Tutorial 05 - Annotations](tutorial-05---annotations.html)
 - [Tutorial 06 - Multiple Axis](tutorial-06---multiple-axis.html)
 
 ## Adding a Second Chart
+
 Assuming, you've already know how to add one `SCIChartSurface`, it should be fairly easy to add second surface.
 Just repeat the same procedure to configure the second chart. We will leave off annotations and modifiers.
 Everything else will be the same.
@@ -49,6 +54,7 @@ The code below shows how to add two `SCIChartSurface` instance into one view:
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"|-(0)-[SciChart2]-(0)-|" options:0 metrics:nil views:layoutDictionary]];
         [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[SciChart1(SciChart2)]-(0)-[SciChart2(SciChart1)]-(0)-|" options:0 metrics:nil views:layoutDictionary]];
     }
+
 </div>
 <div class="code-snippet" id="swift">
     private let surface = SCIChartSurface()
@@ -85,6 +91,7 @@ The code below shows how to add two `SCIChartSurface` instance into one view:
         View.AddConstraints(NSLayoutConstraint.FromVisualFormat("|-(0)-[SciChart2]-(0)-|", 0, null, layoutDictionary));
         View.AddConstraints(NSLayoutConstraint.FromVisualFormat("V:|-(0)-[SciChart1(SciChart2)]-(0)-[SciChart2(SciChart1)]-(0)-|", 0, null, layoutDictionary));
     }
+
 </div>
 
 > **_NOTE:_** You might want to add your **Surfaces** from the `.storyboard` or `.xib` or whatever else. Constrains in visual format is just for the sake of simplicity.
@@ -119,6 +126,7 @@ Now, let's add Axes onto a Surfaces as we did before, the only difference - we e
     // ...
     [self setupAxesForSurface:_surface];
     [self setupAxesForSurface:_surface2];
+
 </div>
 <div class="code-snippet" id="swift">
     fileprivate func setupAxesFor(surface: SCIChartSurface) {
@@ -170,6 +178,7 @@ Now, let's add Axes onto a Surfaces as we did before, the only difference - we e
     // ...
     SetupAxesForSurface(Surface);
     SetupAxesForSurface(Surface2);
+
 </div>
 
 At this stage, you should have something similar to the shown below:
@@ -177,6 +186,7 @@ At this stage, you should have something similar to the shown below:
 ![Multi Chart Empty](img/tutorials-2d/tutorials-2d-multi-chart-empty.png)
 
 ## Adding a Series to the Second Chart
+
 Now we are ready to add a [RenderableSeries](2D Chart Types.html) to the second chart.
 To try something new, let's add a [Mountain Series](2d-chart-types---mountain-area-series.html)
 
@@ -232,9 +242,11 @@ Now you should see something like this:
 ![Multi Chart](img/tutorials-2d/tutorials-2d-multi-chart.mp4"></video>
 
 ## Synchronizing Multiple Charts
+
 In SciChart, you can synchronize **VisibleRanges**, chart **Sizes**, Modifiers, tooltips and more!
 
 #### Synchronizing VisibleRanges on Axes
+
 To make both charts show the same **VisibleRanges** on both axes, you **share** the same `ISCIRange` instance across the axes.
 
 In this particular case, there is no need to do that because both charts use the same data. But if it was different, we would need to **synchronize** VisibleRanges like this:
@@ -255,6 +267,7 @@ In this particular case, there is no need to do that because both charts use the
     // Create another X axis and apply sharedXRange
     SCINumericAxis *xAxis2 = SCINumericAxis()
     xAxis2.visibleRange = sharedXRange;
+
 </div>
 <div class="code-snippet" id="swift">
     // Create an ISCIRange instance that will be shared across multiple charts
@@ -267,6 +280,7 @@ In this particular case, there is no need to do that because both charts use the
     // Create another X axis and apply sharedXRange
     let xAxis2 = SCINumericAxis()
     xAxis2.visibleRange = sharedXRange
+
 </div>
 <div class="code-snippet" id="cs">
     // Create an ISCIRange instance that will be shared across multiple charts
@@ -279,9 +293,11 @@ In this particular case, there is no need to do that because both charts use the
     // Create another X axis and apply sharedXRange
     var xAxis2 = new SCINumericAxis();
     xAxis2.VisibleRange = sharedXRange;
+
 </div>
 
 #### Synchronizing Chart Widths
+
 Imagine a situation when you have a two charts with Y axes on opposite sides, or values on your Y-Axes differs, and width of them are different.
 It will cause one of the chart areas stick out. There is a helper class called `SCIChartVerticalGroup` which is used in situations like this.
 It's just line charts up. See the code below which showcases how to use it:
@@ -308,13 +324,14 @@ It's just line charts up. See the code below which showcases how to use it:
 </div>
 
 We used this technique in our **Multi-Pane Stock Chart** example, which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
-> 
+
 > - [Obj-C/Swift Example](https://www.scichart.com/example/ios-multi-pane-stock-chart/)
 > - [Xamarin Example](https://www.scichart.com/example/xamarin-chart/xamarin-chart-multi-pane-stock-charts-example/)
 
 ![Multi-Pane Stock Chart](img/tutorials-2d/tutorials-2d-multi-pane-stock-chart-example.png)
 
 #### Linking Cursor and Other Modifiers
+
 Next we are going to **link chart modifiers**.
 
 The first chart has an array of ChartModifiers set up to handle zooming, panning and tooltips.
@@ -335,6 +352,7 @@ To sync those modifier, you should add the modifiers through the `SCIModifierGro
     modifierGroup.eventGroup = @"SharedEventGroup";
     modifierGroup.receiveHandledEvents = YES;
     [modifierGroup.childModifiers addAll:[SCIZoomExtentsModifier new], [SCIPinchZoomModifier new], rolloverModifier, [SCIXAxisDragModifier new], [SCIYAxisDragModifier new], nil];
+
 </div>
 <div class="code-snippet" id="swift">
     let rolloverModifier = SCIRolloverModifier()
@@ -361,19 +379,20 @@ Run the application again. The Cursors and Tooltips are now **synchronized** acr
 <video autoplay loop muted playsinline src="img/tutorials-2d/tutorials-2d-multi-chart-sync.mp4"></video>
 
 ## Where to Go From Here?
+
 You can download the final project from our GitHub Repository:
+
 - [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2007%20-%20Linking%20Multiple%20Charts)
 - [Xamarin](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-xamarin/tutorials-2d/tutorial-07)
 
+Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - Accessibility Hooks](tutorial-08---laccessibility-hooks.html)
+
 Of course, this is not the limit of what you can achieve with the SciChart iOS. You might want to read some of the following articles:
+
 - [Axis APIs](Axis APIs.html)
 - [Annotations API](Annotations APIs.html)
 - [2D Chart Types](2D Chart Types.html)
 - [Chart Modifiers](Chart Modifier APIs.html)
 
-Finally, start exploring. The SciChart iOS is quite extensive. 
+Finally, start exploring. The SciChart iOS is quite extensive.
 You can look into our [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) which are full of 2D and 3D examples, which are also available on our [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
-
-For instance - take a look at our **Sync Multi Chart** example, which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
-
-![Sync Multi Chart Example](img/tutorials-2d/tutorials-2d-sync-multi-chart-example.png)
