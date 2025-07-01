@@ -46,6 +46,7 @@ custom_categories:
       - Tutorial 05 - Annotations
       - Tutorial 06 - Multiple Axis
       - Tutorial 07 - Linking Multiple Charts
+      - Tutorial 08 - Accessibility hooks
   - name: Tutorials 3D
     children:
       - 3D Tutorial 01 - Create a simple Scatter Chart 3D
@@ -53,9 +54,9 @@ custom_categories:
       - 3D Tutorial 03 - Cursors and Tooltips
       - 3D Tutorial 04 - Plotting Realtime Data
 
-# SciChart iOS 2D Charts
+  # SciChart iOS 2D Charts
   - name: Axis APIs
-    children: 
+    children:
       - Add an Axis to a SCIChartSurface
       - Axis Ranging - AutoRange
       - Axis Ranging - VisibleRange and DataRange
@@ -110,7 +111,7 @@ custom_categories:
       - Animations API
       - Animations API - Animate Appended Point
       - Animations API - Animate Updated Point
-      
+
   - name: Styling and Theming
     children:
       - SCIPenStyle, SCIBrushStyle and SCIFontStyle
@@ -119,7 +120,7 @@ custom_categories:
       - Modify built-in Themes
 
   - name: Chart Modifier APIs
-    children: 
+    children:
       - Custom Modifiers - the SCIChartModifierBase API
       - Custom Modifiers - the SCIGestureModifierBase API
       - Zoom and Pan - SCIZoomExtentsModifier
@@ -136,7 +137,7 @@ custom_categories:
       - Series Value Modifier
 
   - name: Annotations APIs
-    children: 
+    children:
       - BoxAnnotation
       - LineAnnotation
       - LineArrowAnnotation
@@ -150,10 +151,10 @@ custom_categories:
       - CustomAnnotation
 
   # - name: Advanced 2D chart Topics
-    # children: 
-      # - Placeholder
+  # children:
+  # - Placeholder
 
-# SciChart iOS 3D Charts
+  # SciChart iOS 3D Charts
   - name: Axis 3D APIs
     children:
       - SciChart 3D Basics - Coordinates in 3D Space
@@ -361,7 +362,7 @@ custom_categories:
       - SCIBezierCurveInterpolator
       - SCICosineInterpolationControlPointsProvider
       - SCIDefaultBezierControlPointsProvider
-      
+
       # Layout Managers
       - ISCIAxisLayoutChangeListener
       - ISCIAxisLayoutManager
@@ -466,7 +467,7 @@ custom_categories:
       - SCIAxisDragModifierBase
       - SCIXAxisDragModifier
       - SCIYAxisDragModifier
-      
+
       # Series Value Modifier
       - ISCISeriesValueMarker
       - ISCISeriesValueMarkerFactory
