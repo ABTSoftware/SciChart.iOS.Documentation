@@ -258,3 +258,155 @@ Axes tooltips for modifiers are customized the same way as **Series Tooltips** -
 </div>
 
 ![Custom Axis Tooltip](img/modifiers-2d/custom-axis-tooltip.png)
+
+### Reading Series Information with Tooltip Interactions
+
+To extract data point information when a tooltip is displayed or updated, implement a custom SeriesInfoProvider. This approach enables you to intercept tooltip updates and access formatted values such as X and Y, which can then be forwarded to your chart view, model or another handler.
+
+This approach allows you to:
+- Intercept updates when the tooltip is shown or refreshed.
+- Extract the formatted X/Y values of the touched data point.
+- Forward that information to your chart view or any other handler.
+
+> **_NOTE:_** This approach works with all tooltip-based modifiers, including SCITooltipModifier, SCIRolloverModifier, and SCICursorModifier.
+
+To begin, implement the required protocols and subclass SCIDefaultXySeriesInfoProvider and SCIXySeriesTooltip:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+// CustomSeriesInfoProvider.h file
+#import &lt;SciChart/SCISeriesTooltipBase+Protected.h&gt;
+#import &lt;SciChart/SCISeriesInfoProviderBase+Protected.h&gt;
+#import &lt;SciChart/SCIDefaultXySeriesInfoProvider.h&gt;
+#import &lt;SciChart/SCIXySeriesTooltip.h&gt;
+
+@protocol CustomXySeriesTooltipDelegate &lt;NSObject&gt;
+-(void)getSeriesInfo: (SCIXySeriesInfo )seriesInfo;
+@end
+
+@protocol CustomSeriesInfoProviderDelegate &lt;NSObject&gt;
+-(void)getSeriesInfo: (SCIXySeriesInfo *)seriesInfo;
+@end
+
+@interface CustomSeriesInfoProvider : SCIDefaultXySeriesInfoProvider
+@property(nonatomic, weak) id delegate;
+@end
+
+// CustomSeriesInfoProvider.m file
+@interface CustomXySeriesTooltip : SCIXySeriesTooltip
+@property(nonatomic, weak) id tooltipDelegate;
+@end
+
+@implementation CustomXySeriesTooltip
+@synthesize tooltipDelegate;
+
+- (void)internalUpdateWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo {
+    [super internalUpdateWithSeriesInfo:seriesInfo];
+    [tooltipDelegate getSeriesInfo: seriesInfo];
+  }
+@end
+
+@implementation CustomSeriesInfoProvider
+@synthesize delegate;
+
+- (id)getSeriesTooltipInternalWithSeriesInfo:(SCIXySeriesInfo *)seriesInfo modifierType:(Class)modifierType {
+    if (modifierType == SCIRolloverModifier.class) {
+        CustomXySeriesTooltip*customXySeriesTooltip = [[CustomXySeriesTooltip alloc] initWithSeriesInfo:seriesInfo];
+        customXySeriesTooltip.tooltipDelegate = self;
+        return customXySeriesTooltip;
+    } else {
+        return [super getSeriesTooltipInternalWithSeriesInfo:seriesInfo modifierType:modifierType];
+    }
+}
+
+- (void)getSeriesInfo:(SCIXySeriesInfo *)seriesInfo {
+    [delegate getSeriesInfo: seriesInfo];
+  }
+@end
+
+</div>
+<div class="code-snippet" id="swift">
+  protocol CustomXySeriesTooltipDelegate {
+      func getTouchDataSeriesIndex(seriesInfo: SCIXySeriesInfo)
+  }
+  protocol CustomSeriesInfoProviderDelegate {
+      func getTouchDataSeriesIndex(seriesInfo: SCIXySeriesInfo)
+  }
+  class CustomSeriesInfoProvider: SCIDefaultXySeriesInfoProvider, CustomXySeriesTooltipDelegate {
+      var delegate: CustomSeriesInfoProviderDelegate?
+
+      class CustomXySeriesTooltip: SCIXySeriesTooltip {
+          var tooltipDelegate: CustomXySeriesTooltipDelegate?
+          override func internalUpdate(with seriesInfo: SCIXySeriesInfo) {
+              super.internalUpdate(with: seriesInfo)
+              tooltipDelegate?.getTouchDataSeriesIndex(seriesInfo: seriesInfo)
+          }
+      }
+      override func getSeriesTooltipInternal(seriesInfo: SCIXySeriesInfo, modifierType: AnyClass) -> ISCISeriesTooltip {
+          // Replace SCITooltipModifier with the specific modifier class you are using (e.g. SCITooltipModifier)
+          if (modifierType == SCIRolloverModifier.self) {
+              let customXySeriesTooltip = CustomXySeriesTooltip(seriesInfo: seriesInfo)
+              customXySeriesTooltip.tooltipDelegate = self
+              return customXySeriesTooltip
+          } else {
+              return super.getSeriesTooltipInternal(seriesInfo: seriesInfo, modifierType: modifierType)
+          }
+      }
+      func getTouchDataSeriesIndex(seriesInfo: SCIXySeriesInfo) {
+          delegate?.getTouchDataSeriesIndex(seriesInfo: seriesInfo)
+      }
+
+    }
+</div>
+
+Implement the CustomSeriesInfoProviderDelegate in your chart view to receive and handle the extracted data:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+@interface RolloverModifierChartView : UIViewController &lt;CustomSeriesInfoProviderDelegate&gt;
+...
+-(void)getSeriesInfo:(SCIXySeriesInfo *)seriesInfo {
+    NSString *string = NSString.empty;
+    string = [string stringByAppendingFormat:@"X: %@\n", seriesInfo.formattedXValue.rawString];
+    string = [string stringByAppendingFormat:@"Y: %@", seriesInfo.formattedYValue.rawString];
+
+    NSLog(@"Rollover touch => %@", string);
+    NSLog(@"Series name => %@", seriesInfo.seriesName);
+}
+</div>
+<div class="code-snippet" id="swift">
+extension UsingRolloverModifierChartView: CustomSeriesInfoProviderDelegate {
+    func getTouchDataSeriesIndex(seriesInfo: SCIXySeriesInfo) {
+        var string = NSString.empty;
+        string += "X: \(seriesInfo.formattedXValue.rawString) "
+        string += "Y: \(seriesInfo.formattedYValue.rawString)"
+        print("Rollover touch => \(string)")
+        print("Series name =>", seriesInfo.seriesName ?? "")
+    }
+}
+</div>
+
+To use your custom info provider, assign it to each renderable series:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+    CustomSeriesInfoProvider *customSeriesInfoProvider = [CustomSeriesInfoProvider new];
+    customSeriesInfoProvider.delegate = self;
+    rSeries.seriesInfoProvider = customSeriesInfoProvider;
+</div>
+<div class="code-snippet" id="swift">
+    let customSeriesInfoProvider = CustomSeriesInfoProvider()
+    customSeriesInfoProvider.delegate = self
+    rSeries.seriesInfoProvider = customSeriesInfoProvider
+</div>
+
+> **_NOTE:_** If you are using multiple series, create a separate instance of CustomSeriesInfoProvider for each series.
