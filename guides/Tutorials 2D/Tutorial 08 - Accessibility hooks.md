@@ -296,7 +296,9 @@ Change chart theme based on system appearance:
 
 You can download the final project from our GitHub Repository:
 
-- [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2008%20-%20Accessibility%20Hooks)
+- [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2008%20-%20Accessibility%20hooks)
+
+Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - ChartModifier To ViewModel](tutorial-09---chartmodifier-to-viewmodel.html)
 
 Of course, this is not the limit of what you can achieve with the SciChart iOS. You might want to read some of the following articles:
 
@@ -307,7 +309,3 @@ Of course, this is not the limit of what you can achieve with the SciChart iOS. 
 
 Finally, start exploring. The SciChart iOS is quite extensive.
 You can look into our [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) which are full of 2D and 3D examples, which are also available on our [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples).
-
-For instance - take a look at our **Sync Multi Chart** example, which can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
-
-![Sync Multi Chart Example](img/tutorials-2d/tutorials-2d-sync-multi-chart-example.png)

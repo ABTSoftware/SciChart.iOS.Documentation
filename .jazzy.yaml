@@ -47,6 +47,7 @@ custom_categories:
       - Tutorial 06 - Multiple Axis
       - Tutorial 07 - Linking Multiple Charts
       - Tutorial 08 - Accessibility hooks
+      - Tutorial 09 - ChartModifier To ViewModel
   - name: Tutorials 3D
     children:
       - 3D Tutorial 01 - Create a simple Scatter Chart 3D
@@ -128,6 +129,7 @@ custom_categories:
       - Zoom and Pan - SCIZoomPanModifier
       - Zoom and Pan - SCIXAxisDragModifier
       - Zoom and Pan - SCIYAxisDragModifier
+      - Zoom and Pan – Mouse Wheel and Trackpad Support
       - ChartOverview
       - Interactivity - SCITooltipModifier
       - Interactivity - SCIRolloverModifier
