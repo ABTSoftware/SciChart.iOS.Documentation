@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Tutorial 09 - ChartModifier To ViewModel
-//
-//  Created by CN10 on 01/09/25.
-//
-
 import UIKit
 import SciChart
 

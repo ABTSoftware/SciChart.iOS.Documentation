@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  ChartModifierToViewModel
-//
-//  Created by CN10 on 29/08/25.
-//
-
 import UIKit
 import SciChart
 

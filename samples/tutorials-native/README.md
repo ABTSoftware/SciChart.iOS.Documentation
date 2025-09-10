@@ -15,8 +15,7 @@ We have a set of [2D Tutorials](https://www.scichart.com/documentation/ios/curre
 - [Tutorial 06 - Multiple Axis](https://www.scichart.com/documentation/ios/current/tutorial-06---multiple-axis.html)
 - [Tutorial 07 - Linking Multiple Charts](https://www.scichart.com/documentation/ios/current/tutorial-07---linking-multiple-charts.html)
 - [Tutorial 08 - Accessibility Hooks](https://www.scichart.com/documentation/ios/current/tutorial-08---accessibility-hooks.html)
-
-Tutorial 08 -
+- [Tutorial 09 - ChartModifier To ViewModel](https://www.scichart.com/documentation/ios/current/tutorial-09---chartmodifier-to-viewmodel.html)
 
 ## 3D Tutorials
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1610"
+   LastUpgradeVersion = "1640"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C29755042E0E83830008A4E3"
-               BuildableName = "Tutorial 08 - Accessibility Hooks.app"
-               BlueprintName = "Tutorial 08 - Accessibility Hooks"
-               ReferencedContainer = "container:Tutorial 08 - Accessibility Hooks.xcodeproj">
+               BlueprintIdentifier = "C20ED4692E657E0600CDADBD"
+               BuildableName = "Tutorial 09 - ChartModifier To ViewModel.app"
+               BlueprintName = "Tutorial 09 - ChartModifier To ViewModel"
+               ReferencedContainer = "container:Tutorial 09 - ChartModifier To ViewModel.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -44,10 +44,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C29755042E0E83830008A4E3"
-            BuildableName = "Tutorial 08 - Accessibility Hooks.app"
-            BlueprintName = "Tutorial 08 - Accessibility Hooks"
-            ReferencedContainer = "container:Tutorial 08 - Accessibility Hooks.xcodeproj">
+            BlueprintIdentifier = "C20ED4692E657E0600CDADBD"
+            BuildableName = "Tutorial 09 - ChartModifier To ViewModel.app"
+            BlueprintName = "Tutorial 09 - ChartModifier To ViewModel"
+            ReferencedContainer = "container:Tutorial 09 - ChartModifier To ViewModel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -61,10 +61,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C29755042E0E83830008A4E3"
-            BuildableName = "Tutorial 08 - Accessibility Hooks.app"
-            BlueprintName = "Tutorial 08 - Accessibility Hooks"
-            ReferencedContainer = "container:Tutorial 08 - Accessibility Hooks.xcodeproj">
+            BlueprintIdentifier = "C20ED4692E657E0600CDADBD"
+            BuildableName = "Tutorial 09 - ChartModifier To ViewModel.app"
+            BlueprintName = "Tutorial 09 - ChartModifier To ViewModel"
+            ReferencedContainer = "container:Tutorial 09 - ChartModifier To ViewModel.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
