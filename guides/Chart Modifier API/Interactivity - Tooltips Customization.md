@@ -425,7 +425,7 @@ To use your custom info provider, assign it to each renderable series:
 A: You can extract the SCIXySeriesInfo from RolloverModifier by creating a custom ISCISeriesInfoProvider, then overriding the getSeriesTooltipInternal method and notifying your ViewModel via delegation or closure.
 For more details, see the documentation:
 [Reading Series Info via Rollover or Touch Events](#reading-series-information-with-tooltip-interactions)
-Check out a working example on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Documentation/blob/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2008%20-%20Accessibility%20hooks/Tutorial%2009%20-%20ChartModifier%20To%20ViewModel/ViewController.swift)
+Check out a working example on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Documentation/blob/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2009%20-%20ChartModifier%20To%20ViewModel/Tutorial%2009%20-%20ChartModifier%20To%20ViewModel/ViewController.swift)
 
 **Q: How to detect tap/click under the mouse/touch for RolloverModifier and get datapoints out into another ViewModel?**      
 A: If you override internalUpdate(with:) in a custom tooltip, you can detect the exact data point being touched or clicked. From there, delegate the data (e.g., formatted X/Y values) to another ViewModel or any handler.
