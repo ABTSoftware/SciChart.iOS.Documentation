@@ -385,7 +385,7 @@ You can download the final project from our GitHub Repository:
 - [Swift](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-native/tutorials-2d/Tutorial%2007%20-%20Linking%20Multiple%20Charts)
 - [Xamarin](https://github.com/ABTSoftware/SciChart.iOS.Documentation/tree/release_v4/samples/tutorials-xamarin/tutorials-2d/tutorial-07)
 
-Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - Accessibility Hooks](tutorial-08---laccessibility-hooks.html)
+Also, you can found **next tutorial** from this series here - [SciChart iOS Tutorial - Accessibility Hooks](tutorial-08---accessibility-hooks.html)
 
 Of course, this is not the limit of what you can achieve with the SciChart iOS. You might want to read some of the following articles:
 

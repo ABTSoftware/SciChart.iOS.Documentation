@@ -54,3 +54,14 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
 </div>
 
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
+
+## FAQ
+**Q: How to keyboard zoom on +/- keys in macOS?**          
+A: To implement zooming via keyboard on macOS using the + and - keys, override the `keyDown(with:)` method in your chart-hosting view or responder, detect the appropriate key input, compute a zoom scale, and update the visibleRange of your SCINumericAxis accordingly.
+For more details, see the documentation:
+[Zoom and Pan – Mouse Wheel and Trackpad Support](#zoom-and-pan--mouse-wheel-and-trackpad-support.html)
+
+**Q: Whether chart content supports mouse-wheel zooming** 
+A: We don't have a built in scroll modifier for macOS, but it would done by overriding `scrollWheel(with event: NSEvent)` method.
+For more details, see the documentation:
+[Zoom and Pan – Mouse Wheel and Trackpad Support](#zoom-and-pan--mouse-wheel-and-trackpad-support.html)

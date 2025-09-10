@@ -1,10 +1,3 @@
-//
-//  CustomSeriesInfoProvider.swift
-//  ChartModifierToViewModel
-//
-//  Created by CN10 on 29/08/25.
-//
-
 import SciChart.Protected.SCISeriesTooltipBase
 import SciChart.Protected.SCISeriesInfoProviderBase
 
