@@ -152,6 +152,7 @@ custom_categories:
       - AxisMarkerAnnotation
       - AxisMarkerCustomAnnotation
       - CustomAnnotation
+      - CustomGrip
 
   # - name: Advanced 2D chart Topics
   # children:
