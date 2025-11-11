@@ -15,6 +15,7 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
 | `topThickness`, `bottomThickness`, `leftThickness`, `rightThickness` | Individual side thickness customization.   |
 | `antiAliasing`                                                       | Enables smoother border rendering.         |
 
+### Usage
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
@@ -41,7 +42,7 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
     xAxis.axisBorderStyle = SCIAxisBorderStyle(color: 0xFFAD3D8D, antiAliasing: false, topThickness: 1, leftThickness: 3, bottomThickness: 5, rightThickness: 0.5) ?? SCIAxisBorderStyle()
 </div>
 
-### Example code
+### Example
 <div class="code-snippet-tabs">
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>

@@ -74,6 +74,7 @@ custom_categories:
       - Axis Alignment - Create a Vertical Chart
       - Axis Styling - Title and Labels
       - Axis Styling - Grid Lines, Ticks and Axis Bands
+      - Axis Styling - Axis Border Style
       - Axis APIs - Convert Pixel to Data coordinates
       - Axis APIs - Programmatically Zoom, Scroll
       - Axis APIs - Value Axis vs. Category Axis
