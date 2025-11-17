@@ -10,10 +10,10 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
 
 | Property                                                             | Description                                |
 | -------------------------------------------------------------------- | ------------------------------------------ |
-| `color`                                                              | Defines the border color (in ARGB format). |
-| `thickness`                                                          | Uniform border thickness for all sides.    |
-| `topThickness`, `bottomThickness`, `leftThickness`, `rightThickness` | Individual side thickness customization.   |
-| `antiAliasing`                                                       | Enables smoother border rendering.         |
+| `SCIAxisBorderStyle.color`                                                              | Defines the border color (in ARGB format). |
+| `SCIAxisBorderStyle.thickness`                                                          | Uniform border thickness for all sides.    |
+| `SCIAxisBorderStyle.topThickness`, `SCIAxisBorderStyle.bottomThickness`, `SCIAxisBorderStyle.leftThickness`, `SCIAxisBorderStyle.rightThickness` | Individual side thickness customization.   |
+| `SCIAxisBorderStyle.antiAliasing`                                                       | Enables smoother border rendering.         |
 
 ### Usage
 <div class="code-snippet-tabs">
@@ -100,17 +100,18 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
     xAxis3.drawMajorTicks = YES;
     xAxis3.visibleRange = [[SCIDoubleRange alloc] initWithMin:-10 max:110];
     // Apply distinguish thickness for each side
-    xAxis3.axisBorderStyle = [[SCIAxisBorderStyle alloc] initWithColor:primaryColors[1]
+    xAxis3.axisBorderStyle = [[SCIAxisBorderStyle alloc] initWithColor:primaryColors[2]
                                                           antiAliasing:YES
                                                           topThickness:1
-                                                         leftThickness:3
+                                                         leftThickness:0.5
                                                        bottomThickness:5
-                                                        rightThickness:0.5];
+                                                        rightThickness:3];
     
     // --- Y Axes ---
     SCINumericAxis *yAxis1 = [SCINumericAxis new];
     yAxis1.axisId = @"yAxis1";
     yAxis1.axisTitle = @"Flipped Y Axis - Left Aligned";
+    yAxis1.axisTitlePlacement = SCIAxisTitlePlacement_Right;
     yAxis1.axisAlignment = SCIAxisAlignment_Left;
     yAxis1.flipCoordinates = YES;
     yAxis1.drawMajorBands = NO;
@@ -154,6 +155,14 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
     
 </div>
 <div class="code-snippet" id="swift">
+    let primaryColors: [UInt32] = [
+        0xFF4FBEE6, // Light blue
+        0xFFAD3D8D, // Magenta
+        0xFF6BBDAE, // Teal
+        0xFFE76E63, // Coral red
+        0xFF2C4B92  // Deep blue
+    ]
+    
     let axisTitleSize: Float = 12.0
     let labelSize: Float = 10.0
     let tickSize: Float = 8.0
@@ -192,11 +201,12 @@ The `SCIAxisBorderStyle` class defines the appearance of borders drawn around an
     xAxis3.drawMajorTicks = true
     xAxis3.visibleRange = SCIDoubleRange(min: -10.0, max: 110.0)
     // Apply distinguish thickness for each side
-    xAxis3.axisBorderStyle = SCIAxisBorderStyle(color: primaryColors[2], antiAliasing: false, topThickness: 1, leftThickness: 3, bottomThickness: 5, rightThickness: 0.5) ?? SCIAxisBorderStyle()
+    xAxis3.axisBorderStyle = SCIAxisBorderStyle(color: primaryColors[2], antiAliasing: false, topThickness: 1, leftThickness: 0.5, bottomThickness: 5, rightThickness: 3) ?? SCIAxisBorderStyle()
         
     let yAxis1 = SCINumericAxis()
     yAxis1.axisId = "yAxis1"
     yAxis1.axisTitle = "Flipped Y Axis - Left Aligned"
+    yAxis1.axisTitlePlacement = .right
     yAxis1.axisAlignment = .left
     yAxis1.flipCoordinates = true
     yAxis1.drawMajorBands = false
