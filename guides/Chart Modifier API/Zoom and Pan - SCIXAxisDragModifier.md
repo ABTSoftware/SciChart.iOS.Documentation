@@ -5,7 +5,7 @@ SciChart iOS provides **scale or pan** an X Axis via the `SCIXAxisDragModifier`,
 
 Besides [common features](Chart Modifier APIs.html#common-chart-modifier-features) which are inherited from the `SCIChartModifierBase` class, 
 the `SCIXAxisDragModifier` allows to control its specific features via the following properties:
-- `SCIAxisDragModifierBase.dragMode` - allows to change the default axis **scaling** behavior to axis **panning** behavior - similarly to [SCIZoomPanModifier](zoom-and-pan---scizoompanmodifier.html) via the `SCIAxisDragMode` enumeration.
+- `SCIAxisDragModifierBase.dragMode` - allows to change the default axis **scaling** behavior to axis **panning** behavior - similarly to [SCIxAxisDragModifier](zoom-and-pan---scixAxisDragModifier.html) via the `SCIAxisDragMode` enumeration.
 - `SCIAxisDragModifierBase.minTouchArea` - configures the **sensitivity** of the modifier.
 - `SCIXAxisDragModifier.clipModeX` - allows to specify the **behavior** when scrolling **reaches data extents** in X direction via the `SCIClipMode` enumeration.
 - `SCIXAxisDragModifier.clipModeTargetX` - allows to specify which target is used as limit by `clipModeX` when you reach the edge of the `X-Axis` extents.
@@ -56,6 +56,38 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
 
     // Add the modifier to the surface
     Surface.ChartModifiers.Add(xAxisDragModifier);
+</div>
+
+### Include/Exclude Certain Axis
+The `SCIXAxisDragModifier` allows you to include or exclude certain axis from the axis drag operation.
+This feature is especially useful in multiple-axis charts, where you may want to zoom/pan only selected axes while keeping others fixed.
+By default all axis are included, to exclude one or more X axis, set the following property:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+// Exclude a specific axis from the pan zoom operation
+[xAxisDragModifier includeXAxis:xAxis isIncluded:NO];
+
+// Include a specific axis from the pan zoom operation
+[xAxisDragModifier includeXAxis:xAxis isIncluded:YES];
+
+// Reset flags
+[xAxisDragModifier includeAll];
+[xAxisDragModifier excludeAll];
+</div>
+<div class="code-snippet" id="swift">
+// Exclude a specific axis from the pan zoom operation
+xAxisDragModifier.includeXAxis(xAxis, isIncluded: false)
+
+// Include a specific axis from the pan zoom operation
+xAxisDragModifier.includeXAxis(xAxis, isIncluded: true)
+
+// Reset flags
+xAxisDragModifier.includeAll()
+xAxisDragModifier.excludeAll()
 </div>
 
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
