@@ -59,6 +59,63 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
     Surface.ChartModifiers.Add(zoomExtentsModifier);
 </div>
 
+## Additional Properties
+
+### Restricting Interaction to a Single Direction (X or Y)
+Interaction for this modifier can be limited to a specific axis direction by configuring the direction property.
+Set direction to one of the SCIDirection2D values to restrict the modifier to the X-axis, Y-axis, or both.
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+zoomExtentsModifier.direction = SCIDirection2D_XyDirection; // Allows interaction in both directions
+zoomExtentsModifier.direction = SCIDirection2D_XDirection;  // X-axis only
+zoomExtentsModifier.direction = SCIDirection2D_YDirection;  // Y-axis only
+</div>
+<div class="code-snippet" id="swift">
+zoomExtentsModifier.direction = .xyDirection    // Allows interaction in both directions
+zoomExtentsModifier.direction = .xDirection     // X-axis only
+zoomExtentsModifier.direction = .yDirection     // Y-axis only
+</div>
+
+### Include/Exclude Certain Axis from Zoom Extent
+The `SCIZoomExtentsModifier` allows you to include or exclude certain axis from the zoom entent operation.
+This feature is especially useful in charts with multiple axes, where you may want to zoom only selected axes while keeping others unchanged.
+By default all axis are included, to exclude one or more X or Y axis, set the following property:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+// Exclude a specific axis from the pan zoom operation
+[zoomExtentsModifier includeXAxis:xAxis isIncluded:NO];
+[zoomExtentsModifier includeYAxis:yAxis isIncluded:NO];
+
+// Include a specific axis from the pan zoom operation
+[zoomExtentsModifier includeXAxis:xAxis isIncluded:YES];
+[zoomExtentsModifier includeYAxis:yAxis isIncluded:YES];
+
+// Reset flags
+[zoomExtentsModifier includeAll];
+[zoomExtentsModifier excludeAll];
+</div>
+<div class="code-snippet" id="swift">
+// Exclude a specific axis from the pan zoom operation
+zoomExtentsModifier.includeXAxis(xAxis, isIncluded: false)
+zoomExtentsModifier.includeYAxis(yAxis, isIncluded: false)
+
+// Include a specific axis from the pan zoom operation
+zoomExtentsModifier.includeXAxis(xAxis, isIncluded: true)
+zoomExtentsModifier.includeYAxis(yAxis, isIncluded: true)
+
+// Reset flags
+zoomExtentsModifier.includeAll()
+zoomExtentsModifier.excludeAll()
+</div>
+
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
 
 ## Programmatically Zoom to Extents
