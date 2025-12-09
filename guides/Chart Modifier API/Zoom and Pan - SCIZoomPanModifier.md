@@ -79,6 +79,63 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
     Surface.ChartModifiers.Add(zoomPanModifier);
 </div>
 
+## Additional Properties
+
+### Restricting Interaction to a Single Direction (X or Y)
+Interaction for this modifier can be limited to a specific axis direction by configuring the direction property.
+Set direction to one of the SCIDirection2D values to restrict the modifier to the X-axis, Y-axis, or both.
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+zoomPanModifier.direction = SCIDirection2D_XyDirection; // Allows interaction in both directions
+zoomPanModifier.direction = SCIDirection2D_XDirection;  // X-axis only
+zoomPanModifier.direction = SCIDirection2D_YDirection;  // Y-axis only
+</div>
+<div class="code-snippet" id="swift">
+zoomPanModifier.direction = .xyDirection    // Allows interaction in both directions
+zoomPanModifier.direction = .xDirection     // X-axis only
+zoomPanModifier.direction = .yDirection     // Y-axis only
+</div>
+
+### Include/Exclude Certain Axis from Pan Zoom
+The `SCIZoomPanModifier` allows you to include or exclude certain axis from the pan zoom operation.
+This feature is especially useful in multiple-axis charts, where you may want to pan only selected axes while keeping others fixed.
+By default all axis are included, to exclude one or more X or Y axis, set the following property:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+// Exclude a specific axis from the pan zoom operation
+[zoomPanModifier includeXAxis:xAxis isIncluded:NO];
+[zoomPanModifier includeYAxis:yAxis isIncluded:NO];
+
+// Include a specific axis from the pan zoom operation
+[zoomPanModifier includeXAxis:xAxis isIncluded:YES];
+[zoomPanModifier includeYAxis:yAxis isIncluded:YES];
+
+// Reset flags
+[zoomPanModifier includeAll];
+[zoomPanModifier excludeAll];
+</div>
+<div class="code-snippet" id="swift">
+// Exclude a specific axis from the pan zoom operation
+zoomPanModifier.includeXAxis(xAxis, isIncluded: false)
+zoomPanModifier.includeYAxis(yAxis, isIncluded: false)
+
+// Include a specific axis from the pan zoom operation
+zoomPanModifier.includeXAxis(xAxis, isIncluded: true)
+zoomPanModifier.includeYAxis(yAxis, isIncluded: true)
+
+// Reset flags
+zoomPanModifier.includeAll()
+zoomPanModifier.excludeAll()
+</div>
+
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
 
 > **_NOTE:_**  The `setDisableTouchEvent:` method is used to allow or prevent userInteraction of a surface view when it is inside a scroll view. 
