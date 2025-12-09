@@ -5,7 +5,7 @@ SciChart iOS provides **scale or pan** an Y Axis via the `SCIYAxisDragModifier`,
 
 Besides [common features](Chart Modifier APIs.html#common-chart-modifier-features) which are inherited from the `SCIChartModifierBase` class, 
 the `SCIYAxisDragModifier` allows to control its specific features via the following properties:
-- `SCIAxisDragModifierBase.dragMode` - allows to change the default axis **scaling** behavior to axis **panning** behavior - similarly to [SCIZoomPanModifier](zoom-and-pan---scizoompanmodifier.html) via the `SCIAxisDragMode` enumeration.
+- `SCIAxisDragModifierBase.dragMode` - allows to change the default axis **scaling** behavior to axis **panning** behavior - similarly to [SCIyAxisDragModifier](zoom-and-pan---sciyAxisDragModifier.html) via the `SCIAxisDragMode` enumeration.
 - `SCIAxisDragModifierBase.minTouchArea` - configures the **sensitivity** of the modifier.
 
 ## Adding a SCIYAxisDragModifier to a Chart
@@ -50,4 +50,80 @@ Any [Chart Modifier](Chart Modifier APIs.html) can be [added to a `SCIChartSurfa
     Surface.ChartModifiers.Add(yAxisDragModifier);
 </div>
 
+### Include/Exclude Certain Axis
+The `SCIYAxisDragModifier` allows you to include or exclude certain axis from the axis drag operation.
+This feature is especially useful in multiple-axis charts, where you may want to zoom/pan only selected axes while keeping others fixed.
+By default all axis are included, to exclude one or more Y axis, set the following property:
+
+<div class="code-snippet-tabs">
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+  <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+// Exclude a specific axis from the pan zoom operation
+[yAxisDragModifier includeYAxis:yAxis isIncluded:NO];
+
+// Include a specific axis from the pan zoom operation
+[yAxisDragModifier includeYAxis:yAxis isIncluded:YES];
+
+// Reset flags
+[yAxisDragModifier includeAll];
+[yAxisDragModifier excludeAll];
+</div>
+<div class="code-snippet" id="swift">
+// Exclude a specific axis from the pan zoom operation
+yAxisDragModifier.includeYAxis(yAxis, isIncluded: false)
+
+// Include a specific axis from the pan zoom operation
+yAxisDragModifier.includeYAxis(yAxis, isIncluded: true)
+
+// Reset flags
+yAxisDragModifier.includeAll()
+yAxisDragModifier.excludeAll()
+</div>
+
 > **_NOTE:_** To learn more about features available, please visit the [Chart Modifier APIs](Chart Modifier APIs.html#common-chart-modifier-features) article.
+
+## SCIAxisDragModifier
+
+SciChart has introduced a new modifier, `SCIAxisDragModifier`, which **combines the functionality of both `SCIXAxisDragModifier` and `SCIYAxisDragModifier`**.
+This unified modifier allows you to configure drag behavior for the X-axis, Y-axis, or **both axes simultaneously**, eliminating the need to declare two separate modifiers.
+
+### Why Use SCIAxisDragModifier?
+
+Previously, to enable drag interactions on both axes, you needed to add:
+
+* `SCIXAxisDragModifier` (for the X-axis), and
+* `SCIYAxisDragModifier` (for the Y-axis)
+
+With the new `SCIAxisDragModifier`, you can now accomplish the same behavior plus combined-axis dragging with **one** modifier.
+
+<div class="code-snippet-tabs">
+ <button class="code-snippet-tab" onclick="showCodeFor(event, 'objectivec')">OBJECTIVE-C</button>
+ <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
+</div>
+<div class="code-snippet" id="objectivec">
+SCIAxisDragModifier *axisDragModifier = [SCIAxisDragModifier new];
+
+// Choose the drag behavior: zoom (SCIDragMode_Scale) or pan (SCIDragMode_Pan)
+axisDragModifier.dragMode = SCIDragMode_Scale;    // or SCIDragMode_Pan
+
+// Choose affected axis/axes
+axisDragModifier.direction = SCIDirection_YDirection;   // Y axis
+//axisDragModifier.direction = SCIDirection_XDirection;     // X axis
+// axisDragModifier.direction = SCIDirection_XYDirection;  // Both axes together
+
+</div>
+<div class="code-snippet" id="swift">
+let axisDragModifier = SCIAxisDragModifier()
+
+// Choose the drag behavior: zoom (.scale) or pan (.pan)
+axisDragModifier.dragMode = .scale   // or .pan
+
+// Choose affected axis/axes
+axisDragModifier.direction = .yDirection  // Y axis
+// axisDragModifier.direction = .xDirection   // X axis
+// axisDragModifier.direction = .xyDirection // Both axes together
+</div>
+
+> **_NOTE:_** For new projects, SciChart recommends using `SCIAxisDragModifier` as the preferred, modern, and more flexible approach to axis dragging.
