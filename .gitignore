@@ -3,3 +3,6 @@
 **/SciChart.xcframework
 **/generated-docs/**
 **/docs-headers/**
+# Build results
+bin/
+obj/
