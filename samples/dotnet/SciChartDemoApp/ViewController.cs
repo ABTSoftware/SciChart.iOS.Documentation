@@ -28,9 +28,6 @@ namespace SciChartDemoApp
 
             InvokeOnMainThread(() =>
             {
-                string licenseKey = "YOUR_LICENSE_KEY_HERE";
-                SCIChartSurface.SetRuntimeLicenseKey(licenseKey);
-
                 var surface = new SCIChartSurface(new CGRect(20, 120, 300, 300));
                 surface.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
                 View.AddSubview(surface);
@@ -43,6 +40,9 @@ namespace SciChartDemoApp
                 xAxis.MajorTickLineLength = 10;
                 xAxis.MinorTickLineLength = 5;
                 xAxis.FlipCoordinates = false;
+                xAxis.AutoRange = SCIAutoRange.Never;
+                xAxis.VisibleRange = new SCIDoubleRange(0.0, 30.0);
+
 
                 var yAxis = new SCINumericAxis();
                 yAxis.AxisAlignment = SCIAxisAlignment.Left;
@@ -53,7 +53,7 @@ namespace SciChartDemoApp
                 yAxis.MajorTickLineLength = 10;
                 yAxis.MinorTickLineLength = 5;
                 yAxis.FlipCoordinates = false;
-                yAxis.GrowBy = new SCIDoubleRange(2, 2);
+                yAxis.GrowBy = new SCIDoubleRange(0.1, 0.1);
 
 
                 surface.XAxes.Add(xAxis);

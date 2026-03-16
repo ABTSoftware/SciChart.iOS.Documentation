@@ -37,20 +37,19 @@ namespace SciChart.iOS.Binding
     }
 
     [Native]
-    public enum SCIRangeClipMode : long
-    {
-        None = 0,
-        Min = 1,
-        Max = 2,
-        Both = 3
-    }
-
-    [Native]
     public enum SCIAutoRange : long
     {
         Never = 0,
         Once = 1,
         Always = 2
+    }
+
+    [Native]
+    public enum SCIRangeClipMode : long
+    {
+        MinMax = 0,
+        Min = 1,
+        Max = 2
     }
 
 }

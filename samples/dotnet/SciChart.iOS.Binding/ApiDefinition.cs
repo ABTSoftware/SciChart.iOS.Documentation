@@ -6,85 +6,76 @@ using System;
 
 namespace SciChart.iOS.Binding
 {
-	//AXIS
-	[Protocol, Model]
+	// Protocols - no Model, no BaseType
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCIRange { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCIComparable { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCICoordinateCalculator { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCITickProvider { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCITickCoordinatesProvider { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCILabelProvider { }
 
-	[Protocol, Model]
+	[Protocol]
 	[BaseType(typeof(NSObject))]
 	public interface ISCIString { }
-	//
 
-	//Rendering series
-	// // Colors
-	// [BaseType(typeof(NSObject))]
-	// interface SCIColor { }
+	[BaseType(typeof(NSObject))]
+	interface SCIDoubleRange : ISCIRange
+	{
+		// NSNumber constructor
+		// [Export("initWithMin:max:")]
+		// IntPtr Constructor(NSNumber min, NSNumber max);
 
+		// double constructor - matches native ObjC
+		[Export("initWithMin:max:")]
+		IntPtr Constructor(double min, double max);
 
-	// [BaseType(typeof(NSObject))]
-	// interface SCIAxisBase
-	// {
-	// 	[Export("axisAlignment")]
-	// 	SCIAxisAlignment AxisAlignment { [Bind("axisAlignment")] get; [Bind("setAxisAlignment:")] set; }
+		[Export("min")]
+		double Min { get; set; }
 
-	// 	[Export("axisId", ArgumentSemantic.Copy)]
-	// 	string AxisId { get; set; }
-	// }
+		[Export("max")]
+		double Max { get; set; }
+	}
 
 	[BaseType(typeof(NSObject))]
 	interface SCIAxisBase
 	{
 		[Export("axisAlignment")]
-		SCIAxisAlignment AxisAlignment { [Bind("axisAlignment")] get; [Bind("setAxisAlignment:")] set; }
+		SCIAxisAlignment AxisAlignment { get; set; }
 
 		[Export("axisId", ArgumentSemantic.Copy)]
 		string AxisId { get; set; }
 
-		// Visible Range
 		[Export("visibleRange", ArgumentSemantic.Strong)]
 		SCIDoubleRange VisibleRange { get; set; }
 
 		[Export("growBy", ArgumentSemantic.Strong)]
 		SCIDoubleRange GrowBy { get; set; }
 
+		[Export("autoRange")]
+		SCIAutoRange AutoRange { get; set; }
+
 		[Export("visibleRangeLimit", ArgumentSemantic.Strong)]
 		ISCIRange VisibleRangeLimit { get; set; }
 
 		[Export("visibleRangeLimitMode")]
 		SCIRangeClipMode VisibleRangeLimitMode { get; set; }
-
-		[Export("minimalZoomConstrain", ArgumentSemantic.Strong)]
-		ISCIComparable MinimalZoomConstrain { get; set; }
-
-		[Export("maximumZoomConstrain", ArgumentSemantic.Strong)]
-		ISCIComparable MaximumZoomConstrain { get; set; }
-
-		[Export("minorDelta", ArgumentSemantic.Strong)]
-		ISCIComparable MinorDelta { get; set; }
-
-		[Export("majorDelta", ArgumentSemantic.Strong)]
-		ISCIComparable MajorDelta { get; set; }
 
 		[Export("autoTicks")]
 		bool AutoTicks { get; set; }
@@ -121,9 +112,6 @@ namespace SciChart.iOS.Binding
 
 		[Export("attributedAxisTitle", ArgumentSemantic.Copy)]
 		NSAttributedString AttributedAxisTitle { get; set; }
-
-		[Export("autoRange")]
-		SCIAutoRange AutoRange { get; set; }
 
 		[Export("tickProvider", ArgumentSemantic.Strong)]
 		ISCITickProvider TickProvider { get; set; }
@@ -200,37 +188,11 @@ namespace SciChart.iOS.Binding
 		[Export("dataRangeChangeListener", ArgumentSemantic.Strong)]
 		SCIDataRangeChangeListener DataRangeChangeListener { get; set; }
 
-		// Methods
-
-		[Export("createCoordinateCalculatorFromRange:")]
-		ISCICoordinateCalculator CreateCoordinateCalculatorFromRange(ISCIRange visibleRange);
-
 		[Export("animateVisibleRangeTo:withDuration:")]
 		void AnimateVisibleRangeTo(ISCIRange range, float duration);
 
 		[Export("isValidRange:")]
 		bool IsValidRange(ISCIRange range);
-
-		[Export("onDataRangeChanged")]
-		void OnDataRangeChanged();
-
-		[Export("getDataValueFrom:")]
-		ISCIComparable GetDataValue(float pixelCoordinate);
-
-		[Export("getCoordinateFrom:")]
-		float GetCoordinate(ISCIComparable value);
-
-		[Export("formatText:")]
-		ISCIString FormatText(ISCIComparable value);
-
-		[Export("formatCursorText:")]
-		ISCIString FormatCursorText(ISCIComparable value);
-
-		[Export("getMaximumRange:")]
-		ISCIRange GetMaximumRange(bool forceCacheUpdate);
-
-		[Export("getDataRange:")]
-		ISCIRange GetDataRange(bool forceCacheUpdate);
 	}
 
 	delegate void SCIVisibleRangeChangeListener(ISCIRange oldRange, ISCIRange newRange);
@@ -239,12 +201,13 @@ namespace SciChart.iOS.Binding
 	[BaseType(typeof(SCIAxisBase))]
 	interface SCINumericAxis
 	{
+		// ADD THIS - needed for new SCINumericAxis()
+		// [Export("init")]
+		// IntPtr Constructor();
+
 		[Static]
 		[Export("new")]
 		SCINumericAxis Create();
-
-		// [Export("visibleRange", ArgumentSemantic.Strong)]
-		// SCIDoubleRange VisibleRange { get; set; }
 	}
 
 	[BaseType(typeof(NSObject))]
@@ -299,20 +262,6 @@ namespace SciChart.iOS.Binding
 		[Export("count")]
 		nint Count { get; }
 	}
-
-	[BaseType(typeof(NSObject))]
-	interface SCIDoubleRange : ISCIRange
-	{
-		[Export("initWithMin:max:")]
-		IntPtr Constructor(NSNumber min, NSNumber max);
-
-		[Export("min")]
-		NSNumber Min { get; set; }
-
-		[Export("max")]
-		NSNumber Max { get; set; }
-	}
-
 
 	[BaseType(typeof(UIView))]
 	interface SCIChartSurface
