@@ -25,10 +25,13 @@ sudo dotnet workload install ios
 3. Add the `scichart.xcframework` to the project (ensure the framework is included in the binding project).
 
 Project structure should look similar to:
+
+```text
 scichart.ios.binding/
- ├── scichart.xcframework
- ├── SciChartBinding.csproj
- └── ...
+├── scichart.xcframework
+├── SciChartBinding.csproj
+└── ...
+```
 
 ## Build
 
