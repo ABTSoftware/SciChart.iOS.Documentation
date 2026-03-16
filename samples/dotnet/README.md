@@ -68,6 +68,12 @@ Copy the UDID of the simulator you want to use.
 Replace <UDID> with the simulator UDID:
 
 ```bash
+ dotnet build -t:Run -f net8.0-ios -r iossimulator-arm64 \
+  /p:_DeviceName=:v2:udid=<UDID>
+```
+OR  
+
+```bash
 /usr/local/share/dotnet/packs/Microsoft.iOS.Sdk.net8.0_18.0/18.0.8319/tools/bin/mlaunch \
   --launchsim bin/Debug/net8.0-ios/iossimulator-arm64/SciChartDemoApp.app/ \
   --device ":v2:udid=<UDID>" \
@@ -79,4 +85,3 @@ Replace <UDID> with the simulator UDID:
 ## Notes
 
 - Ensure the iOS simulator is available via Xcode.
-- The runtime identifier `iossimulator-arm64` is required for Apple Silicon Macs.
