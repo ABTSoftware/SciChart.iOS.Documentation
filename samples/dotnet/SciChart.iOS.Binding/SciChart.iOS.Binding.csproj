@@ -4,19 +4,14 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>true</ImplicitUsings>
     <IsBindingProject>true</IsBindingProject>
-
-    <!--
-      Enable trim analyzers for class libraries.
-      To learn more, see: https://learn.microsoft.com/dotnet/core/deploying/trimming/prepare-libraries-for-trimming
-    -->
-    <IsTrimmable>true</IsTrimmable>
+     <IsTrimmable>false</IsTrimmable>
   </PropertyGroup>
 
   <ItemGroup>
     <NativeReference Include="SciChart.xcframework">
       <Kind>Framework</Kind>
-          <SmartLink>true</SmartLink>
-      <ForceLoad>false</ForceLoad>
+          <SmartLink>false</SmartLink>
+      <ForceLoad>true</ForceLoad>
     </NativeReference>
   </ItemGroup>
 
