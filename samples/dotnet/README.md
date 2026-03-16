@@ -7,6 +7,7 @@ This guide explains how to build and run the **SciChart iOS .NET example**.
 - Install **.NET 8 SDK** (https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - Xcode installed with iOS simulator support
 - Visual Studio Code
+- Navigate to the **dotnet folder** and open it in Visual Studio Code:
 
 ## Setup
 
