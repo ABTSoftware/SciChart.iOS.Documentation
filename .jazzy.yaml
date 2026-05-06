@@ -139,6 +139,9 @@ custom_categories:
       - Interactivity - SCISeriesSelectionModifier
       - Legend Modifier
       - Series Value Modifier
+      - Trading Annotation - SCIPitchforkCreationModifier
+      - Trading Annotation - SCIXabcdCreationModifier
+      - Trading Annotation - SCIBrushAnnotationCreationModifier
 
   - name: Annotations APIs
     children:
@@ -154,6 +157,10 @@ custom_categories:
       - AxisMarkerCustomAnnotation
       - CustomAnnotation
       - CustomGrip
+      - CompositeAnnotation
+      - PitchforkAnnotation
+      - XabcdAnnotation
+      - BrushAnnotation
 
   # - name: Advanced 2D chart Topics
   # children:
@@ -472,6 +479,9 @@ custom_categories:
       - SCIAxisDragModifierBase
       - SCIXAxisDragModifier
       - SCIYAxisDragModifier
+      - SCIPitchforkCreationModifier
+      - SCIXabcdCreationModifier
+      - SCIBrushAnnotationCreationModifier
 
       # Series Value Modifier
       - ISCISeriesValueMarker
@@ -683,6 +693,17 @@ custom_categories:
       - SCIAxisLabelAnnotation
       - SCIAxisMarkerAnnotation
       - SCIAxisMarkerCustomAnnotation
+
+      # Trading Annotations
+      - ISCITradingAnnotation
+      - SCITradingAnnotationBase
+      - SCIElliotWaveAnnotationBase
+      - ISCIPolygonAnnotation
+      - SCIPolygonAnnotation
+      - SCICompositeAnnotation
+      - SCIXabcdAnnotation
+      - SCIPitchforkAnnotation
+      - SCIBrushAnnotation
 
       - ISCIAnnotationDragListener
       - SCIAnnotationIsHiddenChangedListener
