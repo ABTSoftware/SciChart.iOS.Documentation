@@ -23,8 +23,8 @@ The SCIPitchforkAnnotation can be configured using the properties and method lis
 | **Field**                               | **Description**                                                                                     |
 | --------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | `SCIPitchforkAnnotation.tineStroke`           |  Defines the SCIPenStyle used to draw the pitchfork lines (outer 4 tines).                                 |
-| `SCIPitchforkAnnotation.middleFill`         |  Defines the SCIBrushStyle used to fill the central region around the median line.  |
-| `SCIPitchforkAnnotation.sidesFill` |  Defines the SCIBrushStyle used to fill the outer regions on either side.                                         |  
+| `SCIPitchforkAnnotation.halfWidthZoneFill`         |  Defines the SCIBrushStyle used to fill the central region around the median line.  |
+| `SCIPitchforkAnnotation.fullWidthZoneFill` |  Defines the SCIBrushStyle used to fill the outer regions on either side.                                         |  
 
 
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
@@ -54,8 +54,8 @@ SCIPitchforkAnnotation *pitchfork = [[SCIPitchforkAnnotation alloc] init];
 [pitchfork setBasePointWithX:@228 y:@11600];
 
 // Customize appearance
-pitchfork.middleFill = [[SCISolidBrushStyle alloc] initWithColorCode:0x401E90FF];
-pitchfork.sidesFill  = [[SCISolidBrushStyle alloc] initWithColorCode:0x4000AA00];
+pitchfork.halfWidthZoneFill = [[SCISolidBrushStyle alloc] initWithColorCode:0x401E90FF];
+pitchfork.fullWidthZoneFill  = [[SCISolidBrushStyle alloc] initWithColorCode:0x4000AA00];
 
 // Enable interaction
 pitchfork.isEditable = YES;
@@ -75,8 +75,8 @@ pitchfork.setBasePointWithX(NSNumber(value: 250), y: NSNumber(value: 11300))
 pitchfork.setBasePointWithX(NSNumber(value: 228), y: NSNumber(value: 11600))
 
 // Customize appearance
-pitchfork.middleFill = SCISolidBrushStyle(color: 0x401E90FF)
-pitchfork.sidesFill  = SCISolidBrushStyle(color: 0x4000AA00)
+pitchfork.halfWidthZoneFill = SCISolidBrushStyle(color: 0x401E90FF)
+pitchfork.fullWidthZoneFill  = SCISolidBrushStyle(color: 0x4000AA00)
 
 // Enable interaction
 pitchfork.isEditable = true
