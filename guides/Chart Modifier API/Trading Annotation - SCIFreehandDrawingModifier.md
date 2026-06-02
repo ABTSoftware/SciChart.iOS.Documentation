@@ -17,11 +17,16 @@ This is useful for scenarios such as:
 
 ## API Reference
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIFreehandDrawingModifier.stroke`           |  The pen style used to draw the annotation                               |
-| `SCIFreehandDrawingModifier.selectionOffset`         |  Specifies extra padding around the selection bounds of the annotation..  |
-| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()` |  Removes all currently selected freehand drawing annotations from the chart surface.  |
+| **Field**                                                | **Description**                                                                     |
+| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| `SCIFreehandDrawingModifier.stroke`                      | The pen style used to draw the annotation                                           |
+| `SCIFreehandDrawingModifier.selectionOffset`             | Specifies extra padding around the selection bounds of the annotation..             |
+| `SCIFreehandDrawingModifier.xAxisId`                     | ID of the X‑Axis the annotation is measured against.                                |
+| `SCIFreehandDrawingModifier.yAxisId`                     | ID of the Y‑Axis the annotation is measured against.                                |
+| `SCIFreehandDrawingModifier.tag`                         | Custom tag identifier for the modifier.                                             |
+| `SCIFreehandDrawingModifier.onCompleted`                 | A callback invoked on the main thread when a full XABCD annotation is completed.    |
+| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()` | Removes all currently selected freehand drawing annotations from the chart surface. |
+
  
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle and SCIFontStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
 

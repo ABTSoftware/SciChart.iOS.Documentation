@@ -19,11 +19,11 @@ The creation flow follows a structured sequence:
 
 ### Per Point Interaction (X → A → B → C → D)
 
-| Gesture        | Behavior |
-|----------------|----------|
+| Gesture        | Behavior                                       |
+| -------------- | ---------------------------------------------- |
 | **Touch Down** | Places the current point at the touch location |
-| **Drag**       | Moves the point dynamically in real-time |
-| **Touch Up**   | Locks the point and advances to the next one |
+| **Drag**       | Moves the point dynamically in real-time       |
+| **Touch Up**   | Locks the point and advances to the next one   |
 
 ### Completion
 
@@ -104,22 +104,25 @@ surface.chartModifiers.add(modifier)
 
 The SCIXabcdCreationModifier can be configured using the properties and method listed in the table below:
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIXabcdCreationModifier.annotationFill`           |  Defines the stroke style for newly created annotations.                                 |
-| `SCIXabcdCreationModifier.annotationFill`         |  Defines the fill style for newly created annotations.  |
-| `SCIXabcdCreationModifier.isInSourceBounds` |  Reports whether the event occurred within the **Source**.                                           |
-| `SCIXabcdCreationModifier.isDragging`        |  Indicates whether the user is actively dragging a point. |
-| `SCIXabcdCreationModifier.activePointIndex`                |  Represents the index of the point currently being placed.                                                                  |
-| `SCIXabcdCreationModifier.onCompleted`                |  A callback invoked on the main thread when a full XABCD annotation is completed.                                                                  |
+| **Field**                                   | **Description**                                                                  |
+| ------------------------------------------- | -------------------------------------------------------------------------------- |
+| `SCIXabcdCreationModifier.annotationFill`   | Defines the stroke style for newly created annotations.                          |
+| `SCIXabcdCreationModifier.annotationFill`   | Defines the fill style for newly created annotations.                            |
+| `SCIXabcdCreationModifier.isInSourceBounds` | Reports whether the event occurred within the **Source**.                        |
+| `SCIXabcdCreationModifier.isDragging`       | Indicates whether the user is actively dragging a point.                         |
+| `SCIXabcdCreationModifier.activePointIndex` | Represents the index of the point currently being placed.                        |
+| `SCIXabcdCreationModifier.xAxisId`          | ID of the X‑Axis the annotation is measured against.                             |
+| `SCIXabcdCreationModifier.yAxisId`          | ID of the Y‑Axis the annotation is measured against.                             |
+| `SCIXabcdCreationModifier.tag`              | Custom tag identifier for the modifier.                                          |
+| `SCIXabcdCreationModifier.onCompleted`      | A callback invoked on the main thread when a full XABCD annotation is completed. |
 
-> **_Behavior Notes:_**
-- The modifier automatically resets after completing point D
-- Only one annotation is created per interaction cycle 
-- Designed for real-time financial charting and harmonic pattern visualization
-
-> **_Best Practices:_** 
+## Best Practices
 - Disable conflicting gesture modifiers during drawing for better UX
 - Use onCompleted to validate or store annotations
 - Customize stroke/fill for better visual distinction
 - Call cancel when switching tools or modes
+
+## Notes
+- The modifier automatically resets after completing point D
+- Only one annotation is created per interaction cycle 
+- Designed for real-time financial charting and harmonic pattern visualization

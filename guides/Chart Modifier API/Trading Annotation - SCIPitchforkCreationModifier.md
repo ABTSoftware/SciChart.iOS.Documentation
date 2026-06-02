@@ -67,15 +67,18 @@ You can extract its geometry using base data methods exposed by the annotation:
 
 ## API Reference
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIPitchforkCreationModifier.creationState`           |  Current state of the pitchfork creation lifecycle.                                 |
-| `SCIPitchforkCreationModifier.onCompleted`         |  A callback invoked when a full pitchfork annotation is completed.  |
-| `SCIPitchforkCreationModifier.reset()` |  Cancels any in-progress gesture and returns the modifier to `Idle`.                                           |
-| `SCIPitchforkCreationModifier.halfWidthZoneFill`           |  Fill colour for the central (middle) polygon section.                                 |
-| `SCIPitchforkCreationModifier.fullWidthZoneFill`         |  Fill colour for the two outer polygon sections.  |
-| `SCIPitchforkCreationModifier.tineStroke` |  The pen style used to draw the four tine lines.                                           |
-| `SCIPitchforkCreationModifier.mainStroke` |  The pen style used to draw the main pivot line.                                           |
+| **Field**                                        | **Description**                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------- |
+| `SCIPitchforkCreationModifier.creationState`     | Current state of the pitchfork creation lifecycle.                  |
+| `SCIPitchforkCreationModifier.onCompleted`       | A callback invoked when a full pitchfork annotation is completed.   |
+| `SCIPitchforkCreationModifier.reset()`           | Cancels any in-progress gesture and returns the modifier to `Idle`. |
+| `SCIPitchforkCreationModifier.halfWidthZoneFill` | Fill colour for the central (middle) polygon section.               |
+| `SCIPitchforkCreationModifier.fullWidthZoneFill` | Fill colour for the two outer polygon sections.                     |
+| `SCIPitchforkCreationModifier.tineStroke`        | The pen style used to draw the four tine lines.                     |
+| `SCIPitchforkCreationModifier.mainStroke`        | The pen style used to draw the main pivot line.                     |
+| `SCIPitchforkCreationModifier.xAxisId`           | ID of the X‑Axis the annotation is measured against.                |
+| `SCIPitchforkCreationModifier.yAxisId`           | ID of the Y‑Axis the annotation is measured against.                |
+| `SCIPitchforkCreationModifier.tag`               | Custom tag identifier for the modifier.                             |
 
 ## Usage Example
 

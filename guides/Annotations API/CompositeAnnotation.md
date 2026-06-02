@@ -30,8 +30,8 @@ A `SCICompositeAnnotation` can be added onto a chart using the following code:
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
 </div>
 <div class="code-snippet" id="objectivec">
-    // Assume a surface has been created and configured somewhere
-id<SCIChartSurface> surface = self.surface;
+// Assume a surface has been created and configured somewhere
+id<ISCIChartSurface> surface;
 
 // Create a CompositeAnnotation
 SCICompositeAnnotation *compositeAnnotation = [SCICompositeAnnotation new];

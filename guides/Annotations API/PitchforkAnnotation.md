@@ -20,11 +20,11 @@ The SCIPitchforkAnnotation is defined by three base points:
 
 The SCIPitchforkAnnotation can be configured using the properties and method listed in the table below:
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIPitchforkAnnotation.tineStroke`           |  Defines the SCIPenStyle used to draw the pitchfork lines (outer 4 tines).                                 |
-| `SCIPitchforkAnnotation.halfWidthZoneFill`         |  Defines the SCIBrushStyle used to fill the central region around the median line.  |
-| `SCIPitchforkAnnotation.fullWidthZoneFill` |  Defines the SCIBrushStyle used to fill the outer regions on either side.                                         |  
+| **Field**                                  | **Description**                                                                   |
+| ------------------------------------------ | --------------------------------------------------------------------------------- |
+| `SCIPitchforkAnnotation.tineStroke`        | Defines the SCIPenStyle used to draw the pitchfork lines (outer 4 tines).         |
+| `SCIPitchforkAnnotation.halfWidthZoneFill` | Defines the SCIBrushStyle used to fill the central region around the median line. |
+| `SCIPitchforkAnnotation.fullWidthZoneFill` | Defines the SCIBrushStyle used to fill the outer regions on either side.          |
 
 
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.

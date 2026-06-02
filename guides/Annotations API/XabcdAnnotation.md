@@ -28,11 +28,11 @@ kDPointIndex = 4 indicates the index of the final D point.
     * Triangle XAB
     * Triangle BCD
 
-The SCIPitchforkAnnotation can be configured using the properties and method listed in the table below:
+The SCIXabcdAnnotation can be configured using the properties and method listed in the table below:
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIXabcdAnnotation.showRatios`           |  Determines whether calculated harmonic ratios are displayed on the chart.                                 |
+| **Field**                       | **Description**                                                           |
+| ------------------------------- | ------------------------------------------------------------------------- |
+| `SCIXabcdAnnotation.showRatios` | Determines whether calculated harmonic ratios are displayed on the chart. |
 
 
 ## Define Points
@@ -51,7 +51,7 @@ A `SCIXabcdAnnotation` can be added onto a chart using the following code:
 </div>
 <div class="code-snippet" id="objectivec">
 // Assume a surface has been created and configured somewhere
-id<SCIChartSurface> surface = self.surface;
+id<ISCIChartSurface> surface;
 
 SCIXabcdAnnotation *xAbcdAnn = [[SCIXabcdAnnotation alloc] init];
 
@@ -98,6 +98,6 @@ xAbcdAnn.showRatios = true
 self.surface.annotations.add(items: xAbcdAnn)
 </div>
 
-> **_NOTE:_** For interactive creation of SCIPitchforkAnnotation, use the corresponding annotation creation modifier [SCIXabcdCreationModifier](trading-annotation---scixabcdcreationmodifier.html) available in SciChart iOS.
+> **_NOTE:_** For interactive creation of SCIXabcdAnnotation, use the corresponding annotation creation modifier [SCIXabcdCreationModifier](trading-annotation---scixabcdcreationmodifier.html) available in SciChart iOS.
 
 > **_NOTE:_** To learn more about other **Annotation Types**, available out of the box in SciChart, please find the comprehensive list in the [Annotation APIs](Annotations APIs.html) article.

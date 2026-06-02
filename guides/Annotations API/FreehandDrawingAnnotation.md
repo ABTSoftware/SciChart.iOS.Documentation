@@ -11,11 +11,11 @@ A `SCIFreehandDrawingAnnotation` is a multi-point annotation that stores a colle
 
 The SCIFreehandDrawingAnnotation can be configured using the properties and method listed in the table below:
 
-| **Field**                               | **Description**                                                                                     |
-| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| `SCIFreehandDrawingAnnotation.stroke`           |  Defines the stroke style (color and thickness) of the pen.                                |
-| `SCIFreehandDrawingAnnotation.drawId`         |  A unique identifier for the annotation instance.  |
-| `SCIFreehandDrawingAnnotation.selectionOffset` |  Extra padding applied around the selection bounds.                                           |  
+| **Field**                                      | **Description**                                            |
+| ---------------------------------------------- | ---------------------------------------------------------- |
+| `SCIFreehandDrawingAnnotation.stroke`          | Defines the stroke style (color and thickness) of the pen. |
+| `SCIFreehandDrawingAnnotation.drawId`          | A unique identifier for the annotation instance.           |
+| `SCIFreehandDrawingAnnotation.selectionOffset` | Extra padding applied around the selection bounds.         |
 
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
 

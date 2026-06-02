@@ -139,6 +139,7 @@ custom_categories:
       - Interactivity - SCISeriesSelectionModifier
       - Legend Modifier
       - Series Value Modifier
+      - Trading Annotation - SCIExtendedLineCreationModifier
       - Trading Annotation - SCIPitchforkCreationModifier
       - Trading Annotation - SCIXabcdCreationModifier
       - Trading Annotation - SCIFreehandDrawingModifier
@@ -158,6 +159,7 @@ custom_categories:
       - CustomAnnotation
       - CustomGrip
       - CompositeAnnotation
+      - ExtendedLineAnnotation
       - PitchforkAnnotation
       - XabcdAnnotation
       - FreehandDrawingAnnotation
@@ -479,6 +481,7 @@ custom_categories:
       - SCIAxisDragModifierBase
       - SCIXAxisDragModifier
       - SCIYAxisDragModifier
+      - SCIExtendedLineCreationModifier
       - SCIPitchforkCreationModifier
       - SCIXabcdCreationModifier
       - SCIFreehandDrawingModifier
@@ -702,6 +705,7 @@ custom_categories:
       - SCIPolyLineAnnotation
       - SCICompositeAnnotation
       - SCIXabcdAnnotation
+      - SCIExtendedLineAnnotation
       - SCIPitchforkAnnotation
       - SCIFreehandDrawingAnnotation
 
