@@ -28,7 +28,7 @@ The creation flow follows a structured sequence:
 ### Completion
 
 - After placing point **D**, the annotation is finalized
-- The `onCompleted` callback is invoked
+- The `annotationCreationCompletionListener` callback is invoked
 - The modifier resets immediately, ready for a new annotation
 
 ![Xabcd Annotation](img/annotations/xabcd-annotation.png)
@@ -67,12 +67,22 @@ modifier.annotationFill = [[SCISolidBrushStyle alloc] initWithColorCode:0x55AAAA
 
 // Callback triggered when the user completes placing all 5 points (X, A, B, C, D)
 // Provides access to the fully created annotation object
-modifier.onCompleted = ^(SCIXabcdAnnotation *annotation) {
-    NSLog(@"XABCD annotation created: %@", annotation);
-    NSArray<SCIComparablePoint*> *arrPoints = [annotation getBaseDataValues];
+__weak typeof(self) weakSelf = self;
+modifier.annotationCreationCompletionListener = ^(id<ISCIAnnotation> _Nonnull         createdAnnotation, SCIAnnotationCreationType type) {
+    __strong typeof(weakSelf) strongSelf = weakSelf;
+    if (!strongSelf) return;
+            
+    NSLog(@"XABCD annotation created: %@ type %@", createdAnnotation, SCIAnnotationTypeName(type));
+            
+    if (![createdAnnotation isKindOfClass:[SCIXabcdAnnotation class]]) return;
+            
+    SCIXabcdAnnotation *xabcd = (SCIXabcdAnnotation *)createdAnnotation;
+    NSArray<SCIComparablePoint *> *points = [xabcd getBaseDataValues];
 
-    NSLog(@"XABCD point X: %@, %@",[arrPoints[0].x toDate],arrPoints[0].y);
-    NSLog(@"XABCD point A: %@, %@",arrPoints[1].x,arrPoints[1].y);
+    // Get data points
+    // Index mapping: 0 = X, 1 = A, 2 = B, 3 = C, 4 = D
+    NSLog(@"[XABCD] X: date=%@  price=%@", points[0].x, points[0].y);
+    NSLog(@"[XABCD] A: date=%@  price=%@", points[1].x, points[1].y);
 };
 
 // Add the modifier to the chart surface
@@ -90,10 +100,17 @@ modifier.annotationFill = SCISolidBrushStyle(color: 0x55AAAA00)
 
 // Callback triggered when all points (X, A, B, C, D) are placed
 // Gives access to the completed annotation object
-modifier.onCompleted = { annotation in
-    print("XABCD annotation created: \(annotation)")
-    let arrPoints = annotation.getBaseDataValues()
-    print("XABCD point X: \(arrPoints[0].x.toDate), \(arrPoints[0].y)")
+modifier.annotationCreationCompletionListener  = { [weak self] createdAnnotation, type in
+    guard self != nil else { return }
+                
+    print("Annotation created: \(createdAnnotation), type: \(SCIAnnotationTypeName(type))")
+                
+    guard let xabcd = createdAnnotation as? SCIXabcdAnnotation else { return }
+    let arrPoints = xabcd.getBaseDataValues()
+                
+    // Get data points
+    // Index mapping: 0 = X, 1 = A, 2 = B, 3 = C, 4 = D
+    print("XABCD point X: \(arrPoints[0].x), \(arrPoints[0].y)")
     print("XABCD point A: \(arrPoints[1].x), \(arrPoints[1].y)")
 }
 
@@ -104,21 +121,22 @@ surface.chartModifiers.add(modifier)
 
 The SCIXabcdCreationModifier can be configured using the properties and method listed in the table below:
 
-| **Field**                                   | **Description**                                                                  |
-| ------------------------------------------- | -------------------------------------------------------------------------------- |
-| `SCIXabcdCreationModifier.annotationFill`   | Defines the stroke style for newly created annotations.                          |
-| `SCIXabcdCreationModifier.annotationFill`   | Defines the fill style for newly created annotations.                            |
-| `SCIXabcdCreationModifier.isInSourceBounds` | Reports whether the event occurred within the **Source**.                        |
-| `SCIXabcdCreationModifier.isDragging`       | Indicates whether the user is actively dragging a point.                         |
-| `SCIXabcdCreationModifier.activePointIndex` | Represents the index of the point currently being placed.                        |
-| `SCIXabcdCreationModifier.xAxisId`          | ID of the X‑Axis the annotation is measured against.                             |
-| `SCIXabcdCreationModifier.yAxisId`          | ID of the Y‑Axis the annotation is measured against.                             |
-| `SCIXabcdCreationModifier.tag`              | Custom tag identifier for the modifier.                                          |
-| `SCIXabcdCreationModifier.onCompleted`      | A callback invoked on the main thread when a full XABCD annotation is completed. |
+| **Field**                                                                | **Description**                                               |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| `SCIXabcdCreationModifier.annotationStroke`                              | Defines the stroke style for newly created annotations.       |
+| `SCIXabcdCreationModifier.annotationFill`                                | Defines the fill style for newly created annotations.         |
+| `SCIXabcdCreationModifier.isDragging`                                    | Indicates whether the user is actively dragging a point.      |
+| `SCIXabcdCreationModifier.activePointIndex`                              | Represents the index of the point currently being placed.     |
+| `SCIXabcdCreationModifier.reset()`                                       | Cancels and removes any in-progress annotation.               |
+| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.          |
+| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.          |
+| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                       |
+| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full XABCD annotation is completed. |
 
 ## Best Practices
 - Disable conflicting gesture modifiers during drawing for better UX
-- Use onCompleted to validate or store annotations
+- Use CompletionListener to validate or store annotations
+- Call `reset()` when switching tools or exiting drawing mode
 - Customize stroke/fill for better visual distinction
 - Call cancel when switching tools or modes
 

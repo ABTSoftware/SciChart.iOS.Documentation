@@ -17,15 +17,15 @@ This is useful for scenarios such as:
 
 ## API Reference
 
-| **Field**                                                | **Description**                                                                     |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| `SCIFreehandDrawingModifier.stroke`                      | The pen style used to draw the annotation                                           |
-| `SCIFreehandDrawingModifier.selectionOffset`             | Specifies extra padding around the selection bounds of the annotation..             |
-| `SCIFreehandDrawingModifier.xAxisId`                     | ID of the X‑Axis the annotation is measured against.                                |
-| `SCIFreehandDrawingModifier.yAxisId`                     | ID of the Y‑Axis the annotation is measured against.                                |
-| `SCIFreehandDrawingModifier.tag`                         | Custom tag identifier for the modifier.                                             |
-| `SCIFreehandDrawingModifier.onCompleted`                 | A callback invoked on the main thread when a full XABCD annotation is completed.    |
-| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()` | Removes all currently selected freehand drawing annotations from the chart surface. |
+| **Field**                                                                | **Description**                                                                     |
+| ------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- |
+| `SCIFreehandDrawingModifier.stroke`                                      | The pen style used to draw the annotation                                           |
+| `SCIFreehandDrawingModifier.selectionOffset`                             | Specifies extra padding around the selection bounds of the annotation..             |
+| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()`                 | Removes all currently selected freehand drawing annotations from the chart surface. |
+| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.                                |
+| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                                |
+| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                                             |
+| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a drawing annotation is completed.                          |
 
  
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle and SCIFontStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
@@ -42,11 +42,27 @@ A `SCIFreehandDrawingModifier` can be added onto a chart using the following cod
   <button class="code-snippet-tab" onclick="showCodeFor(event, 'swift')">SWIFT</button>
 </div>
 <div class="code-snippet" id="objectivec">
-    // Assume a surface has been created and configured somewhere
+// Assume a surface has been created and configured somewhere
 id<SCIChartSurface> surface = self.surface;
 
 SCIFreehandDrawingModifier *freehandModifier = [SCIFreehandDrawingModifier new];
+
+// Set the stroke style
 freehandModifier.stroke = [[SCISolidPenStyle alloc] initWithColorCode:0xFFFF0000 thickness:2];
+
+// Call completion block
+__weak typeof(self) weakSelf = self;
+  freehandModifier.annotationCreationCompletionListener = ^(id<ISCIAnnotation> _Nonnull createdAnnotation, SCIAnnotationCreationType type) {
+    __strong typeof(weakSelf) strongSelf = weakSelf;
+    if (!strongSelf) return;
+        
+    NSLog(@"FREEHAND annotation created: %@ type %@", createdAnnotation, SCIAnnotationTypeName(type));
+        
+    if (![createdAnnotation isKindOfClass:[SCIFreehandDrawingAnnotation class]]) return;
+    SCIFreehandDrawingAnnotation *annotation = (SCIFreehandDrawingAnnotation*) createdAnnotation;
+        
+    NSLog(@"draw id: %@", annotation.drawId);        
+};
 
 // Add to chart modifiers collection
 [surface.chartModifiers add:freehandModifier];
@@ -56,7 +72,20 @@ freehandModifier.stroke = [[SCISolidPenStyle alloc] initWithColorCode:0xFFFF0000
 let surface: ISCIChartSurface
 
 let freehandModifier = SCIFreehandDrawingModifier()
+
+// Set the stroke style
 freehandModifier.stroke = SCISolidPenStyle(color: SCIColor.red, thickness: 2.0)
+
+// Call completion block
+freehandModifier.annotationCreationCompletionListener = { [weak self] createdAnnotation, type in
+  guard self != nil else { return }
+            
+  print("FREEHAND drawing annotation created: \(createdAnnotation), type: \(SCIAnnotationTypeName(type))")
+            
+  if let annotation = createdAnnotation as? SCIFreehandDrawingAnnotation {
+      print("draw id: \(annotation.drawId)")
+  }
+}
 
 // Add to chart modifiers collection
 surface.chartModifiers.add(freehandModifier)

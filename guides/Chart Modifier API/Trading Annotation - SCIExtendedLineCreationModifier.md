@@ -26,7 +26,7 @@ The creation flow is split into two sequential pan gestures.
 ### Completion
 
 - After point **B** is set, a `SCIExtendedLineAnnotation` is created
-- The `onCompleted` callback is invoked on the main thread
+- The `annotationCreationCompletionListener` callback is invoked
 - The modifier automatically resets to Idle and is ready for the next line
 
 ## Retrieving Annotation Data
@@ -40,16 +40,16 @@ Values correspond to the chart’s X‑Axis and Y‑Axis units.
 
 ## API Reference
 
-| **Field**                                     | **Description**                                                     |
-| --------------------------------------------- | ------------------------------------------------------------------- |
-| `SCIExtendedLineCreationModifier.stroke`      | Pen style used to draw the extended line.                           |
-| `SCIExtendedLineCreationModifier.xAxisId`     | ID of the X‑Axis the annotation is draw against.                    |
-| `SCIExtendedLineCreationModifier.yAxisId`.    | ID of the Y‑Axis the annotation is measured against.                |
-| `SCIExtendedLineCreationModifier.tag`         | Custom tag identifier for the modifier.                             |
-| `SCIExtendedLineCreationModifier.extendStart` | Boolean flag controlling backward extension of the line.            |
-| `SCIExtendedLineCreationModifier.extendEnd`   | Boolean flag controlling forward extension of the line.             |
-| `SCIExtendedLineCreationModifier.onCompleted` | Callback invoked when a full extended line annotation is completed. |
-| `SCIExtendedLineCreationModifier.reset()`     | Cancels any in‑progress gesture and returns the modifier to Idle.   |
+| **Field**                                                                | **Description**                                                     |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `SCIExtendedLineCreationModifier.stroke`                                 | Pen style used to draw the extended line.                           |
+| `SCIExtendedLineCreationModifier.extendStart`                            | Boolean flag controlling backward extension of the line.            |
+| `SCIExtendedLineCreationModifier.extendEnd`                              | Boolean flag controlling forward extension of the line.             |
+| `SCIExtendedLineCreationModifier.reset()`                                | Cancels any in‑progress gesture and returns the modifier to Idle.   |
+| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is draw against.                    |
+| `SCIAnnotationCreationModifierBase.yAxisId`.                             | ID of the Y‑Axis the annotation is measured against.                |
+| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                             |
+| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | Callback invoked when a full extended line annotation is completed. |
 
 
 ## Usage Example
@@ -68,8 +68,19 @@ SCIExtendedLineCreationModifier *modifier = [SCIExtendedLineCreationModifier new
 modifier.extendStart = YES;
 modifier.extendEnd = YES; 
 
+// Set the stroke style
+modifier.stroke = [[SCISolidPenStyle alloc] initWithColorCode:0xFFE97064 thickness:2];
+
 // Handle completion
-modifier.onCompleted = ^(SCIExtendedLineAnnotation *annotation) {
+modifier.annotationCreationCompletionListener = ^(id<ISCIAnnotation> _Nonnull createdAnnotation, SCIAnnotationCreationType type) {         
+  __strong typeof(weakSelf) strongSelf = weakSelf;
+  if (!strongSelf) return;
+            
+  NSLog(@"ExtendedLine annotation created: %@ type %@", createdAnnotation, SCIAnnotationTypeName(type));
+     
+  if (![createdAnnotation isKindOfClass:[SCIExtendedLineAnnotation class]]) return;
+  SCIExtendedLineAnnotation *annotation = (SCIExtendedLineAnnotation *)createdAnnotation;
+            
   double x1Point = annotation.x1.toDouble;
   double x2Point = annotation.x2.toDouble;
   double y1Point = annotation.y1.toDouble;
@@ -92,8 +103,16 @@ let modifier = SCIExtendedLineCreationModifier()
 modifier.extendStart = true
 modifier.extendEnd = true
             
+// Set the stroke style
+modifier.stroke = SCISolidPenStyle(color: 0xFFE97064, thickness: 2)
+                        
 // Handle completion
-modifier.onCompleted = { annotation in
+modifier.annotationCreationCompletionListener  = { [weak self] createdAnnotation, type in
+  guard self != nil else { return }
+                
+  print("Annotation created: \(createdAnnotation), type: \(SCIAnnotationTypeName(type))")
+                
+  guard let annotation = createdAnnotation as? SCIExtendedLineAnnotation else { return }
   let x1Point: Double = annotation.getX1()
   let y1Point: Double = annotation.getY1()
   let x2Point: Double = annotation.getX2()
@@ -102,15 +121,12 @@ modifier.onCompleted = { annotation in
   print("point =\(x1Point)  \(x2Point)")
   print("point =\(y1Point)  \(y2Point)")
 }
-            
-// Add to chart
-self.surface.chartModifiers.add(modifier)
 
 </div>
 
 ## Best Practices
 
 - Disable conflicting gesture modifiers during extended line creation for smoother interaction
-- Use `onCompleted` to persist or analyze completed annotations
+- Use `annotationCreationCompletionListener` to persist or analyze completed annotations
 - Call `reset()` when switching tools or exiting drawing mode
 - Configure extendStart and extendEnd to match the desired line extension behavior

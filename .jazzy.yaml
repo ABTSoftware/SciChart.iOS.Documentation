@@ -454,6 +454,7 @@ custom_categories:
       - SCIExecuteOn
       - SCIModifierGroup
       - SCIPlacement
+      - SCIAnnotationCreationType
       - SCISelectionMode
       - SCIShiftTooltipHelper
       - SCISourceMode
@@ -481,6 +482,9 @@ custom_categories:
       - SCIAxisDragModifierBase
       - SCIXAxisDragModifier
       - SCIYAxisDragModifier
+
+      # Gesture Modifiers
+      - SCIAnnotationCreationModifierBase
       - SCIExtendedLineCreationModifier
       - SCIPitchforkCreationModifier
       - SCIXabcdCreationModifier

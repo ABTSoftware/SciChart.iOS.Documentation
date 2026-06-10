@@ -13,32 +13,42 @@ Those could be grouped like the following:
 #### Zoom and Pan Modifiers
 The following modifiers can be used if you want to add scrolling or zooming behavior to a chart:
 
-| **Modifier Name**                                                    | **Description**                                                                                                                                                           |
-| -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Modifier Name**                                                    | **Description**                                                                                                                                                                                                      |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [SCIZoomExtentsModifier](zoom-and-pan---scizoomextentsmodifier.html) | **Resets the zoom** to the data extents via double-tapping. Available almost everywhere, e.g. see the [Sync Multi Chart](https://www.scichart.com/example/ios-chart/ios-chart-example-sync-mutiple-charts/) example. |
-| [SCIPinchZoomModifier](zoom-and-pan---scipinchzoommodifier.html)     | **Zooms** a chart in and out via the pinch and spread gestures correspondingly. Available almost everywhere, e.g. see the [Multiple X-Axes](https://www.scichart.com/example/ios-multiple-axis-demo/) example. |
-| [SCIZoomPanModifier](zoom-and-pan---scizoompanmodifier.html)         | **Pans** the chart in X, Y or both directions with inertia via finger sliding. Available almost everywhere, e,g. see the [Multiple X-Axes](https://www.scichart.com/example/ios-multiple-axis-demo/) example. |
-| [SCIXAxisDragModifier](zoom-and-pan---scixaxisdragmodifier.html)     | **Scales** or **pans an X Axis** via finger drag. See [Drag Axis to Scale a Chart](https://www.scichart.com/example/ios-chart-chart-drag-axis-to-scale-example/) example. |
-| [SCIYAxisDragModifier](zoom-and-pan---sciyaxisdragmodifier.html)     | **Scales** or **pans an Y Axis** via finger drag. See [Drag Axis to Scale a Chart](https://www.scichart.com/example/ios-chart-chart-drag-axis-to-scale-example/) example. |
+| [SCIPinchZoomModifier](zoom-and-pan---scipinchzoommodifier.html)     | **Zooms** a chart in and out via the pinch and spread gestures correspondingly. Available almost everywhere, e.g. see the [Multiple X-Axes](https://www.scichart.com/example/ios-multiple-axis-demo/) example.       |
+| [SCIZoomPanModifier](zoom-and-pan---scizoompanmodifier.html)         | **Pans** the chart in X, Y or both directions with inertia via finger sliding. Available almost everywhere, e,g. see the [Multiple X-Axes](https://www.scichart.com/example/ios-multiple-axis-demo/) example.        |
+| [SCIXAxisDragModifier](zoom-and-pan---scixaxisdragmodifier.html)     | **Scales** or **pans an X Axis** via finger drag. See [Drag Axis to Scale a Chart](https://www.scichart.com/example/ios-chart-chart-drag-axis-to-scale-example/) example.                                            |
+| [SCIYAxisDragModifier](zoom-and-pan---sciyaxisdragmodifier.html)     | **Scales** or **pans an Y Axis** via finger drag. See [Drag Axis to Scale a Chart](https://www.scichart.com/example/ios-chart-chart-drag-axis-to-scale-example/) example.                                            |
 
 #### Interactivity Modifiers
 These modifiers allow to interact with chart series or inspect them:
 
-| **Modifier Name**                                                             | **Description**                                                                                                                                            |
-| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [SCISeriesSelectionModifier](interactivity---sciseriesselectionmodifier.html) | Provides **selection** of a series via tapping on it. See the [Series Selection](https://www.scichart.com/example/ios-chart/ios-series-selection/) example.          |
-| [SCITooltipModifier](interactivity---scitooltipmodifier.html)                 | Provides a **tooltip** for the nearest point on a series under the finger. See the [Using TooltipModifier](https://www.scichart.com/example/ios-chart/ios-using-tooltip-modifier/) example. |
+| **Modifier Name**                                                             | **Description**                                                                                                                                                                                                  |
+| ----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [SCISeriesSelectionModifier](interactivity---sciseriesselectionmodifier.html) | Provides **selection** of a series via tapping on it. See the [Series Selection](https://www.scichart.com/example/ios-chart/ios-series-selection/) example.                                                      |
+| [SCITooltipModifier](interactivity---scitooltipmodifier.html)                 | Provides a **tooltip** for the nearest point on a series under the finger. See the [Using TooltipModifier](https://www.scichart.com/example/ios-chart/ios-using-tooltip-modifier/) example.                      |
 | [SCIRolloverModifier](interactivity---scirollovermodifier.html)               | Provides a **vertical slice** cursor **with tooltips** and markers rolling over a series. See the [Using RolloverModifier](https://www.scichart.com/example/ios-chart-tooltips-using-rollovermodifier/) example. |
-| [SCICursorModifier](interactivity---scicursormodifier.html)                   | Provides a **crosshairs** with a tooltip and axis labels. See [Using CursorModifier](https://www.scichart.com/example/ios-using-cursor-modifier/) example. |
+| [SCICursorModifier](interactivity---scicursormodifier.html)                   | Provides a **crosshairs** with a tooltip and axis labels. See [Using CursorModifier](https://www.scichart.com/example/ios-using-cursor-modifier/) example.                                                       |
 
 #### Miscellaneous Modifiers  
 Modifiers below are used as helpers and can be a useful addition to a chart:
 
-| **Modifier Name**                              | **Description**                                                                                                                                            |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [SCIModifierGroup](#scimodifiergroup-features) | Can be used to **group** chart modifiers together. This can useful in **multi-chart** scenarios, to unite ModifierGroups into one **EventGroup** of modifiers. If an **Event** occurs on a chart, it will be propagated to modifiers from other charts that are in the same **EventGroup**. See the [Multi-Panel Stock Chart](https://www.scichart.com/example/ios-multi-pane-stock-chart/) example. |
-| [SCILegendModifier](legend-modifier.html)    | Allows to creates and configure a **Legend** for a chart. See the [Legend Chart](https://www.scichart.com/example/ios-chart/ios-chart-legends-api-example/) example. |
-| [SCISeriesValueModifier](series-value-modifier.html)    | A custom ChartModifier which places an `SCISeriesValueMarkerAnnotation` on the YAxis for each RenderableSeries in the chart, showing the current `ISCIRenderableSeries` latest Y-value. E.g. for each series, place one axis-marker with the latest Y-value of the series. See the [SeriesValueModifier Chart](https://www.scichart.com/example/ios-chart/ios-chart-legends-api-example/) example. |
+| **Modifier Name**                                    | **Description**                                                                                                                                                                                                                                                                                                                                                                                      |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [SCIModifierGroup](#scimodifiergroup-features)       | Can be used to **group** chart modifiers together. This can useful in **multi-chart** scenarios, to unite ModifierGroups into one **EventGroup** of modifiers. If an **Event** occurs on a chart, it will be propagated to modifiers from other charts that are in the same **EventGroup**. See the [Multi-Panel Stock Chart](https://www.scichart.com/example/ios-multi-pane-stock-chart/) example. |
+| [SCILegendModifier](legend-modifier.html)            | Allows to creates and configure a **Legend** for a chart. See the [Legend Chart](https://www.scichart.com/example/ios-chart/ios-chart-legends-api-example/) example.                                                                                                                                                                                                                                 |
+| [SCISeriesValueModifier](series-value-modifier.html) | A custom ChartModifier which places an `SCISeriesValueMarkerAnnotation` on the YAxis for each RenderableSeries in the chart, showing the current `ISCIRenderableSeries` latest Y-value. E.g. for each series, place one axis-marker with the latest Y-value of the series. See the [SeriesValueModifier Chart](https://www.scichart.com/example/ios-chart/ios-chart-legends-api-example/) example.   |
+
+#### Creation Modifiers
+These modifiers allow interactive drawing of annotations directly on the chart surface:
+
+| **Modifier Name**                                                                            | **Description**                                                                                                                                                                                                                                                                                        |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [SCIXabcdCreationModifier](trading-annotation---scixabcdcreationmodifier.html)               | Provides interactive placement of an XABCD harmonic pattern by tapping/dragging to define five sequential points [X, A, B, C, D]. Commonly used in trading analysis for pattern recognition. See the [Trading Annotation](https://www.scichart.com/example/ios-chart/ios-trading-annotation/) example. |
+| [SCIPitchforkCreationModifier](trading-annotation---scipitchforkcreationmodifier.html)       | Enables interactive creation of a pitchfork tool by selecting three anchor points. Automatically draws three parallel trend lines for support/resistance analysis. See the [Trading Annotation](https://www.scichart.com/example/ios-chart/ios-trading-annotation/)  example.                          |
+| [SCIExtendedLineCreationModifier](trading-annotation---sciextendedlinecreationmodifier.html) | Allows interactive placement of an extended line through two points [X1, Y1], [X2, Y2]. The line extends infinitely across the chart viewport for trend visualization.                                                                                                                                 |
+| [SCIFreehandDrawingModifier](trading-annotation---scifreehanddrawingmodifier.html)           | Provides a **crosshairs** with a tooltip and axis labels. See [Freehand Drawing Annotation](https://www.scichart.com/example/ios-freehand-drawing-annotation/) example.                                                                                                                                |
 
 > **_NOTE:_** To learn more about **ChartModifiers API**, please read the [Common ChartModifiers Features](#common-chart-modifier-features) section. 
 > To find out more about a **specific** ChartModifier, please refer to a corresponding article about this Modifier type.
@@ -81,13 +91,13 @@ It is a must that Custom Modifiers implement `ISCIChartModifier`, and hence we r
 
 Please see the list of common features below:
 
-| **Feature**                              | **Description**                                                                                                             |
-| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| `ISCIChartSurfaceProvider.parentSurface` | Provides the `ISCIChartSurface` which the modifier is attached to. See the `ISCIAttachable.isAttached` method below.        |
-| `ISCIChartModifierCore.modifierSurface`  | Returns the **ModifierSurface** from the parental `SCIChartSurface`. It is used to place Views like tooltips, etc. onto it. |
+| **Feature**                              | **Description**                                                                                                                                                                                               |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `ISCIChartSurfaceProvider.parentSurface` | Provides the `ISCIChartSurface` which the modifier is attached to. See the `ISCIAttachable.isAttached` method below.                                                                                          |
+| `ISCIChartModifierCore.modifierSurface`  | Returns the **ModifierSurface** from the parental `SCIChartSurface`. It is used to place Views like tooltips, etc. onto it.                                                                                   |
 | `ISCIAttachable.isAttached`              | Value which indicates whether a modifier is attached to a `SCIChartSurface` or not. If it is - `ISCIChartSurfaceProvider.parentSurface` property will return the corresponding instance of `SCIChartSurface`. |
-| `ISCIChartModifierCore.isEnabled`        | Allows to specify if a modifier should be **available** for interaction **or not**.                                         |
-| `ISCIReceiveEvents.receiveHandledEvents` | Allows to specify whether a modifier should receive events handled by another modifier.                                     |
+| `ISCIChartModifierCore.isEnabled`        | Allows to specify if a modifier should be **available** for interaction **or not**.                                                                                                                           |
+| `ISCIReceiveEvents.receiveHandledEvents` | Allows to specify whether a modifier should receive events handled by another modifier.                                                                                                                       |
 
 #### SCIModifierGroup Features
 The `SCIModifierGroup` allows **grouping** of modifiers. This can be useful if modifiers create a logical group within which they are handled together. 
@@ -101,3 +111,15 @@ This can be done by setting `SCIModifierGroup.eventGroup` to be the same for **M
 | `SCIModifierGroup.eventGroup`        | Allows to specify which **EventGroup** this modifier goes in. It is used to share events between modifiers that belong to different surfaces. |
 | `ISCIReceiveEventGroup.eventsSource` | Returns the **ModifierSurface** which is the source of the events.                                                                            |
 | `SCIModifierGroup.childModifiers`    | Assigns a collection of modifiers to a **ModifierGroup**. Also a collection can be passed into the class constructor during creation.         |
+
+## Common Creation Modifier Features
+All the **CreationModifiers** provided by SciChart derive from the `SCIAnnotationCreationModifierBase` class. 
+
+Please see the list of common features below:
+
+| **Feature**                                                              | **Description**                                                  |
+| ------------------------------------------------------------------------ | ---------------------------------------------------------------- |
+| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.             |
+| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.             |
+| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                          |
+| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full annotation creation is completed. |

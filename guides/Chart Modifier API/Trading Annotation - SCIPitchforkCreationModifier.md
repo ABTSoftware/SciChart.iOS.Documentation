@@ -44,7 +44,7 @@ The creation flow is split into two sequential pan gestures.
 ### Completion
 
 - After point **C** is set, a `SCIPitchforkAnnotation` is created
-- The `onCompleted` callback is invoked on the main thread
+- The `annotationCreationCompletionListener` callback is invoked
 - The modifier automatically resets to `Idle` and is ready for the next pitchfork
 
 ## Retrieving Annotation Data
@@ -67,18 +67,18 @@ You can extract its geometry using base data methods exposed by the annotation:
 
 ## API Reference
 
-| **Field**                                        | **Description**                                                     |
-| ------------------------------------------------ | ------------------------------------------------------------------- |
-| `SCIPitchforkCreationModifier.creationState`     | Current state of the pitchfork creation lifecycle.                  |
-| `SCIPitchforkCreationModifier.onCompleted`       | A callback invoked when a full pitchfork annotation is completed.   |
-| `SCIPitchforkCreationModifier.reset()`           | Cancels any in-progress gesture and returns the modifier to `Idle`. |
-| `SCIPitchforkCreationModifier.halfWidthZoneFill` | Fill colour for the central (middle) polygon section.               |
-| `SCIPitchforkCreationModifier.fullWidthZoneFill` | Fill colour for the two outer polygon sections.                     |
-| `SCIPitchforkCreationModifier.tineStroke`        | The pen style used to draw the four tine lines.                     |
-| `SCIPitchforkCreationModifier.mainStroke`        | The pen style used to draw the main pivot line.                     |
-| `SCIPitchforkCreationModifier.xAxisId`           | ID of the X‑Axis the annotation is measured against.                |
-| `SCIPitchforkCreationModifier.yAxisId`           | ID of the Y‑Axis the annotation is measured against.                |
-| `SCIPitchforkCreationModifier.tag`               | Custom tag identifier for the modifier.                             |
+| **Field**                                                                | **Description**                                                     |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------- |
+| `SCIPitchforkCreationModifier.halfWidthZoneFill`                         | Fill colour for the central (middle) polygon section.               |
+| `SCIPitchforkCreationModifier.fullWidthZoneFill`                         | Fill colour for the two outer polygon sections.                     |
+| `SCIPitchforkCreationModifier.tineStroke`                                | The pen style used to draw the four tine lines.                     |
+| `SCIPitchforkCreationModifier.mainStroke`                                | The pen style used to draw the main pivot line.                     |
+| `SCIPitchforkCreationModifier.creationState`                             | Current state of the pitchfork creation lifecycle.                  |
+| `SCIPitchforkCreationModifier.reset()`                                   | Cancels any in-progress gesture and returns the modifier to `Idle`. |
+| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.                |
+| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                |
+| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                             |
+| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full pitchfork annotation is completed.   |
 
 ## Usage Example
 
@@ -92,16 +92,30 @@ You can extract its geometry using base data methods exposed by the annotation:
 // Create pitchfork creation modifier
 SCIPitchforkCreationModifier *modifier = [SCIPitchforkCreationModifier new];
 
+//Styling
+modifier.halfWidthZoneFill = [[SCISolidBrushStyle alloc] initWithColorCode:0x401F9FFF];
+modifier.fullWidthZoneFill = [[SCISolidBrushStyle alloc] initWithColorCode:0x40F0FA00];
+modifier.tineStroke = [[SCISolidPenStyle alloc] initWithColorCode:0xFF007064 thickness:2];
+modifier.mainStroke = [[SCISolidPenStyle alloc] initWithColorCode:0xFF007064 thickness:2];
+
 // Handle completion
-modifier.onCompleted = ^(SCIPitchforkAnnotation *annotation) {
-NSLog(@"Pitchfork created: %@", annotation);
-
-NSArray *points = [annotation getBaseDataValues];
-
-NSLog(@"Point A: %@", points[0]);
-NSLog(@"Point B: %@", points[1]);
-NSLog(@"Point C: %@", points[2]);
-
+__weak typeof(self) weakSelf = self;
+modifier.annotationCreationCompletionListener = ^(id<ISCIAnnotation> _Nonnull createdAnnotation, SCIAnnotationCreationType type) {
+  __strong typeof(weakSelf) strongSelf = weakSelf;
+  if (!strongSelf) return;
+            
+  NSLog(@"PITCHFORK annotation created: %@ type %@", createdAnnotation, SCIAnnotationTypeName(type));
+            
+  if (![createdAnnotation isKindOfClass:[SCIPitchforkAnnotation class]]) return;
+  SCIPitchforkAnnotation *annotation = (SCIPitchforkAnnotation*) createdAnnotation;
+            
+  /// Get data points
+  NSArray<SCIComparablePoint *> *arrPoints = [annotation getBaseDataValues];
+            
+  NSLog(@"Point A: %@", arrPoints[0]);
+  NSLog(@"Point B: %@", arrPoints[1]);
+  NSLog(@"Point C: %@", arrPoints[2]);
+            
 };
 
 // Add to chart
@@ -114,16 +128,25 @@ NSLog(@"Point C: %@", points[2]);
 // Create pitchfork creation modifier
 let modifier = SCIPitchforkCreationModifier()
 
+
+modifier.halfWidthZoneFill = SCISolidBrushStyle(color: 0x401F9FFF)
+modifier.fullWidthZoneFill  = SCISolidBrushStyle(color: 0x40F0FA00)
+modifier.tineStroke = SCISolidPenStyle(color: 0xFF007064, thickness: 2)
+modifier.mainStroke = SCISolidPenStyle(color: 0xFF007064, thickness: 2)
+            
 // Handle completion
-modifier.onCompleted = { annotation in
-print("Pitchfork created: (annotation)")
-
-let points = annotation.getBaseDataValues()
-
-print("Point A: \(points[0])")
-print("Point B: \(points[1])")
-print("Point C: \(points[2])")
-
+modifier.annotationCreationCompletionListener = { [weak self] createdAnnotation, type in
+    guard self != nil else { return }
+                
+    print("PITCHFORK annotation created: \(createdAnnotation), type: \(SCIAnnotationTypeName(type))")
+                
+    if let annotation = createdAnnotation as? SCIPitchforkAnnotation {
+        // Get data points
+        let points = annotation.getBaseDataValues()
+        print("Point A: \(points[0])")
+        print("Point B: \(points[1])")
+        print("Point C: \(points[2])")
+    }
 }
 
 // Add to chart
@@ -134,7 +157,7 @@ surface.chartModifiers.add(modifier)
 ## Best Practices
 
 - Disable conflicting gesture modifiers during pitchfork creation for smoother interaction
-- Use `onCompleted` to persist or analyze completed annotations
+- Use `annotationCreationCompletionListener` to persist or analyze completed annotations
 - Call `reset()` when switching tools or exiting drawing mode
 - Use distinct styling for pitchfork annotations to improve chart readability
 
