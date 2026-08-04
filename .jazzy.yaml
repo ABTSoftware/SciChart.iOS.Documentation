@@ -139,6 +139,10 @@ custom_categories:
       - Interactivity - SCISeriesSelectionModifier
       - Legend Modifier
       - Series Value Modifier
+      - Trading Annotation - SCIExtendedLineCreationModifier
+      - Trading Annotation - SCIPitchforkCreationModifier
+      - Trading Annotation - SCIXabcdCreationModifier
+      - Trading Annotation - SCIFreehandDrawingModifier
 
   - name: Annotations APIs
     children:
@@ -154,6 +158,11 @@ custom_categories:
       - AxisMarkerCustomAnnotation
       - CustomAnnotation
       - CustomGrip
+      - CompositeAnnotation
+      - ExtendedLineAnnotation
+      - PitchforkAnnotation
+      - XabcdAnnotation
+      - FreehandDrawingAnnotation
 
   # - name: Advanced 2D chart Topics
   # children:
@@ -445,6 +454,7 @@ custom_categories:
       - SCIExecuteOn
       - SCIModifierGroup
       - SCIPlacement
+      - SCIAnnotationCreationType
       - SCISelectionMode
       - SCIShiftTooltipHelper
       - SCISourceMode
@@ -472,6 +482,13 @@ custom_categories:
       - SCIAxisDragModifierBase
       - SCIXAxisDragModifier
       - SCIYAxisDragModifier
+
+      # Gesture Modifiers
+      - SCIAnnotationCreationModifierBase
+      - SCIExtendedLineCreationModifier
+      - SCIPitchforkCreationModifier
+      - SCIXabcdCreationModifier
+      - SCIFreehandDrawingModifier
 
       # Series Value Modifier
       - ISCISeriesValueMarker
@@ -683,6 +700,18 @@ custom_categories:
       - SCIAxisLabelAnnotation
       - SCIAxisMarkerAnnotation
       - SCIAxisMarkerCustomAnnotation
+
+      # Trading Annotations
+      - ISCITradingAnnotation
+      - SCITradingAnnotationBase
+      - SCIElliotWaveAnnotationBase
+      - ISCIPolyLineAnnotation
+      - SCIPolyLineAnnotation
+      - SCICompositeAnnotation
+      - SCIXabcdAnnotation
+      - SCIExtendedLineAnnotation
+      - SCIPitchforkAnnotation
+      - SCIFreehandDrawingAnnotation
 
       - ISCIAnnotationDragListener
       - SCIAnnotationIsHiddenChangedListener
