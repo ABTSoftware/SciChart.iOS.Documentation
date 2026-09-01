@@ -12,23 +12,26 @@ This article is concerned with simply giving **an overview of the annotations** 
 
 The annotations which are available out the box in SciChart are listed below:
 
-| **Annotation Type**                                              | **Description**                                                                                                                       |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| [SCIBoxAnnotation](boxannotation.html)                           | Draws a **rectangle** at specific `X1, X2, Y1, Y2` coordinates.                                                                       |
-| [SCILineAnnotation](lineannotation.html)                         | Draws a **line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                                       |
-| [SCILineArrowAnnotation](linearrowannotation.html)               | Draws an **arrow** from `[X1, Y1]` to `[X2, Y2]` coordinates.                                                                         |
-| [SCIHorizontalLineAnnotation](horizontallineannotation.html)     | Draws a **horizontal line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                            |
-| [SCIVerticalLineAnnotation](verticallineannotation.html)         | Draws a **vertical line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                              |
-| [SCITextAnnotation](textannotation.html)                         | Allows to place a piece of **text** at specific `[X1, Y1]` coordinates on a chart.                                                    |
-| [SCIImageAnnotation](imageannotation.html)                       | Allows to place a **image** at specific `[X1, Y1]` coordinates on a chart or use it as a background image for a chart.                |
-| [SCIAxisLabelAnnotation](axislabelannotation.html)               | Allows to place a piece of **text** at specific `X1` or  `Y1` coordinate on a chart **Axis**.                                         |
-| [SCIAxisMarkerAnnotation](axismarkerannotation.html)             | Allows to place **markers** with custom text onto `X or Y axes`. By default, shows the axis **value at its location**.                |
-| [SCIAxisMarkerCustomAnnotation](axismarkercustomannotation.html) | Allows to place **markers** with custom `UIView` onto `X or Y axes`.                                                                  |
-| [SCICustomAnnotation](customannotation.html)                     | Allows to place any `UIView` at a specific `[X1, Y1]` coordinates on a chart.                                                         |
-| [SCIXabcdAnnotation](xabcdannotation.html)                       | Allows to draw XABCD pattern by connecting five points [X, A, B, C, D] points.                                                        |
-| [SCIPitchforkAnnotation](pitchforkannotation.html)               | Allows to draw an Andrew's Pitchfork from a pivot point A through two crossbar points B, C projecting three parallel trend channels.  |
-| [SCIExtendedLineAnnotation](extendedlineannotation.html)         | Allows to draws a line between [X1, Y1] and [X2, Y2] coordinates that can optionally extend beyond either endpoint to the chart edge. |
-| [SCIFreehandDrawingAnnotation](freehanddrawingannotation.html)   | Allows to draws a freehand path by recording a continuous sequence of touch points across the chart surface.                          |
+| **Annotation Type**                                                      | **Description**                                                                                                                              |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [SCIBoxAnnotation](boxannotation.html)                                   | Draws a **rectangle** at specific `X1, X2, Y1, Y2` coordinates.                                                                              |
+| [SCILineAnnotation](lineannotation.html)                                 | Draws a **line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                                              |
+| [SCILineArrowAnnotation](linearrowannotation.html)                       | Draws an **arrow** from `[X1, Y1]` to `[X2, Y2]` coordinates.                                                                                |
+| [SCIHorizontalLineAnnotation](horizontallineannotation.html)             | Draws a **horizontal line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                                   |
+| [SCIVerticalLineAnnotation](verticallineannotation.html)                 | Draws a **vertical line** between `[X1, Y1]` and `[X2, Y2]` coordinates.                                                                     |
+| [SCITextAnnotation](textannotation.html)                                 | Allows to place a piece of **text** at specific `[X1, Y1]` coordinates on a chart.                                                           |
+| [SCIImageAnnotation](imageannotation.html)                               | Allows to place a **image** at specific `[X1, Y1]` coordinates on a chart or use it as a background image for a chart.                       |
+| [SCIAxisLabelAnnotation](axislabelannotation.html)                       | Allows to place a piece of **text** at specific `X1` or  `Y1` coordinate on a chart **Axis**.                                                |
+| [SCIAxisMarkerAnnotation](axismarkerannotation.html)                     | Allows to place **markers** with custom text onto `X or Y axes`. By default, shows the axis **value at its location**.                       |
+| [SCIAxisMarkerCustomAnnotation](axismarkercustomannotation.html)         | Allows to place **markers** with custom `UIView` onto `X or Y axes`.                                                                         |
+| [SCICustomAnnotation](customannotation.html)                             | Allows to place any `UIView` at a specific `[X1, Y1]` coordinates on a chart.                                                                |
+| [SCIXabcdAnnotation](xabcdannotation.html)                               | Allows to draw XABCD pattern by connecting five points [X, A, B, C, D] points.                                                               |
+| [SCIPitchforkAnnotation](pitchforkannotation.html)                       | Allows to draw an Andrew's Pitchfork from a pivot point A through two crossbar points B, C projecting three parallel trend channels.         |
+| [SCIExtendedLineAnnotation](extendedlineannotation.html)                 | Allows to draws a line between [X1, Y1] and [X2, Y2] coordinates that can optionally extend beyond either endpoint to the chart edge.        |
+| [SCIFreehandDrawingAnnotation](freehanddrawingannotation.html)           | Allows to draws a freehand path by recording a continuous sequence of touch points across the chart surface.                                 |
+| [SCIFibonacciRetracementAnnotation](fibonacciretracementannotation.html) | Allows to plot Fibonacci retracement levels between two extreme points.                                                                      |
+| [SCIMeasureAnnotation](measureannotation.html)                           | Allows to measure the price and time change between two points, displaying the calculated change as a label.                                 |
+| [SCIStopLossTakeProfitAnnotation](stoplosstakeprofitannotation.html)     | Allows to plot a trade planning zone between an entry level and a target level, coloured as take profit or stop loss depending on direction. |
 
 > **_NOTE:_** To learn more about **Annotation API**, please read the [Common Annotations Features](#common-annotations-features) section. 
 > To find out more about a **specific** Annotation Type, please refer to a corresponding article about this **Annotation type**.

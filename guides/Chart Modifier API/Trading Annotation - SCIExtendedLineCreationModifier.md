@@ -40,16 +40,16 @@ Values correspond to the chart’s X‑Axis and Y‑Axis units.
 
 ## API Reference
 
-| **Field**                                                                | **Description**                                                     |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| `SCIExtendedLineCreationModifier.stroke`                                 | Pen style used to draw the extended line.                           |
-| `SCIExtendedLineCreationModifier.extendStart`                            | Boolean flag controlling backward extension of the line.            |
-| `SCIExtendedLineCreationModifier.extendEnd`                              | Boolean flag controlling forward extension of the line.             |
-| `SCIExtendedLineCreationModifier.reset()`                                | Cancels any in‑progress gesture and returns the modifier to Idle.   |
-| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is draw against.                    |
-| `SCIAnnotationCreationModifierBase.yAxisId`.                             | ID of the Y‑Axis the annotation is measured against.                |
-| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                             |
-| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | Callback invoked when a full extended line annotation is completed. |
+| **Field**                              | **Description**                                                     |
+| -------------------------------------- | ------------------------------------------------------------------- |
+| `stroke`                               | Pen style used to draw the extended line.                           |
+| `extendStart`                          | Boolean flag controlling backward extension of the line.            |
+| `extendEnd`                            | Boolean flag controlling forward extension of the line.             |
+| `reset()`                              | Cancels any in‑progress gesture and returns the modifier to Idle.   |
+| `xAxisId`                              | ID of the X‑Axis the annotation is draw against.                    |
+| `yAxisId`.                             | ID of the Y‑Axis the annotation is measured against.                |
+| `tag`                                  | Custom tag identifier for the modifier.                             |
+| `annotationCreationCompletionListener` | Callback invoked when a full extended line annotation is completed. |
 
 
 ## Usage Example

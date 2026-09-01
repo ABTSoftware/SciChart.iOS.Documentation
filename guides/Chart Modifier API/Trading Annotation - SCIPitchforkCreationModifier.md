@@ -67,18 +67,18 @@ You can extract its geometry using base data methods exposed by the annotation:
 
 ## API Reference
 
-| **Field**                                                                | **Description**                                                     |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------- |
-| `SCIPitchforkCreationModifier.halfWidthZoneFill`                         | Fill colour for the central (middle) polygon section.               |
-| `SCIPitchforkCreationModifier.fullWidthZoneFill`                         | Fill colour for the two outer polygon sections.                     |
-| `SCIPitchforkCreationModifier.tineStroke`                                | The pen style used to draw the four tine lines.                     |
-| `SCIPitchforkCreationModifier.mainStroke`                                | The pen style used to draw the main pivot line.                     |
-| `SCIPitchforkCreationModifier.creationState`                             | Current state of the pitchfork creation lifecycle.                  |
-| `SCIPitchforkCreationModifier.reset()`                                   | Cancels any in-progress gesture and returns the modifier to `Idle`. |
-| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.                |
-| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                |
-| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                             |
-| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full pitchfork annotation is completed.   |
+| **Field**                              | **Description**                                                     |
+| -------------------------------------- | ------------------------------------------------------------------- |
+| `halfWidthZoneFill`                    | Fill colour for the central (middle) polygon section.               |
+| `fullWidthZoneFill`                    | Fill colour for the two outer polygon sections.                     |
+| `tineStroke`                           | The pen style used to draw the four tine lines.                     |
+| `mainStroke`                           | The pen style used to draw the main pivot line.                     |
+| `creationState`                        | Current state of the pitchfork creation lifecycle.                  |
+| `reset()`                              | Cancels any in-progress gesture and returns the modifier to `Idle`. |
+| `xAxisId`                              | ID of the X‑Axis the annotation is measured against.                |
+| `yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                |
+| `tag`                                  | Custom tag identifier for the modifier.                             |
+| `annotationCreationCompletionListener` | A callback invoked when a full pitchfork annotation is completed.   |
 
 ## Usage Example
 

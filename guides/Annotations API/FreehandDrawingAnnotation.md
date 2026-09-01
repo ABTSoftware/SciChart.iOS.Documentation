@@ -5,7 +5,7 @@ he `SCIFreehandDrawingAnnotation` allows for freehand drawing directly on the ch
 
 > **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - Freehand Drawing Annotation - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-freehand-drawing-annotations-example/) ̰
+> - Freehand Drawing Annotation - [Obj-C/Swift](https://www.scichart.com/example/ios-chart/ios-macos-freehand-drawing-annotations-example/)
 
 A `SCIFreehandDrawingAnnotation` is a multi-point annotation that stores a collection of points to represent a freehand path drawn by the user.
 

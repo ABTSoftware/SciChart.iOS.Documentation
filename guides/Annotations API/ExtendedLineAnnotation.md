@@ -3,8 +3,9 @@ The `SCIExtendedLineAnnotation` is a specialized line annotation for iOS charts 
 
 ![Extended Line Annotation](img/annotations/extended-line-annotation.png)
 
-> **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
+> **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub]
 > 
+> - Trading Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart/ios-macos-trading-annotation-example/)
 
 ## Structure and Points
 The SCIExtendedLineAnnotation is defined by two anchor points:

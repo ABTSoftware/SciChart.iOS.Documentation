@@ -5,7 +5,7 @@ The SCIXabcdAnnotation is a specialized multi-point trading annotation used to d
 
 > **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - Xabcd Annotation - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-trading-annotations-example/) ̰
+> - Trading Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart/ios-macos-trading-annotation-example/) ̰
 
 The `SCICompositeAnnotation` class provides the `SCICompositeAnnotation.borderPen` and `SCICompositeAnnotation.fillBrush` properties, which are used for the annotation outline and background and expects the `SCIPenStyle` and `SCIBrushStyle` correspondingly. 
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle and SCIFontStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.

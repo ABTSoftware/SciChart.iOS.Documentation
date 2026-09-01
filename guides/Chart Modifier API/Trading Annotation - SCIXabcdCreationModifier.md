@@ -121,17 +121,17 @@ surface.chartModifiers.add(modifier)
 
 The SCIXabcdCreationModifier can be configured using the properties and method listed in the table below:
 
-| **Field**                                                                | **Description**                                               |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| `SCIXabcdCreationModifier.annotationStroke`                              | Defines the stroke style for newly created annotations.       |
-| `SCIXabcdCreationModifier.annotationFill`                                | Defines the fill style for newly created annotations.         |
-| `SCIXabcdCreationModifier.isDragging`                                    | Indicates whether the user is actively dragging a point.      |
-| `SCIXabcdCreationModifier.activePointIndex`                              | Represents the index of the point currently being placed.     |
-| `SCIXabcdCreationModifier.reset()`                                       | Cancels and removes any in-progress annotation.               |
-| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.          |
-| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.          |
-| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                       |
-| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full XABCD annotation is completed. |
+| **Field**            | **Description**                                               |
+| -------------------- | ------------------------------------------------------------- |
+| `annotationStroke`   | Defines the stroke style for newly created annotations.       |
+| `annotationFill`     | Defines the fill style for newly created annotations.         |
+| `isDragging`         | Indicates whether the user is actively dragging a point.      |
+| `activePointIndex`   | Represents the index of the point currently being placed.     |
+| `reset()`            | Cancels and removes any in-progress annotation.               |
+| `xAxisId`            | ID of the X‑Axis the annotation is measured against.          |
+| `yAxisId`            | ID of the Y‑Axis the annotation is measured against.          |
+| `tag`                | Custom tag identifier for the modifier.                       |
+| `CompletionListener` | A callback invoked when a full XABCD annotation is completed. |
 
 ## Best Practices
 - Disable conflicting gesture modifiers during drawing for better UX
