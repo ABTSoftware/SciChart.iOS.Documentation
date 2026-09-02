@@ -1,5 +1,5 @@
 # The SCIXabcdAnnotation
-The SCIXabcdAnnotation is a specialized multi-point trading annotation used to draw harmonic patterns such as Gartley, Butterfly, Bat, and Crab. These patterns consist of five key points: X, A, B, C, and D, which help identify potential reversal zones in financial charts.
+The `SCIXabcdAnnotation` is a specialized multi-point trading annotation used to draw harmonic patterns such as Gartley, Butterfly, Bat, and Crab. These patterns consist of five key points: X, A, B, C, and D, which help identify potential reversal zones in financial charts.
 
 ![Xabcd Annotation](img/annotations/xabcd-annotation.png)
 

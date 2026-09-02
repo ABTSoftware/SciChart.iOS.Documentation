@@ -1,5 +1,5 @@
 # The SCIStopLossTakeProfitAnnotation
-The SCIStopLossTakeProfitAnnotation is a trade planning tool placed on the chart using two anchor points, which marks the zone between an entry level and a target level. It is commonly used to visualize a planned trade's risk and reward before it is placed.
+The `SCIStopLossTakeProfitAnnotation` is a trade planning tool placed on the chart using two anchor points, which marks the zone between an entry level and a target level. It is commonly used to visualize a planned trade's risk and reward before it is placed.
 
 ![Stop Loss / Take Profit Annotation](img/annotations/stoplosstakeprofit-annotation.png)
 
@@ -10,7 +10,7 @@ The SCIStopLossTakeProfitAnnotation is a trade planning tool placed on the chart
 > **_NOTE:_** To learn more about **Annotations** in general - please see the [Common Annotation Features](Annotations APIs.html#common-annotations-features) article.
 
 ## Structure and Points
-The SCIStopLossTakeProfitAnnotation is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
+The `SCIStopLossTakeProfitAnnotation` is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
 - Point 0: The entry level of the planned trade
 - Point 1: The target level of the planned trade
 
@@ -22,7 +22,7 @@ The SCIStopLossTakeProfitAnnotation is defined by two base points, added sequent
 - When `showAxisLabels` is enabled, price badges are drawn on the Y-Axis for the two levels, and badges are drawn on the X-Axis at the two anchor points. A band is also filled between the Y-Axis badges, with opacity controlled by `axisSpanFillOpacity`.
 - Additional point or segment labels can be drawn via the `labels` property, with their text optionally overridden dynamically via `formatLabel`.
 
-The SCIStopLossTakeProfitAnnotation can be configured using the properties listed in the table below:
+The `SCIStopLossTakeProfitAnnotation` can be configured using the properties listed in the table below:
 
 | **Field**                                             | **Description**                                                                                                                                                                                                                                                                                  |
 | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

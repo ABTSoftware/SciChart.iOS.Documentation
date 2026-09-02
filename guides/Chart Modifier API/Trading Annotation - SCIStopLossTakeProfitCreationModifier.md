@@ -36,21 +36,23 @@ The creation flow follows a structured sequence:
 - The `annotationCreationCompletionListener` callback is invoked
 - The modifier resets immediately, ready for a new annotation
 
-![Stop Loss / Take Profit Annotation](img/annotations/stop-loss-take-profit-annotation.png)
+![Stop Loss / Take Profit Annotation](img/annotations/stoplosstakeprofit-annotation.png)
 
 ## Retrieving Annotation Points After Drawing Completion
 After an annotation drawing is completed, you can retrieve its underlying points using:
-getBaseDataValues()
-getBasePoints()
+`-[ISCITradingAnnotation getBaseDataValues]`
+`-[ISCITradingAnnotation getBasePoints]`
 Both methods return the annotation's defining points, but in different coordinate spaces.
 
-### getBaseDataValues()
+`-[ISCITradingAnnotation getBaseDataValues]`
+
 - Returns the annotation points in data space (axis values).
 - X and Y values correspond to the chart's actual data coordinates
 - Independent of pixel resolution or screen scaling
 - Useful for storing, analysis, or reloading annotations
 
-### getBasePoints()
+`-[ISCITradingAnnotation getBasePoints]`
+
 - Returns annotation points in pixel space (rendered screen coordinates).
 - X and Y values correspond to screen pixels
 - Useful for rendering overlays or UI alignment
@@ -142,17 +144,18 @@ self.surface.chartModifiers.add(items: self.stopLossTakeProfitModifier)
 
 The SCIStopLossTakeProfitCreationModifier can be configured using the properties listed in the table below:
 
-| **Field**                              | **Description**                                                                               |
-| -------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `takeProfitStroke`                     | Defines the `SCIPenStyle` used for the level lines when the second point is above the first.  |
-| `takeProfitFill`                       | Defines the `SCIBrushStyle` used to fill the zone when the second point is above the first.   |
-| `stopLossStroke`                       | Defines the `SCIPenStyle` used for the level lines when the second point is below the first.  |
-| `stopLossFill`                         | Defines the `SCIBrushStyle` used to fill the zone when the second point is below the first.   |
-| `showAxisLabels`                       | Determines whether axis labels are shown on both the X and Y axes.                            |
-| `axisSpanFillOpacity`                  | Defines the opacity of the band filled on the axes between the two axis labels.               |
-| `labels`                               | Defines the labels applied to each new annotation.                                            |
-| `formatLabel`                          | Defines the block which supplies the complete text of each label.                             |
-| `annotationCreationCompletionListener` | A callback invoked when a full Stop Loss / Take Profit annotation (both points) is completed. |
+| **Field**                                                   | **Description**                                                                              |
+| ----------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `SCIStopLossTakeProfitCreationModifier.takeProfitStroke`    | Defines the `SCIPenStyle` used for the level lines when the second point is above the first. |
+| `SCIStopLossTakeProfitCreationModifier.takeProfitFill`      | Defines the `SCIBrushStyle` used to fill the zone when the second point is above the first.  |
+| `SCIStopLossTakeProfitCreationModifier.stopLossStroke`      | Defines the `SCIPenStyle` used for the level lines when the second point is below the first. |
+| `SCIStopLossTakeProfitCreationModifier.stopLossFill`        | Defines the `SCIBrushStyle` used to fill the zone when the second point is below the first.  |
+| `SCIStopLossTakeProfitCreationModifier.showAxisLabels`      | Determines whether axis labels are shown on both the X and Y axes.                           |
+| `SCIStopLossTakeProfitCreationModifier.axisSpanFillOpacity` | Defines the opacity of the band filled on the axes between the two axis labels.              |
+| `SCIStopLossTakeProfitCreationModifier.labels`              | Defines the labels applied to each new annotation.                                           |
+| `fSCIStopLossTakeProfitCreationModifier.ormatLabel`         | Defines the block which supplies the complete text of each label.                            |
+
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Best Practices
 - Pair `takeProfitStroke`/`takeProfitFill` and `stopLossStroke`/`stopLossFill` with clearly distinct colours (e.g. green vs red) so risk and reward zones are identifiable at a glance

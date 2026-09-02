@@ -30,24 +30,26 @@ The creation flow follows a structured sequence:
 
 - After placing the **End** point, the annotation is finalized
 - The direction between Start and End is resolved: if End is above Start, `growingStroke`/`growingFill` are applied; if End is below Start, `decliningStroke`/`decliningFill` are applied
-- The `annotationCreationCompletionListener` callback is invoked
+- The `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` callback is invoked
 - The modifier resets immediately, ready for a new annotation
 
 ![Measure Annotation](img/annotations/measure-annotation.png)
 
 ## Retrieving Annotation Points After Drawing Completion
 After an annotation drawing is completed, you can retrieve its underlying points using:
-getBaseDataValues()
-getBasePoints()
+`-[ISCITradingAnnotation getBaseDataValues]`
+`-[ISCITradingAnnotation getBasePoints]`
 Both methods return the annotation's defining points, but in different coordinate spaces.
 
-### getBaseDataValues()
+`-[ISCITradingAnnotation getBaseDataValues]`
+
 - Returns the annotation points in data space (axis values).
 - X and Y values correspond to the chart's actual data coordinates
 - Independent of pixel resolution or screen scaling
 - Useful for storing, analysis, or reloading annotations
 
-### getBasePoints()
+`-[ISCITradingAnnotation getBasePoints]`
+
 - Returns annotation points in pixel space (rendered screen coordinates).
 - X and Y values correspond to screen pixels
 - Useful for rendering overlays or UI alignment
@@ -141,16 +143,17 @@ self.surface.chartModifiers.add(items: self.measureModifier)
 
 The SCIMeasureCreationModifier can be configured using the properties listed in the table below:
 
-| **Field**                              | **Description**                                                                        |
-| -------------------------------------- | -------------------------------------------------------------------------------------- |
-| `growingStroke`                        | Defines the `SCIPenStyle` used when the second point is above the first.               |
-| `growingFill`                          | Defines the `SCIBrushStyle` used when the second point is above the first.             |
-| `decliningStroke`                      | Defines the `SCIPenStyle` used when the second point is below the first.               |
-| `decliningFill`                        | Defines the `SCIBrushStyle` used when the second point is below the first.             |
-| `labelStyle`                           | Defines the `SCIFontStyle` used by the measurement label.                              |
-| `yValueScaleFactor`                    | The factor applied to the price change to produce the scaled value shown in the label. |
-| `snapToCandles`                        | Determines whether the anchor points snap to whole candles.                            |
-| `annotationCreationCompletionListener` | A callback invoked when a full Measure annotation (both points) is completed.          |
+| **Field**                                      | **Description**                                                                        |
+| ---------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `SCIMeasureCreationModifier.growingStroke`     | Defines the `SCIPenStyle` used when the second point is above the first.               |
+| `SCIMeasureCreationModifier.growingFill`       | Defines the `SCIBrushStyle` used when the second point is above the first.             |
+| `SCIMeasureCreationModifier.decliningStroke`   | Defines the `SCIPenStyle` used when the second point is below the first.               |
+| `SCIMeasureCreationModifier.decliningFill`     | Defines the `SCIBrushStyle` used when the second point is below the first.             |
+| `SCIMeasureCreationModifier.labelStyle`        | Defines the `SCIFontStyle` used by the measurement label.                              |
+| `SCIMeasureCreationModifier.yValueScaleFactor` | The factor applied to the price change to produce the scaled value shown in the label. |
+| `SCIMeasureCreationModifier.snapToCandles`     | Determines whether the anchor points snap to whole candles.                            |
+
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Best Practices
 - Pair `growingStroke`/`growingFill` and `decliningStroke`/`decliningFill` with visually distinct colours (e.g. green vs red) so direction is communicated at a glance

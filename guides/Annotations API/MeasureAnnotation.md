@@ -1,5 +1,5 @@
 # The SCIMeasureAnnotation
-The SCIMeasureAnnotation measures the change between two points. It renders a rectangle, horizontal and vertical arrows and a dedicated measurement label. It is commonly used to analyze the magnitude and duration of a price swing, drawing a center line with arrowheads, a filled region indicating the measured range, and a label reporting the calculated change.
+The `SCIMeasureAnnotation` measures the change between two points. It renders a rectangle, horizontal and vertical arrows and a dedicated measurement label. It is commonly used to analyze the magnitude and duration of a price swing, drawing a center line with arrowheads, a filled region indicating the measured range, and a label reporting the calculated change.
 
 ![Measure Annotation](img/annotations/measure-annotation.png)
 
@@ -10,7 +10,7 @@ The SCIMeasureAnnotation measures the change between two points. It renders a re
 > **_NOTE:_** To learn more about **Annotations** in general - please see the [Common Annotation Features](Annotations APIs.html#common-annotations-features) article.
 
 ## Structure and Points
-The SCIMeasureAnnotation is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
+The `SCIMeasureAnnotation` is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
 - Point 0: The starting anchor point of the measurement
 - Point 1: The end point of the measurement
 
@@ -22,7 +22,7 @@ The SCIMeasureAnnotation is defined by two base points, added sequentially using
     * If the second point is **below** the first, the `decliningStroke` and `decliningFill` are used.
 - A label is drawn showing the measured change, scaled by `yValueScaleFactor`. The label background is taken from the currently active stroke colour (growing or declining).
 
-The SCIMeasureAnnotation can be configured using the properties listed in the table below:
+The `SCIMeasureAnnotation` can be configured using the properties listed in the table below:
 
 | **Field**                                | **Description**                                                                                                                                      |
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -14,6 +14,14 @@ Annotation available out of the box in SciChart are listed below:
 - [SCIAxisMarkerAnnotation](axismarkerannotation.html)
 - [SCIAxisMarkerCustomAnnotation](axismarkercustomannotation.html)
 - [SCICustomAnnotation](customannotation.html)
+- [SCICompositeAnnotation](compositeannotation.html)
+- [SCIExtendedLineAnnotation](extendedlineannotation.html)
+- [SCIXabcdAnnotation](xabcdannotation.html)
+- [SCIPitchforkAnnotation](pitchforkannotation.html)
+- [SCIFreehandDrawingAnnotation](freehanddrawingannotation.html)
+- [SCIFibonacciRetracementAnnotation](fibonacciretracementannotation.html)
+- [SCIMeasureAnnotation](measureannotation.html)
+- [SCIStopLossTakeProfitAnnotation](stoplosstakeprofitannotation.html)
 
 ## Getting Started
 This tutorial is suitable for **Objective-C**, **Swift** and **C#** with Xamarin.iOS.

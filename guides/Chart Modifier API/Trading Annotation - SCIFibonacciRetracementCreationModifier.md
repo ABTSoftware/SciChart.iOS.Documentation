@@ -28,24 +28,24 @@ The creation flow follows a structured sequence:
 ### Completion
 
 - After placing the **End** point, the annotation is finalized
-- The `annotationCreationCompletionListener` callback is invoked
+- The `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` callback is invoked
 - The modifier resets immediately, ready for a new annotation
 
 ![Fibonacci Retracement Annotation](img/annotations/fibonacci-retracement-annotation.png)
 
 ## Retrieving Annotation Points After Drawing Completion
 After an annotation drawing is completed, you can retrieve its underlying points using:
-getBaseDataValues()
-getBasePoints()
+`-[ISCITradingAnnotation getBaseDataValues]`
+`-[ISCITradingAnnotation getBasePoints]`
 Both methods return the annotation's defining points, but in different coordinate spaces.
 
-### getBaseDataValues()
+ `-[ISCITradingAnnotation getBaseDataValues]`
 - Returns the annotation points in data space (axis values).
 - X and Y values correspond to the chart's actual data coordinates
 - Independent of pixel resolution or screen scaling
 - Useful for storing, analysis, or reloading annotations
 
-### getBasePoints()
+ `-[ISCITradingAnnotation getBasePoints]`
 - Returns annotation points in pixel space (rendered screen coordinates).
 - X and Y values correspond to screen pixels
 - Useful for rendering overlays or UI alignment
@@ -140,18 +140,19 @@ self.surface.chartModifiers.add(items: self.fibonacciModifier)
 
 The SCIFibonacciRetracementCreationModifier can be configured using the properties listed in the table below:
 
-| **Field**                              | **Description**                                                                                                                                  |
-| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `stroke`                               | Defines the `SCIPenStyle` used to draw the level lines. Supplies thickness and dash pattern; the colour of each level comes from `regionColors`. |
-| `levels`                               | Defines the Fibonacci ratios at which levels are drawn.                                                                                          |
-| `regionColors`                         | Defines the colours used to fill the regions between levels, treated as a ramp.                                                                  |
-| `fillOpacity`                          | Defines the opacity applied to the filled regions, in the range 0.0 - 1.0.                                                                       |
-| `showConnectorLine`                    | Determines whether a connector line is drawn between the two base points.                                                                        |
-| `connectorLineStroke`                  | Defines the `SCIPenStyle` used to draw the connector line between the two base points.                                                           |
-| `fibonacciLabelPlacement`              | Determines where the level labels are placed relative to their level line: `Left`, `Top`, or `Inside`.                                           |
-| `fibonacciLabelColorMode`              | Determines how the level labels are coloured: `MultiColor` (matches each level line) or `SingleColor` (uses `labelStyle`'s text colour).         |
-| `labelStyle`                           | Defines the `SCIFontStyle` used by the level labels.                                                                                             |
-| `annotationCreationCompletionListener` | A callback invoked when a full Fibonacci Retracement annotation (both points) is completed.                                                      |
+| **Field**                                                         | **Description**                                                                                                                                  |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `SCIFibonacciRetracementCreationModifier.stroke`                  | Defines the `SCIPenStyle` used to draw the level lines. Supplies thickness and dash pattern; the colour of each level comes from `regionColors`. |
+| `SCIFibonacciRetracementCreationModifier.levels`                  | Defines the Fibonacci ratios at which levels are drawn.                                                                                          |
+| `SCIFibonacciRetracementCreationModifier.regionColors`            | Defines the colours used to fill the regions between levels, treated as a ramp.                                                                  |
+| `SCIFibonacciRetracementCreationModifier.fillOpacity`             | Defines the opacity applied to the filled regions, in the range 0.0 - 1.0.                                                                       |
+| `SCIFibonacciRetracementCreationModifier.showConnectorLine`       | Determines whether a connector line is drawn between the two base points.                                                                        |
+| `SCIFibonacciRetracementCreationModifier.connectorLineStroke`     | Defines the `SCIPenStyle` used to draw the connector line between the two base points.                                                           |
+| `SCIFibonacciRetracementCreationModifier.fibonacciLabelPlacement` | Determines where the level labels are placed relative to their level line: `Left`, `Top`, or `Inside`.                                           |
+| `SCIFibonacciRetracementCreationModifier.fibonacciLabelColorMode` | Determines how the level labels are coloured: `MultiColor` (matches each level line) or `SingleColor` (uses `labelStyle`'s text colour).         |
+| `SCIFibonacciRetracementCreationModifier.labelStyle`              | Defines the `SCIFontStyle` used by the level labels.                                                                                             |
+
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Best Practices
 - Disable conflicting gesture modifiers during drawing for better UX

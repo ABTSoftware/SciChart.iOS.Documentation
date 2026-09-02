@@ -1,5 +1,5 @@
 # The SCIFibonacciRetracementAnnotation
-The SCIFibonacciRetracementAnnotation is a specialized two-point trading annotation used to plot Fibonacci retracement levels between two extreme points on a chart. A trendline connects the two points, and the vertical distance between them is divided by Fibonacci ratio levels placed at key percentages of that range (by default 0%, 23.6%, 38.2%, 50%, 61.8%, 78.6%, and 100%) to highlight potential support and resistance zones.
+The `SCIFibonacciRetracementAnnotation` is a specialized two-point trading annotation used to plot Fibonacci retracement levels between two extreme points on a chart. A trendline connects the two points, and the vertical distance between them is divided by Fibonacci ratio levels placed at key percentages of that range (by default 0%, 23.6%, 38.2%, 50%, 61.8%, 78.6%, and 100%) to highlight potential support and resistance zones.
 
 ![Fibonacci Retracement Annotation](img/annotations/fibonacci-retracement-annotation.png)
 
@@ -10,7 +10,7 @@ The SCIFibonacciRetracementAnnotation is a specialized two-point trading annotat
 > **_NOTE:_** To learn more about **Annotations** in general - please see the [Common Annotation Features](Annotations APIs.html#common-annotations-features) article.
 
 ## Structure and Points
-The SCIFibonacciRetracementAnnotation is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
+The `SCIFibonacciRetracementAnnotation` is defined by two base points, added sequentially using the setBasePointWithX(:y) method:
 - Point 0: The first extreme of the trend (start of the retracement)
 - Point 1: The second extreme of the trend (end of the retracement)
 

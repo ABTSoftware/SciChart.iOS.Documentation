@@ -44,7 +44,7 @@ The creation flow is split into two sequential pan gestures.
 ### Completion
 
 - After point **C** is set, a `SCIPitchforkAnnotation` is created
-- The `annotationCreationCompletionListener` callback is invoked
+- The `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` callback is invoked
 - The modifier automatically resets to `Idle` and is ready for the next pitchfork
 
 ## Retrieving Annotation Data
@@ -53,13 +53,13 @@ After completion, the resulting `SCIPitchforkAnnotation` contains the defining p
 
 You can extract its geometry using base data methods exposed by the annotation:
 
-### getBaseDataValues()
+`-[ISCITradingAnnotation getBaseDataValues]`
 
 - Returns pitchfork anchor points in **data space**
 - Values correspond to chart axis coordinates
 - Best for storage, analytics, and reconstruction
 
-### getBasePoints()
+`-[ISCITradingAnnotation getBasePoints]`
 
 - Returns pitchfork points in **pixel space**
 - Values correspond to rendered screen coordinates
@@ -67,18 +67,16 @@ You can extract its geometry using base data methods exposed by the annotation:
 
 ## API Reference
 
-| **Field**                              | **Description**                                                     |
-| -------------------------------------- | ------------------------------------------------------------------- |
-| `halfWidthZoneFill`                    | Fill colour for the central (middle) polygon section.               |
-| `fullWidthZoneFill`                    | Fill colour for the two outer polygon sections.                     |
-| `tineStroke`                           | The pen style used to draw the four tine lines.                     |
-| `mainStroke`                           | The pen style used to draw the main pivot line.                     |
-| `creationState`                        | Current state of the pitchfork creation lifecycle.                  |
-| `reset()`                              | Cancels any in-progress gesture and returns the modifier to `Idle`. |
-| `xAxisId`                              | ID of the X‑Axis the annotation is measured against.                |
-| `yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                |
-| `tag`                                  | Custom tag identifier for the modifier.                             |
-| `annotationCreationCompletionListener` | A callback invoked when a full pitchfork annotation is completed.   |
+| **Field**                                        | **Description**                                                     |
+| ------------------------------------------------ | ------------------------------------------------------------------- |
+| `SCIPitchforkCreationModifier.halfWidthZoneFill` | Fill colour for the central (middle) polygon section.               |
+| `SCIPitchforkCreationModifier.fullWidthZoneFill` | Fill colour for the two outer polygon sections.                     |
+| `SCIPitchforkCreationModifier.tineStroke`        | The pen style used to draw the four tine lines.                     |
+| `SCIPitchforkCreationModifier.mainStroke`        | The pen style used to draw the main pivot line.                     |
+| `SCIPitchforkCreationModifier.creationState`     | Current state of the pitchfork creation lifecycle.                  |
+| `-[SCIPitchforkCreationModifier reset]`          | Cancels any in-progress gesture and returns the modifier to `Idle`. |
+
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Usage Example
 
@@ -157,8 +155,8 @@ surface.chartModifiers.add(modifier)
 ## Best Practices
 
 - Disable conflicting gesture modifiers during pitchfork creation for smoother interaction
-- Use `annotationCreationCompletionListener` to persist or analyze completed annotations
-- Call `reset()` when switching tools or exiting drawing mode
+- Use `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` to persist or analyze completed annotations
+- Call `-[SCIPitchforkCreationModifier reset]` when switching tools or exiting drawing mode
 - Use distinct styling for pitchfork annotations to improve chart readability
 
 ## Notes

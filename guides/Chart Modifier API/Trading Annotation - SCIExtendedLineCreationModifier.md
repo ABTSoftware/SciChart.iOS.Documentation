@@ -34,23 +34,20 @@ The creation flow is split into two sequential pan gestures.
 After completion, the resulting `SCIExtendedLineAnnotation` provides direct access to its defining anchor points in data space.
 
 ### Point Accessors
-getX1() / getY1() and getX2() / getY2()  
+`-[ISCIAnnotation getX1]` / `-[ISCIAnnotation getY1]` and `[ISCIAnnotation getX2]` / `-[ISCIAnnotation getY2]`
 Returns the first anchor point (A) and the second anchor point (B) in data coordinates.
 Values correspond to the chart’s X‑Axis and Y‑Axis units.
 
 ## API Reference
 
-| **Field**                              | **Description**                                                     |
-| -------------------------------------- | ------------------------------------------------------------------- |
-| `stroke`                               | Pen style used to draw the extended line.                           |
-| `extendStart`                          | Boolean flag controlling backward extension of the line.            |
-| `extendEnd`                            | Boolean flag controlling forward extension of the line.             |
-| `reset()`                              | Cancels any in‑progress gesture and returns the modifier to Idle.   |
-| `xAxisId`                              | ID of the X‑Axis the annotation is draw against.                    |
-| `yAxisId`.                             | ID of the Y‑Axis the annotation is measured against.                |
-| `tag`                                  | Custom tag identifier for the modifier.                             |
-| `annotationCreationCompletionListener` | Callback invoked when a full extended line annotation is completed. |
+| **Field**                                     | **Description**                                                   |
+| --------------------------------------------- | ----------------------------------------------------------------- |
+| `SCIExtendedLineCreationModifier.stroke`      | Pen style used to draw the extended line.                         |
+| `SCIExtendedLineCreationModifier.extendStart` | Boolean flag controlling backward extension of the line.          |
+| `SCIExtendedLineCreationModifier.extendEnd`   | Boolean flag controlling forward extension of the line.           |
+| `-[SCIExtendedLineCreationModifier reset]`    | Cancels any in‑progress gesture and returns the modifier to Idle. |
 
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Usage Example
 
@@ -127,6 +124,6 @@ modifier.annotationCreationCompletionListener  = { [weak self] createdAnnotation
 ## Best Practices
 
 - Disable conflicting gesture modifiers during extended line creation for smoother interaction
-- Use `annotationCreationCompletionListener` to persist or analyze completed annotations
-- Call `reset()` when switching tools or exiting drawing mode
+- Use `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` to persist or analyze completed annotations
+- Call `-[SCIExtendedLineCreationModifier reset]` when switching tools or exiting drawing mode
 - Configure extendStart and extendEnd to match the desired line extension behavior
