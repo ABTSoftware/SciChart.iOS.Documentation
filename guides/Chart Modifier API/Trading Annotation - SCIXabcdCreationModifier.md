@@ -28,24 +28,26 @@ The creation flow follows a structured sequence:
 ### Completion
 
 - After placing point **D**, the annotation is finalized
-- The `annotationCreationCompletionListener` callback is invoked
+- The `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` callback is invoked
 - The modifier resets immediately, ready for a new annotation
 
 ![Xabcd Annotation](img/annotations/xabcd-annotation.png)
 
 ## Retrieving Annotation Points After Drawing Completion
 After an annotation drawing is completed, you can retrieve its underlying points using:
-getBaseDataValues()
-getBasePoints()
+`-[ISCITradingAnnotation getBaseDataValues]`
+`-[ISCITradingAnnotation getBasePoints]`
 Both methods return the annotation’s defining points, but in different coordinate spaces.
 
-### getBaseDataValues()
+`-[ISCITradingAnnotation getBaseDataValues]`
+
 - Returns the annotation points in data space (axis values).
 - X and Y values correspond to the chart’s actual data coordinates
 - Independent of pixel resolution or screen scaling
 - Useful for storing, analysis, or reloading annotations
 
-### getBasePoints()
+`-[ISCITradingAnnotation getBasePoints]`
+
 - Returns annotation points in pixel space (rendered screen coordinates).
 - X and Y values correspond to screen pixels
 - Useful for rendering overlays or UI alignment
@@ -121,22 +123,20 @@ surface.chartModifiers.add(modifier)
 
 The SCIXabcdCreationModifier can be configured using the properties and method listed in the table below:
 
-| **Field**                                                                | **Description**                                               |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------- |
-| `SCIXabcdCreationModifier.annotationStroke`                              | Defines the stroke style for newly created annotations.       |
-| `SCIXabcdCreationModifier.annotationFill`                                | Defines the fill style for newly created annotations.         |
-| `SCIXabcdCreationModifier.isDragging`                                    | Indicates whether the user is actively dragging a point.      |
-| `SCIXabcdCreationModifier.activePointIndex`                              | Represents the index of the point currently being placed.     |
-| `SCIXabcdCreationModifier.reset()`                                       | Cancels and removes any in-progress annotation.               |
-| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.          |
-| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.          |
-| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                       |
-| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a full XABCD annotation is completed. |
+| **Field**                                   | **Description**                                           |
+| ------------------------------------------- | --------------------------------------------------------- |
+| `SCIXabcdCreationModifier.annotationStroke` | Defines the stroke style for newly created annotations.   |
+| `SCIXabcdCreationModifier.annotationFill`   | Defines the fill style for newly created annotations.     |
+| `SCIXabcdCreationModifier.isDragging`       | Indicates whether the user is actively dragging a point.  |
+| `SCIXabcdCreationModifier.activePointIndex` | Represents the index of the point currently being placed. |
+| `-[SCIXabcdCreationModifier reset]`         | Cancels and removes any in-progress annotation.           |
+
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
 
 ## Best Practices
 - Disable conflicting gesture modifiers during drawing for better UX
 - Use CompletionListener to validate or store annotations
-- Call `reset()` when switching tools or exiting drawing mode
+- Call `-[SCIXabcdCreationModifier reset]` when switching tools or exiting drawing mode
 - Customize stroke/fill for better visual distinction
 - Call cancel when switching tools or modes
 

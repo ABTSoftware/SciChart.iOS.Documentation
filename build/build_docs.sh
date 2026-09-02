@@ -72,12 +72,36 @@ generate_api_docs() {
     pushd $DOCS_HEADERS_DIR
     # SciChart.h must be on the same level, that it's headers SciChart/*.h
     cp -a $PATH_TO_FRAMEWORK/Headers/. $SciChart/
-    mv $SciChart/SciChart.h ./
+    cp $SciChart/SciChart.h ./
 
     echo " ----- Generating \`SourceKit\` API files..."
+    # NOTE: this run prints several hundred clang errors ("failed to import bridging header",
+    # undeclared NS_ENUM identifiers, etc). They are benign: SourceKitten opens each
+    # SciChart/*.h individually, and headers that rely on the umbrella having already imported
+    # Foundation do not compile standalone. SourceKitten still extracts their full declarations
+    # and doc comments, so the output is complete.
+    # Do NOT "fix" them by passing `-include Foundation/Foundation.h` or `-include-pch`: that
+    # re-parses the Foundation prelude for all ~1200 header passes and pushes peak memory past
+    # what the machine can take, and sourcekitten gets OOM-killed mid-run.
     sourcekitten doc --objc "SciChart.h" -- -x objective-c \
         -isysroot $(xcrun --sdk iphonesimulator --show-sdk-path) \
         -I "./" > ../scichart-sourcekit-api-docs
+    SOURCEKITTEN_STATUS=$?
+
+    # sourcekitten writes straight to the output file, so a crash (e.g. `Killed: 9` when it runs
+    # out of memory) leaves an empty or truncated file behind. Without this guard the script
+    # still reports success and `generate-site` goes on to build a site with no API reference.
+    # The file ends with a `]` followed by trailing newlines, so strip whitespace before
+    # checking the final character.
+    LAST_CHAR=$(tail -c 32 ../scichart-sourcekit-api-docs | tr -d '[:space:]' | tail -c 1)
+    if [ $SOURCEKITTEN_STATUS -ne 0 ] || [ ! -s ../scichart-sourcekit-api-docs ] \
+        || [ "$LAST_CHAR" != "]" ]; then
+        echo "ERROR: sourcekitten did not produce a complete API docs file (exit $SOURCEKITTEN_STATUS)." >&2
+        echo "       If it was killed, it most likely ran out of memory - free some up and retry." >&2
+        popd
+        rm -rf $DOCS_HEADERS_DIR
+        exit 1
+    fi
     echo " ----- Finished generating \`SourceKit\` API files..."
 
     popd

@@ -17,18 +17,15 @@ This is useful for scenarios such as:
 
 ## API Reference
 
-| **Field**                                                                | **Description**                                                                                                |
-| ------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `SCIFreehandDrawingModifier.stroke`                                      | The pen style used to draw the annotation                                                                      |
-| `SCIFreehandDrawingModifier.selectionOffset`                             | Specifies extra padding around the selection bounds of the annotation..                                        |
-| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()`                 | Removes all currently selected freehand drawing annotations from the chart surface.                            |
-| `SCIFreehandDrawingModifier.getBaseDataValues()`                         | Returns the collection of base data values.                                                                    |
-| `SCIFreehandDrawingModifier.getBasePoints()`                             | Returns the collection of screen-space points which represent the current freehand path drawn by the modifier. |
-| `SCIAnnotationCreationModifierBase.xAxisId`                              | ID of the X‑Axis the annotation is measured against.                                                           |
-| `SCIAnnotationCreationModifierBase.yAxisId`                              | ID of the Y‑Axis the annotation is measured against.                                                           |
-| `SCIAnnotationCreationModifierBase.tag`                                  | Custom tag identifier for the modifier.                                                                        |
-| `SCIAnnotationCreationModifierBase.annotationCreationCompletionListener` | A callback invoked when a drawing annotation is completed.                                                     |
+| **Field**                                                | **Description**                                                                                                |
+| -------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `SCIFreehandDrawingModifier.stroke`                      | The pen style used to draw the annotation                                                                      |
+| `SCIFreehandDrawingModifier.selectionOffset`             | Specifies extra padding around the selection bounds of the annotation..                                        |
+| `SCIFreehandDrawingModifier.deleteSelectedAnnotations()` | Removes all currently selected freehand drawing annotations from the chart surface.                            |
+| `-[ISCITradingAnnotation getBaseDataValues]`             | Returns the collection of base data values.                                                                    |
+| `-[ISCITradingAnnotation getBasePoints]`                 | Returns the collection of screen-space points which represent the current freehand path drawn by the modifier. |
 
+> **_NOTE:_** The **xAxisId** and **yAxisId** must be supplied if you have axis with **non-default** Axis Ids, e.g. in **multi-axis** scenario.
  
 To learn more about **Pens** and **Brushes** and how to utilize them, please refer to the [SCIPenStyle, SCIBrushStyle and SCIFontStyle](scipenstyle-scibrushstyle-and-scifontstyle.html) article.
 

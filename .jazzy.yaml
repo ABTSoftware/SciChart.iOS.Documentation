@@ -1,5 +1,5 @@
 module: SciChart
-module_version: 4.6.0
+module_version: 4.8.1
 author: SciChart
 author_url: https://www.scichart.com
 github_url: https://github.com/ABTSoftware/SciChart.iOS.Examples
@@ -143,6 +143,9 @@ custom_categories:
       - Trading Annotation - SCIPitchforkCreationModifier
       - Trading Annotation - SCIXabcdCreationModifier
       - Trading Annotation - SCIFreehandDrawingModifier
+      - Trading Annotation - SCIFibonacciRetracementCreationModifier
+      - Trading Annotation - SCIMeasureCreationModifier
+      - Trading Annotation - SCIStopLossTakeProfitCreationModifier
 
   - name: Annotations APIs
     children:
@@ -163,6 +166,9 @@ custom_categories:
       - PitchforkAnnotation
       - XabcdAnnotation
       - FreehandDrawingAnnotation
+      - FibonacciRetracementAnnotation
+      - StopLossTakeProfitAnnotation
+      - MeasureAnnotation
 
   # - name: Advanced 2D chart Topics
   # children:
@@ -489,6 +495,9 @@ custom_categories:
       - SCIPitchforkCreationModifier
       - SCIXabcdCreationModifier
       - SCIFreehandDrawingModifier
+      - SCIFibonacciRetracementCreationModifier
+      - SCIMeasureCreationModifier
+      - SCIStopLossTakeProfitCreationModifier
 
       # Series Value Modifier
       - ISCISeriesValueMarker
@@ -712,6 +721,9 @@ custom_categories:
       - SCIExtendedLineAnnotation
       - SCIPitchforkAnnotation
       - SCIFreehandDrawingAnnotation
+      - SCIFibonacciRetracementAnnotation
+      - SCIStopLossTakeProfitAnnotation
+      - SCIMeasureAnnotation
 
       - ISCIAnnotationDragListener
       - SCIAnnotationIsHiddenChangedListener

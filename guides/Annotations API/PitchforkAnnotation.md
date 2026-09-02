@@ -5,7 +5,7 @@ The `SCIPitchforkAnnotation` (also known as Andrew’s Pitchfork) is a specializ
 
 > **_NOTE:_** Examples of the **`Annotations`** usage can be found in the [SciChart iOS Examples Suite](https://www.scichart.com/examples/ios-chart/) as well as on [GitHub](https://github.com/ABTSoftware/SciChart.iOS.Examples):
 > 
-> - Composite Annotation - [Obj-C/Swift](https://www.scichart.com/example/ios-chart-chart-composite-annotations-example/) ̰
+> - Trading Annotations - [Obj-C/Swift](https://www.scichart.com/example/ios-chart/ios-macos-trading-annotation-example/)
 
 ## Structure and Points
 The SCIPitchforkAnnotation is defined by three base points:
